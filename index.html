@@ -2158,7 +2158,7 @@ function goToMilestone(index){
 // Seats left — fetched from backend if available, else a sensible static fallback
 (async function loadSeats(){
   try {
-    const res = await fetch(`${BACKEND_URL}/api/seats`);
+  //  const res = await fetch(`${BACKEND_URL}/api/seats`);
     if (res.ok) {
       const data = await res.json();
       document.getElementById('seatsLeft').textContent = `Filling Fast — ${data.seatsLeft} Seats Left`;
