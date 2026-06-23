@@ -1,0 +1,2469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="theme-color" content="#fafbff">
+<title>MPULSE DIGITAL AI — AI & Digital Marketing Institute</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --violet:#6d28d9;--violet-light:#8b5cf6;--cyan:#0891b2;--cyan-light:#06b6d4;
+  --gold:#d97706;--green:#059669;--bg:#fafbff;--bg2:#f3f1fb;--surface:#ffffff;--surface2:#f6f4fd;
+  --border:rgba(109,40,217,0.12);--border-strong:rgba(109,40,217,0.22);--text:#1a1530;--muted:#5d5a72;
+  --shadow:0 10px 40px rgba(109,40,217,0.08);--shadow-lg:0 20px 60px rgba(109,40,217,0.14);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-track{background:var(--bg2);}
+::-webkit-scrollbar-thumb{background:linear-gradient(var(--violet),var(--cyan));border-radius:3px;}
+.grad-text{background:linear-gradient(90deg,var(--violet),var(--cyan));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
+button{font-family:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(250,251,255,0.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:all .3s;}
+nav.scrolled{padding:10px 5%;box-shadow:0 4px 24px rgba(109,40,217,0.06);}
+.nav-logo{display:flex;align-items:center;gap:12px;}
+.logo-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:900;font-size:17px;color:#fff;box-shadow:0 6px 18px rgba(109,40,217,0.35);}
+.logo-text{font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;line-height:1.1;color:var(--text);}
+.logo-text span{color:var(--violet);}
+.logo-sub{font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;font-weight:600;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links li{position:relative;}
+.nav-links a{font-size:13.5px;font-weight:600;color:var(--text);position:relative;transition:color .25s;display:flex;align-items:center;gap:4px;}
+.nav-links a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));transition:width .25s;border-radius:2px;}
+.nav-links a:hover{color:var(--violet);}
+.nav-links a:hover::after{width:100%;}
+.nav-caret{font-size:10px;transition:transform .25s;}
+.nav-links li:hover .nav-caret{transform:rotate(180deg);}
+
+/* SINGLE COURSE MILESTONE LAYOUT (Digital Marketing) */
+.dm-hero-card{background:linear-gradient(135deg,var(--violet),var(--cyan));border-radius:24px;padding:36px;color:#fff;margin-bottom:40px;}
+.dm-hero-top{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+.dm-pill{background:rgba(255,255,255,0.2);padding:5px 14px;border-radius:100px;font-size:11.5px;font-weight:700;}
+.dm-hero-card h3{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,30px);font-weight:800;margin-bottom:10px;}
+.dm-hero-card p{font-size:14px;opacity:0.92;max-width:640px;line-height:1.7;margin-bottom:22px;}
+.dm-hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+.dm-hero-stats div{display:flex;flex-direction:column;}
+.dm-hero-stats b{font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;}
+.dm-hero-stats span{font-size:11px;opacity:0.85;text-transform:uppercase;letter-spacing:0.5px;}
+.dm-hero-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;}
+.dm-hero-actions button{padding:13px 26px;border-radius:100px;font-weight:700;font-size:13.5px;cursor:pointer;border:none;}
+.dm-btn-primary{background:#fff;color:var(--violet);}
+.dm-btn-outline{background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.4)!important;}
+
+.milestone-track{display:flex;flex-direction:column;gap:16px;}
+.milestone-block{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .25s;}
+.milestone-block.expanded{border-color:var(--border-strong);}
+.milestone-head-row{display:flex;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;}
+.milestone-badge{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:15px;flex-shrink:0;}
+.milestone-head-text{flex:1;min-width:0;}
+.milestone-head-text h4{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.milestone-head-text span{font-size:12px;color:var(--muted);}
+.milestone-chevron{font-size:14px;color:var(--muted);transition:transform .3s;flex-shrink:0;}
+.milestone-block.expanded .milestone-chevron{transform:rotate(180deg);}
+.milestone-content{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.milestone-block.expanded .milestone-content{max-height:3000px;}
+.milestone-inner{padding:0 24px 24px;}
+.module-card{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:12px;}
+.module-card h5{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;color:var(--violet);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.module-topics{display:flex;flex-direction:column;gap:6px;}
+.module-topics div{font-size:12.5px;color:var(--text);line-height:1.5;display:flex;gap:8px;}
+.module-topics div::before{content:'•';color:var(--violet);font-weight:800;flex-shrink:0;}
+
+/* CAREER OUTCOMES BAND (Digital Marketing) */
+.dm-career-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:34px;margin-top:32px;}
+.dm-career-head{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.dm-career-head .ic{width:44px;height:44px;border-radius:13px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.dm-career-head h3{font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;color:var(--text);}
+.dm-career-head p{font-size:12.5px;color:var(--muted);margin-top:2px;}
+.dm-career-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px;}
+.dm-cstat{background:var(--surface2);border:1px solid var(--border);border-radius:16px;padding:20px;text-align:center;}
+.dm-cstat b{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--violet);display:block;}
+.dm-cstat span{font-size:11.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+.dm-support-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:22px;}
+.dm-support-item{display:flex;gap:11px;align-items:flex-start;background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:14px 16px;}
+.dm-support-item .dot{width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.dm-support-item div p{font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.dm-support-item div span{font-size:11.5px;color:var(--muted);line-height:1.4;}
+.dm-assurance-note{background:linear-gradient(135deg,#ede9fe,#cffafe);border:1px solid var(--border-strong);border-radius:14px;padding:16px 18px;font-size:12.5px;color:var(--text);line-height:1.7;margin-bottom:24px;}
+.dm-assurance-note b{color:var(--violet);}
+.dm-career-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.dm-career-cta button{padding:14px 28px;border-radius:100px;font-weight:700;font-size:13.5px;cursor:pointer;border:none;}
+.dm-cta-primary{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;box-shadow:0 10px 26px rgba(109,40,217,0.3);}
+.dm-cta-outline{background:var(--surface2);border:1.5px solid var(--border-strong);color:var(--violet);}
+@media (max-width:768px){
+  .dm-career-stats-grid{grid-template-columns:1fr;}
+  .dm-career-cta button{width:100%;text-align:center;}
+}
+
+/* FAQ ACCORDION */
+.faq-section{background:var(--bg2);}
+.faq-tabs{display:flex;gap:10px;margin-bottom:32px;flex-wrap:wrap;}
+.faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;}
+.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .25s;}
+.faq-item.open{border-color:var(--border-strong);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 22px;cursor:pointer;}
+.faq-q h4{font-family:'Outfit',sans-serif;font-size:14.5px;font-weight:700;color:var(--text);}
+.faq-q .faq-icon{font-size:18px;color:var(--violet);flex-shrink:0;transition:transform .3s;font-weight:300;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a p{padding:0 22px 20px;font-size:13.5px;color:var(--muted);line-height:1.7;}
+.faq-panel{display:none;}
+.faq-panel.active{display:block;}
+
+/* MEGA MENU */
+.mega-menu{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
+  background:var(--surface);border:1px solid var(--border);border-radius:18px;
+  box-shadow:var(--shadow-lg);padding:22px;width:560px;
+  opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;
+  z-index:1100;display:grid;grid-template-columns:1fr 1fr;gap:24px;
+}
+.nav-links li:hover .mega-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(2px);}
+.mega-col-title{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--violet);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.mega-links{display:flex;flex-direction:column;gap:3px;}
+.mega-link{display:flex;flex-direction:column;padding:9px 10px;border-radius:10px;transition:background .2s;cursor:pointer;}
+.mega-link:hover{background:var(--surface2);}
+.mega-link b{font-size:12.5px;font-weight:600;color:var(--text);}
+.mega-link span{font-size:11px;color:var(--muted);margin-top:1px;}
+.mega-view-all{display:block;margin-top:10px;text-align:center;padding:9px;border-radius:9px;background:var(--surface2);border:1px solid var(--border);font-size:11.5px;font-weight:700;color:var(--violet);cursor:pointer;transition:all .2s;}
+.mega-view-all:hover{background:#ede9fe;}
+@media (max-width:1200px){.mega-menu{width:480px;}}
+.nav-actions{display:flex;align-items:center;gap:10px;}
+.nav-callback{background:transparent;border:1.5px solid var(--border-strong);color:var(--violet);padding:9px 18px;font-weight:700;font-size:12.5px;border-radius:100px;cursor:pointer;transition:all .25s;}
+.nav-callback:hover{background:var(--surface2);}
+.nav-cta{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;padding:11px 22px;font-weight:700;font-size:13px;border-radius:100px;cursor:pointer;box-shadow:0 8px 20px rgba(109,40,217,0.3);transition:transform .2s,box-shadow .3s;}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(109,40,217,0.4);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+.hamburger span{width:24px;height:2px;background:var(--violet);border-radius:1px;}
+
+.mobile-nav{position:fixed;inset:0;z-index:999;background:rgba(250,251,255,0.98);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:80px 24px 40px;}
+.mobile-nav.open{transform:none;}
+.mobile-nav a{font-family:'Outfit',sans-serif;font-size:18px;font-weight:700;color:var(--text);letter-spacing:0.5px;padding:18px 0;width:100%;text-align:center;border-bottom:1px solid var(--border);min-height:56px;display:flex;align-items:center;justify-content:center;}
+.mobile-nav .mob-enroll-btn{margin-top:24px;width:100%;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;padding:17px;border-radius:12px;font-size:15px;font-weight:700;text-align:center;border-bottom:none!important;box-shadow:0 10px 30px rgba(109,40,217,0.35);}
+.mobile-close{position:absolute;top:18px;right:18px;width:42px;height:42px;border-radius:10px;font-size:20px;color:var(--text);background:var(--surface2);border:1px solid var(--border);cursor:pointer;display:flex;align-items:center;justify-content:center;}
+
+/* HERO */
+.hero{min-height:96vh;position:relative;overflow:hidden;display:flex;align-items:center;padding:120px 5% 60px;}
+.hero-glow1{position:absolute;width:700px;height:700px;top:-250px;right:-150px;background:radial-gradient(circle,rgba(139,92,246,0.16) 0%,transparent 70%);animation:float1 11s ease-in-out infinite;}
+.hero-glow2{position:absolute;width:600px;height:600px;bottom:-200px;left:-150px;background:radial-gradient(circle,rgba(6,182,212,0.13) 0%,transparent 70%);animation:float2 13s ease-in-out infinite;}
+@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,30px)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(109,40,217,0.08) 1px,transparent 1px);background-size:32px 32px;opacity:.6;}
+.hero-grid-wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border-strong);padding:7px 16px;border-radius:100px;margin-bottom:22px;font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--violet);box-shadow:var(--shadow);}
+.badge-dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:'Outfit',sans-serif;font-size:clamp(32px,5vw,54px);font-weight:800;line-height:1.1;letter-spacing:-1px;color:var(--text);margin-bottom:18px;}
+.hero h1 .l2{display:block;}
+.hero-sub{font-size:16.5px;line-height:1.7;color:var(--muted);margin-bottom:26px;max-width:520px;}
+.hero-sub strong{color:var(--text);font-weight:700;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px;}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;padding:15px 30px;font-weight:700;font-size:14px;border-radius:100px;cursor:pointer;border:none;box-shadow:0 10px 28px rgba(109,40,217,0.32);transition:transform .25s,box-shadow .3s;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(109,40,217,0.42);}
+.btn-outline{background:var(--surface);color:var(--violet);padding:14px 30px;font-weight:700;font-size:14px;border-radius:100px;cursor:pointer;border:1.5px solid var(--border-strong);transition:all .25s;}
+.btn-outline:hover{border-color:var(--violet);box-shadow:var(--shadow);transform:translateY(-2px);}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;}
+.stat-num{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--violet);}
+.stat-label{font-size:11.5px;color:var(--muted);font-weight:600;letter-spacing:0.5px;text-transform:uppercase;margin-top:2px;}
+
+.hero-visual{position:relative;z-index:2;height:460px;}
+.visual-card{position:absolute;background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--shadow-lg);padding:24px;animation:cardFloat 6s ease-in-out infinite;}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.vc1{top:0;right:0;width:270px;animation-delay:0s;}
+.vc2{top:165px;left:0;width:240px;animation-delay:1.5s;}
+.vc3{bottom:0;right:30px;width:250px;animation-delay:3s;}
+.vc-icon{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:11px;}
+.vc1 .vc-icon{background:linear-gradient(135deg,#ede9fe,#dbeafe);}
+.vc2 .vc-icon{background:linear-gradient(135deg,#ccfbf1,#cffafe);}
+.vc3 .vc-icon{background:linear-gradient(135deg,#fef3c7,#fde68a);}
+.vc-title{font-family:'Outfit',sans-serif;font-weight:700;font-size:13.5px;color:var(--text);margin-bottom:4px;}
+.vc-sub{font-size:11.5px;color:var(--muted);line-height:1.5;}
+.vc-bars{display:flex;gap:4px;align-items:flex-end;height:36px;margin-top:12px;}
+.vc-bars div{flex:1;background:linear-gradient(180deg,var(--cyan),var(--violet));border-radius:3px 3px 0 0;animation:barUp 2s ease-in-out infinite alternate;}
+@keyframes barUp{from{transform:scaleY(.4)}to{transform:scaleY(1)}}
+
+/* REFERRAL OFFER BANNER (Hero) */
+.referral-banner{
+  display:inline-flex;align-items:center;gap:12px;background:linear-gradient(135deg,#fef3c7,#fde68a);
+  border:1.5px solid #f59e0b;border-radius:16px;padding:13px 20px;margin-bottom:24px;
+  box-shadow:0 8px 22px rgba(245,158,11,0.18);position:relative;z-index:2;
+}
+.referral-banner .rb-icon{font-size:24px;flex-shrink:0;}
+.referral-banner .rb-text b{font-family:'Outfit',sans-serif;font-size:14px;color:#92400e;display:block;}
+.referral-banner .rb-text span{font-size:11.5px;color:#92400e;opacity:0.85;}
+@media (max-width:768px){
+  .referral-banner{padding:11px 16px;gap:10px;}
+  .referral-banner .rb-icon{font-size:20px;}
+  .referral-banner .rb-text b{font-size:12.5px;}
+  .referral-banner .rb-text span{font-size:10.5px;}
+}
+
+/* DM PRICE CARD */
+.dm-price-card{background:linear-gradient(135deg,#fef3c7,#fde68a);border:1.5px solid #f59e0b;border-radius:18px;padding:24px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+.dm-price-left b{font-family:'Outfit',sans-serif;font-size:30px;font-weight:800;color:#92400e;}
+.dm-price-left span{font-size:12.5px;color:#92400e;font-weight:600;}
+.dm-referral-pill{background:#92400e;color:#fff;padding:10px 18px;border-radius:12px;font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.dm-referral-pill b{font-family:'Outfit',sans-serif;}
+
+/* PREVIEW SECTION (AI vs DM side-by-side, right after hero) */
+.preview-section{background:var(--bg);padding:70px 5% 90px;}
+.preview-top{text-align:center;margin-bottom:46px;}
+.preview-top .section-label{justify-content:center;}
+.preview-top .section-label::before{display:none;}
+.preview-top .section-title{margin:0 auto 12px;}
+.preview-top .section-desc{margin:0 auto;text-align:center;}
+.preview-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;}
+.preview-col-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:2px solid var(--border);}
+.preview-col-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0;}
+.preview-col-icon.ai{background:linear-gradient(135deg,#ede9fe,#dbeafe);}
+.preview-col-icon.dm{background:linear-gradient(135deg,#fce7f3,#fef3c7);}
+.preview-col-head h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:var(--text);}
+.preview-col-head p{font-size:12px;color:var(--muted);margin-top:2px;}
+.preview-cards{display:flex;flex-direction:column;gap:14px;}
+.preview-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:center;transition:transform .25s,box-shadow .25s,border-color .25s;cursor:pointer;}
+.preview-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:var(--border-strong);}
+.preview-img{width:64px;height:64px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.preview-img svg{width:100%;height:100%;}
+.preview-info{flex:1;min-width:0;}
+.preview-info h4{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.3;}
+.preview-info p{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:6px;}
+.preview-meta-row{display:flex;gap:10px;font-size:10.5px;font-weight:700;color:var(--violet);}
+.preview-meta-row span{background:var(--surface2);padding:3px 9px;border-radius:100px;}
+.preview-arrow{font-size:16px;color:var(--muted);flex-shrink:0;transition:transform .25s,color .25s;}
+.preview-card:hover .preview-arrow{transform:translateX(3px);color:var(--violet);}
+.preview-view-all{display:block;text-align:center;margin-top:18px;padding:13px;border-radius:12px;background:var(--surface2);border:1.5px solid var(--border-strong);color:var(--violet);font-weight:700;font-size:13px;cursor:pointer;transition:all .25s;}
+.preview-view-all:hover{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border-color:transparent;}
+@media (max-width:900px){
+  .preview-grid{grid-template-columns:1fr;gap:40px;}
+}
+@media (max-width:480px){
+  .preview-card{padding:12px;gap:10px;}
+  .preview-img{width:52px;height:52px;}
+}
+
+/* SIGNUP POPUP */
+.signup-overlay{position:fixed;inset:0;z-index:11000;background:rgba(26,21,48,0.55);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease;padding:16px;}
+.signup-overlay.open{opacity:1;pointer-events:all;}
+.signup-modal{background:#fff;border-radius:22px;width:100%;max-width:420px;padding:0;position:relative;box-shadow:0 30px 80px rgba(26,21,48,0.3);transform:translateY(20px) scale(0.96);transition:transform .35s cubic-bezier(.34,1.56,.64,1);overflow:hidden;}
+.signup-overlay.open .signup-modal{transform:none;}
+.signup-banner{background:linear-gradient(135deg,var(--violet),var(--cyan));padding:28px;text-align:center;color:#fff;position:relative;}
+.signup-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,0.22);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.signup-banner .sb-icon{font-size:34px;margin-bottom:8px;}
+.signup-banner h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;margin-bottom:4px;}
+.signup-banner p{font-size:12.5px;opacity:0.92;}
+.signup-body{padding:24px 26px 26px;}
+.signup-perks{display:flex;flex-direction:column;gap:9px;margin-bottom:18px;}
+.signup-perks div{display:flex;gap:8px;font-size:12.5px;color:var(--text);align-items:flex-start;}
+.signup-perks .check{color:var(--green);font-weight:800;flex-shrink:0;}
+.signup-form-row{display:flex;flex-direction:column;gap:11px;}
+.signup-form-row input{width:100%;padding:13px 15px;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;}
+.signup-form-row input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,40,217,0.1);}
+.signup-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;box-shadow:0 8px 22px rgba(109,40,217,0.3);}
+.signup-later{display:block;text-align:center;margin-top:12px;font-size:12px;color:var(--muted);cursor:pointer;text-decoration:underline;}
+
+/* COHORT BANNER */
+.cohort-banner{background:linear-gradient(135deg,var(--violet),var(--cyan));padding:14px 5%;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;color:#fff;}
+.cohort-banner .ci{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;}
+.cohort-banner .ci b{font-weight:800;}
+.cohort-banner .seats{background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:100px;font-size:12px;font-weight:700;animation:pulseSeat 2s infinite;}
+@keyframes pulseSeat{0%,100%{background:rgba(255,255,255,0.2)}50%{background:rgba(255,255,255,0.35)}}
+.cohort-banner .cb-btn{background:#fff;color:var(--violet);padding:8px 20px;border-radius:100px;font-weight:800;font-size:12.5px;border:none;cursor:pointer;}
+
+/* MARQUEE */
+.marquee-section{padding:18px 0;background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;}
+.marquee-track{display:flex;animation:marquee 26s linear infinite;white-space:nowrap;}
+.marquee-item{font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:0 36px;}
+.marquee-item .sep{color:var(--violet);margin:0 8px;}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* TOOLS MARQUEE */
+.tools-section{padding:60px 5%;background:var(--bg);text-align:center;}
+.tools-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:8px;}
+.tools-title{font-family:'Outfit',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:800;margin-bottom:36px;}
+.tools-marquee-wrap{overflow:hidden;position:relative;}
+.tools-marquee-wrap::before,.tools-marquee-wrap::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;}
+.tools-marquee-wrap::before{left:0;background:linear-gradient(90deg,var(--bg),transparent);}
+.tools-marquee-wrap::after{right:0;background:linear-gradient(270deg,var(--bg),transparent);}
+.tools-track{display:flex;gap:16px;animation:toolsScroll 30s linear infinite;}
+@keyframes toolsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tool-chip{flex-shrink:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:14px 22px;font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px;box-shadow:var(--shadow);white-space:nowrap;}
+
+/* SECTIONS SHARED */
+section{padding:90px 5%;position:relative;}
+.section-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--violet);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.section-label::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px;}
+.section-title{font-family:'Outfit',sans-serif;font-size:clamp(26px,3.6vw,42px);font-weight:800;line-height:1.15;color:var(--text);margin-bottom:14px;}
+.section-desc{font-size:15.5px;color:var(--muted);line-height:1.7;max-width:580px;margin-bottom:50px;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* OUTCOMES STAT BAND */
+.outcomes-band{background:linear-gradient(135deg,#1a1530,#2c2150);padding:50px 5%;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;}
+.outcome-item h3{font-family:'Outfit',sans-serif;font-size:clamp(26px,3.5vw,38px);font-weight:800;color:#fff;}
+.outcome-item h3 span{background:linear-gradient(90deg,var(--cyan-light),var(--violet-light));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.outcome-item p{font-size:12.5px;color:#c5bce0;margin-top:6px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;}
+
+/* WHY */
+.why-section{background:var(--bg);}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;}
+.feature-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:30px;transition:transform .3s,border-color .3s,box-shadow .3s;}
+.feature-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:var(--shadow-lg);}
+.feature-icon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;background:linear-gradient(135deg,#ede9fe,#cffafe);}
+.feature-title{font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.feature-desc{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+/* COURSES */
+.courses-section{background:var(--bg2);}
+.course-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px;}
+.tab-btn{padding:10px 22px;font-size:12.5px;font-weight:700;letter-spacing:0.5px;background:var(--surface);border:1px solid var(--border);color:var(--muted);border-radius:100px;cursor:pointer;transition:all .25s;}
+.tab-btn.active,.tab-btn:hover{background:linear-gradient(135deg,var(--violet),var(--cyan));border-color:transparent;color:#fff;box-shadow:0 8px 20px rgba(109,40,217,0.25);}
+.course-panel{display:none !important;}
+.course-panel.active{display:block !important;}
+.courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
+.course-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer;}
+.course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.course-card-top{height:120px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.course-emoji{font-size:46px;z-index:1;animation:iconFloat 3s ease-in-out infinite;}
+@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.course-badge{position:absolute;top:12px;right:12px;padding:4px 11px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;}
+.badge-new{background:#d1fae5;color:#047857;}
+.badge-hot{background:#fee2e2;color:#dc2626;}
+.badge-popular{background:#fef3c7;color:#b45309;}
+.course-body{padding:22px;}
+.course-level{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.level-beginner{color:var(--green);}
+.level-intermediate{color:var(--gold);}
+.level-advanced{color:#dc2626;}
+.level-all{color:var(--cyan);}
+.course-name{font-family:'Outfit',sans-serif;font-size:16.5px;font-weight:700;color:var(--text);margin-bottom:9px;line-height:1.3;}
+.course-desc-txt{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:15px;}
+.course-meta{display:flex;gap:14px;font-size:11.5px;color:var(--muted);margin-bottom:18px;font-weight:600;}
+.course-card-actions{display:flex;gap:8px;}
+.course-view{flex:1;padding:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:700;border-radius:8px;cursor:pointer;transition:all .25s;}
+.course-view:hover{border-color:var(--border-strong);}
+.course-enroll{flex:1;padding:12px;background:transparent;border:1.5px solid var(--border-strong);color:var(--violet);font-size:12px;font-weight:700;letter-spacing:0.5px;border-radius:8px;cursor:pointer;transition:all .25s;}
+.course-enroll:hover{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border-color:transparent;}
+.bg-v1{background:linear-gradient(135deg,#ede9fe,#ddd6fe);}
+.bg-v2{background:linear-gradient(135deg,#cffafe,#a5f3fc);}
+.bg-v3{background:linear-gradient(135deg,#fef3c7,#fde68a);}
+.bg-v4{background:linear-gradient(135deg,#d1fae5,#a7f3d0);}
+.bg-v5{background:linear-gradient(135deg,#fce7f3,#fbcfe8);}
+.bg-v6{background:linear-gradient(135deg,#dbeafe,#bfdbfe);}
+
+/* BENEFITS */
+.benefits-section{background:var(--bg);}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+.benefit-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;transition:transform .3s;}
+.benefit-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.benefit-icon{width:46px;height:46px;border-radius:13px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:16px;}
+.benefit-card h4{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text);}
+.benefit-card p{font-size:13.5px;color:var(--muted);line-height:1.6;}
+
+/* PROJECTS SHOWCASE */
+.projects-section{background:var(--bg2);}
+.projects-scroll{display:flex;gap:20px;overflow-x:auto;padding-bottom:14px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;}
+.project-card{flex-shrink:0;width:300px;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:24px;transition:transform .3s;}
+.project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.project-num{font-family:'Outfit',sans-serif;font-size:11px;font-weight:800;color:var(--violet);letter-spacing:1px;margin-bottom:8px;}
+.project-card h4{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:10px;line-height:1.35;}
+.project-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:14px;}
+.project-tools{display:flex;gap:6px;flex-wrap:wrap;}
+.proj-tool-tag{font-size:10.5px;font-weight:700;background:var(--surface2);border:1px solid var(--border);color:var(--violet);padding:4px 10px;border-radius:8px;}
+
+/* PROCESS */
+.process-section{background:var(--bg);}
+.process-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;position:relative;}
+.process-steps::before{content:'';position:absolute;top:38px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));opacity:.25;}
+.step{text-align:center;padding:0 18px;}
+.step-num{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:#fff;margin:0 auto 18px;position:relative;z-index:1;box-shadow:0 10px 28px rgba(109,40,217,0.32);}
+.step-title{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:8px;}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* CAREER SUPPORT (Last Mile) */
+.career-section{background:var(--bg2);}
+.career-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+.career-stage{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;position:relative;}
+.career-stage .stage-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Outfit',sans-serif;font-weight:800;font-size:13px;margin-bottom:14px;}
+.career-stage h4{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.career-stage p{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* MENTORS */
+.mentors-section{background:var(--bg);}
+.mentors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+.mentor-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;text-align:center;transition:transform .3s;}
+.mentor-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);}
+.mentor-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;font-weight:800;margin:0 auto 14px;font-family:'Outfit',sans-serif;}
+.mentor-card h4{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.mentor-card .mrole{font-size:12px;color:var(--violet);font-weight:600;margin-bottom:6px;}
+.mentor-card .mco{font-size:11.5px;color:var(--muted);}
+
+/* PRICING */
+.pricing-section{background:var(--bg2);}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.price-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;transition:transform .3s;}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+.price-card.featured{border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--violet),var(--cyan)) border-box;position:relative;}
+.featured-tag{position:absolute;top:-13px;right:26px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:100px;}
+.plan-name{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+.plan-price{font-size:36px;font-weight:800;margin:12px 0 4px;font-family:'Outfit',sans-serif;color:var(--text);}
+.plan-price span{font-size:13px;color:var(--muted);font-weight:500;}
+.plan-desc{font-size:13px;color:var(--muted);margin-bottom:24px;}
+.plan-features{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex-grow:1;}
+.plan-features div{display:flex;gap:9px;font-size:13.5px;align-items:flex-start;color:var(--text);}
+.check{color:var(--green);font-weight:800;flex-shrink:0;}
+.plan-btn{padding:13px;border-radius:10px;text-align:center;font-weight:700;font-size:13.5px;border:1.5px solid var(--border-strong);background:transparent;color:var(--violet);cursor:pointer;transition:all .25s;}
+.plan-btn.primary{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;}
+.plan-btn:hover{transform:translateY(-2px);}
+
+/* TESTIMONIALS */
+.testimonials-section{background:var(--bg);}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:22px;}
+.testi-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:26px;position:relative;}
+.stars{color:var(--gold);font-size:14px;margin-bottom:12px;letter-spacing:2px;}
+.testi-text{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:20px;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.author-avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:17px;}
+.author-name{font-family:'Outfit',sans-serif;font-size:13.5px;font-weight:700;color:var(--text);}
+.author-class{font-size:11.5px;color:var(--muted);}
+
+/* CONTACT */
+.contact-section{background:var(--bg2);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+.contact-info h3{font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;color:var(--text);margin-bottom:16px;}
+.contact-info p{font-size:14.5px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
+.contact-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;}
+.contact-icon{width:42px;height:42px;background:var(--surface2);border:1px solid var(--border);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.contact-detail h4{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:2px;}
+.contact-detail p{font-size:13px;color:var(--muted);margin:0;}
+.contact-form{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;box-shadow:var(--shadow);}
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 15px;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;outline:none;transition:border-color .25s,box-shadow .25s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,40,217,0.1);}
+.form-group textarea{height:100px;resize:none;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .3s;box-shadow:0 10px 28px rgba(109,40,217,0.3);}
+.submit-btn:hover{transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;margin-bottom:46px;}
+.footer-brand p{font-size:13.5px;color:#b3a9d4;line-height:1.7;margin:14px 0 22px;max-width:280px;}
+.footer-social{display:flex;gap:10px;}
+.social-btn{width:38px;height:38px;border:1px solid rgba(255,255,255,0.15);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#cfc6ea;transition:all .25s;}
+.social-btn svg{width:18px;height:18px;}
+.social-btn:hover{border-color:var(--cyan-light);background:rgba(6,182,212,0.15);color:#fff;transform:translateY(-2px);}
+
+/* FLOATING ACTION BUTTONS */
+.fab-stack{position:fixed;bottom:96px;right:24px;z-index:950;display:flex;flex-direction:column;gap:12px;align-items:center;}
+.fab-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 28px rgba(0,0,0,0.22);transition:transform .25s,box-shadow .25s;cursor:pointer;position:relative;}
+.fab-btn:hover{transform:translateY(-3px) scale(1.05);}
+.fab-btn svg{width:26px;height:26px;}
+.fab-whatsapp{background:#25d366;color:#fff;}
+.fab-whatsapp::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid #25d366;opacity:0;animation:fabPulse 2.2s infinite;}
+@keyframes fabPulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.35)}}
+.fab-call{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;}
+@media (max-width:768px){
+  .fab-stack{bottom:170px;right:16px;gap:10px;}
+  .fab-btn{width:48px;height:48px;}
+  .fab-btn svg{width:22px;height:22px;}
+}
+.footer-col h4{font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan-light);margin-bottom:18px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:13px;color:#b3a9d4;transition:color .25s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:#9d92c0;flex-wrap:wrap;gap:12px;}
+
+.back-top{position:fixed;bottom:30px;right:30px;z-index:900;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--violet),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:18px;color:#fff;cursor:pointer;box-shadow:0 10px 28px rgba(109,40,217,0.35);opacity:0;transform:translateY(20px);transition:all .3s;}
+.back-top.show{opacity:1;transform:none;}
+
+.toast{position:fixed;bottom:90px;right:30px;z-index:9000;background:var(--surface);border:1px solid #a7f3d0;border-radius:14px;padding:16px 22px;color:#047857;font-size:13.5px;font-weight:600;transform:translateX(200%);transition:transform .4s ease;box-shadow:var(--shadow-lg);max-width:330px;}
+.toast.show{transform:none;}
+
+@media (max-width:1100px){
+  .hero-grid-wrap{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .outcomes-band{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:768px){
+  nav{padding:13px 5%;}
+  .nav-links{display:none;}
+  .nav-actions{display:none;}
+  .hamburger{display:flex;}
+  .hero{padding:96px 5% 40px;min-height:auto;}
+  .hero h1{font-size:28px;}
+  .hero-sub{font-size:14.5px;}
+  .hero-actions{flex-direction:column;}
+  .btn-primary,.btn-outline{width:100%;text-align:center;}
+  .hero-stats{gap:20px;}
+  .cohort-banner{flex-direction:column;gap:10px;text-align:center;}
+  section{padding:56px 5%;}
+  .section-title{font-size:23px;}
+  .features-grid,.benefits-grid,.testimonials-grid,.mentors-grid,.career-grid{grid-template-columns:1fr;}
+  .courses-grid{grid-template-columns:1fr;}
+  .course-tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:6px;}
+  .course-tabs::-webkit-scrollbar{display:none;}
+  .tab-btn{flex-shrink:0;}
+  .contact-grid{grid-template-columns:1fr;}
+  .contact-form{padding:24px;}
+  .form-row{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .pricing-grid{grid-template-columns:1fr;}
+  .process-steps::before{display:none;}
+  .outcomes-band{grid-template-columns:repeat(2,1fr);padding:36px 5%;gap:24px;}
+  .toast{right:16px;left:16px;bottom:80px;}
+  footer{padding-bottom:90px;}
+  .back-top{bottom:80px;}
+}
+
+.mobile-sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:890;padding:12px 16px calc(14px + env(safe-area-inset-bottom));background:rgba(250,251,255,0.97);backdrop-filter:blur(16px);border-top:1px solid var(--border);gap:10px;box-shadow:0 -6px 24px rgba(109,40,217,0.08);}
+@media (max-width:768px){.mobile-sticky-cta{display:flex;}}
+.mob-cta-call{flex:1;padding:14px 10px;background:var(--surface2);border:1.5px solid var(--border-strong);color:var(--violet);border-radius:10px;font-size:13px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;}
+.mob-cta-enroll{flex:1.6;padding:14px 10px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border-radius:10px;font-size:13px;font-weight:700;text-align:center;display:flex;align-items:center;justify-content:center;gap:6px;min-height:48px;box-shadow:0 8px 22px rgba(109,40,217,0.3);}
+
+/* ══════ ENROLLMENT MODAL ══════ */
+.enroll-overlay{position:fixed;inset:0;z-index:10000;background:rgba(26,21,48,0.55);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:16px;}
+.enroll-overlay.open{opacity:1;pointer-events:all;}
+.enroll-modal{background:#fff;border:1px solid var(--border);border-radius:22px;width:100%;max-width:560px;max-height:92vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(26,21,48,0.3);transform:translateY(30px) scale(0.97);transition:transform .35s cubic-bezier(.34,1.56,.64,1);scrollbar-width:none;}
+.enroll-modal::-webkit-scrollbar{display:none;}
+.enroll-overlay.open .enroll-modal{transform:none;}
+.modal-header{padding:22px 26px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:2;border-radius:22px 22px 0 0;}
+.modal-header-left h2{font-family:'Outfit',sans-serif;font-size:16px;font-weight:800;color:var(--text);}
+.modal-header-left p{font-size:12px;color:var(--muted);margin-top:2px;}
+.modal-close{width:34px;height:34px;border-radius:9px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;}
+.modal-close:hover{background:#fee2e2;border-color:#fca5a5;color:#dc2626;}
+.step-progress{padding:18px 26px 0;display:flex;align-items:center;gap:0;}
+.sp-item{display:flex;flex-direction:column;align-items:center;flex:1;position:relative;}
+.sp-item:not(:last-child)::after{content:'';position:absolute;top:15px;left:50%;width:100%;height:2px;background:var(--border);z-index:0;}
+.sp-item.done:not(:last-child)::after{background:var(--violet);}
+.sp-dot{width:30px;height:30px;border-radius:50%;background:var(--surface2);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:var(--muted);position:relative;z-index:1;transition:all .3s;}
+.sp-item.active .sp-dot{background:linear-gradient(135deg,var(--violet),var(--cyan));border-color:transparent;color:#fff;box-shadow:0 0 0 4px rgba(109,40,217,0.12);}
+.sp-item.done .sp-dot{background:var(--green);border-color:var(--green);color:#fff;}
+.sp-label{font-size:10px;font-weight:700;letter-spacing:0.5px;color:var(--muted);margin-top:6px;text-transform:uppercase;}
+.sp-item.active .sp-label,.sp-item.done .sp-label{color:var(--violet);}
+.modal-body{padding:22px 26px 26px;}
+.enroll-step{display:none;}
+.enroll-step.active{display:block;}
+.mf-group{margin-bottom:15px;}
+.mf-group label{display:block;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.mf-group input,.mf-group select,.mf-group textarea{width:100%;padding:12px 14px;background:var(--surface2);border:1px solid var(--border);color:var(--text);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14.5px;outline:none;transition:border-color .25s,box-shadow .25s;}
+.mf-group input:focus,.mf-group select:focus,.mf-group textarea:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,40,217,0.1);}
+.mf-group textarea{height:84px;resize:none;}
+.mf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media (max-width:480px){.mf-row{grid-template-columns:1fr;}}
+.info-note{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:13px 15px;margin-bottom:16px;font-size:12.5px;color:#4338ca;line-height:1.6;display:flex;gap:10px;align-items:flex-start;}
+.info-note span{font-size:16px;flex-shrink:0;}
+.modal-nav{display:flex;gap:12px;margin-top:18px;}
+.btn-back{flex:1;padding:13px;background:transparent;border:1.5px solid var(--border-strong);color:var(--muted);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .25s;}
+.btn-back:hover{border-color:var(--violet);color:var(--violet);}
+.btn-next{flex:2;padding:13px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .3s;box-shadow:0 8px 22px rgba(109,40,217,0.3);display:flex;align-items:center;justify-content:center;gap:8px;}
+.btn-next:hover{transform:translateY(-2px);}
+
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px;}
+.slot-btn{padding:10px 6px;border-radius:9px;text-align:center;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;transition:all .2s;line-height:1.3;}
+.slot-btn:hover,.slot-btn.selected{border-color:var(--violet);background:#ede9fe;color:var(--text);}
+.slot-btn .slot-time{font-size:13px;font-weight:700;color:var(--violet);display:block;margin-bottom:2px;}
+
+.fee-card{background:linear-gradient(135deg,#ede9fe,#cffafe);border:1px solid var(--border-strong);border-radius:14px;padding:18px 20px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;}
+.fee-info h4{font-size:15px;font-weight:700;color:var(--text);font-family:'Outfit',sans-serif;}
+.fee-info p{font-size:12px;color:var(--muted);margin-top:3px;}
+.fee-amount{text-align:right;}
+.fee-demo{font-size:11px;color:var(--green);font-weight:700;letter-spacing:0.5px;}
+.fee-full{font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:var(--text);}
+
+.emi-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.emi-btn{padding:11px 8px;border-radius:10px;text-align:center;border:1px solid var(--border);background:var(--surface2);cursor:pointer;transition:all .2s;}
+.emi-btn:hover,.emi-btn.selected{border-color:var(--gold);background:#fef3c7;}
+.emi-count{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--gold);}
+.emi-label{font-size:10px;color:var(--muted);margin-top:2px;}
+.emi-amount{font-size:12px;color:var(--text);font-weight:700;margin-top:3px;}
+
+.razorpay-card{background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:24px;text-align:center;color:#fff;margin-bottom:18px;}
+.rzp-logo-text{font-family:'Outfit',sans-serif;font-weight:800;font-size:18px;letter-spacing:-0.5px;}
+.rzp-logo-text span{color:#3395ff;}
+.razorpay-card p{font-size:12px;color:#cbd5e1;margin-top:8px;line-height:1.6;}
+.pay-now-btn{width:100%;padding:16px;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 8px 26px rgba(22,163,74,0.35);transition:transform .2s,box-shadow .2s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.pay-now-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(22,163,74,0.45);}
+.secure-badges{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.secure-badge{font-size:10.5px;color:var(--muted);display:flex;align-items:center;gap:4px;font-weight:600;}
+
+.success-screen{text-align:center;padding:16px 0;}
+.success-icon{width:78px;height:78px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#22c55e);display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 18px;box-shadow:0 10px 30px rgba(22,163,74,0.35);animation:successPop .5s cubic-bezier(.34,1.56,.64,1);}
+@keyframes successPop{from{transform:scale(0)}to{transform:scale(1)}}
+.success-screen h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:var(--text);margin-bottom:8px;}
+.success-screen p{font-size:13.5px;color:var(--muted);line-height:1.7;margin-bottom:22px;}
+.success-id{background:#d1fae5;border:1px solid #6ee7b7;border-radius:10px;padding:13px 18px;margin-bottom:22px;display:inline-block;width:100%;}
+.success-id span{font-size:11px;color:#047857;font-weight:700;letter-spacing:0.5px;display:block;margin-bottom:4px;}
+.success-id code{font-family:'Outfit',sans-serif;font-size:14px;color:var(--text);font-weight:700;}
+.success-actions{display:flex;gap:10px;}
+.btn-whatsapp{flex:1;padding:13px;background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
+.btn-done{flex:1;padding:13px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;}
+
+.pay-processing{text-align:center;padding:36px 20px;}
+.pay-processing .proc-icon{font-size:48px;animation:procFloat 1s ease-in-out infinite alternate;margin-bottom:14px;}
+@keyframes procFloat{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+.pay-processing h4{font-family:'Outfit',sans-serif;font-size:16px;color:var(--text);margin-bottom:8px;font-weight:700;}
+.pay-processing p{font-size:13px;color:var(--muted);}
+.proc-bar{width:100%;height:4px;background:var(--surface2);border-radius:2px;margin-top:20px;overflow:hidden;}
+.proc-fill{height:100%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px;animation:procLoad 2s ease-out forwards;}
+@keyframes procLoad{0%{width:0%}30%{width:40%}70%{width:75%}100%{width:100%}}
+
+@media (max-width:480px){
+  .modal-header{padding:18px 18px 14px;}
+  .modal-body{padding:18px 18px 24px;}
+  .step-progress{padding:16px 18px 0;}
+}
+
+/* ══════ COURSE DETAIL MODAL ══════ */
+.detail-overlay{position:fixed;inset:0;z-index:10500;background:rgba(26,21,48,0.55);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:16px;}
+.detail-overlay.open{opacity:1;pointer-events:all;}
+.detail-modal{background:#fff;border-radius:24px;width:100%;max-width:640px;max-height:90vh;overflow-y:auto;position:relative;box-shadow:0 30px 80px rgba(26,21,48,0.3);transform:translateY(30px) scale(0.97);transition:transform .35s cubic-bezier(.34,1.56,.64,1);scrollbar-width:thin;}
+.detail-overlay.open .detail-modal{transform:none;}
+.detail-header{background:linear-gradient(135deg,var(--violet),var(--cyan));padding:28px 28px 22px;border-radius:24px 24px 0 0;color:#fff;position:sticky;top:0;z-index:2;}
+.detail-close{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,0.2);border:none;color:#fff;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.detail-badge-row{display:flex;gap:8px;margin-bottom:10px;}
+.detail-pill{background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;}
+.detail-header h2{font-family:'Outfit',sans-serif;font-size:22px;font-weight:800;margin-bottom:6px;}
+.detail-header p{font-size:13px;opacity:0.9;}
+.detail-stats-row{display:flex;gap:20px;margin-top:18px;flex-wrap:wrap;}
+.detail-stat{display:flex;flex-direction:column;}
+.detail-stat b{font-family:'Outfit',sans-serif;font-size:18px;}
+.detail-stat span{font-size:10.5px;opacity:0.85;text-transform:uppercase;letter-spacing:0.5px;}
+.detail-body{padding:26px 28px;}
+.detail-section-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;color:var(--text);margin:22px 0 14px;display:flex;align-items:center;gap:8px;}
+.detail-section-title:first-child{margin-top:0;}
+.milestone-item{background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:16px 18px;margin-bottom:10px;}
+.milestone-head{display:flex;justify-content:space-between;align-items:center;}
+.milestone-head b{font-size:13.5px;color:var(--text);}
+.milestone-dur{font-size:11px;color:var(--violet);font-weight:700;background:#ede9fe;padding:3px 10px;border-radius:100px;}
+.milestone-topics{margin-top:10px;font-size:12.5px;color:var(--muted);line-height:1.7;}
+.detail-tools-row{display:flex;gap:8px;flex-wrap:wrap;}
+.detail-tool-chip{font-size:11.5px;font-weight:700;background:var(--surface2);border:1px solid var(--border);color:var(--violet);padding:6px 12px;border-radius:100px;}
+.detail-cta-row{display:flex;gap:12px;margin-top:24px;}
+.detail-enroll-btn{flex:2;padding:14px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(109,40,217,0.3);}
+.detail-callback-btn{flex:1;padding:14px;background:var(--surface2);border:1.5px solid var(--border-strong);color:var(--violet);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;}
+
+/* ══════ CALLBACK MODAL ══════ */
+.callback-overlay{position:fixed;inset:0;z-index:10600;background:rgba(26,21,48,0.55);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:16px;}
+.callback-overlay.open{opacity:1;pointer-events:all;}
+.callback-modal{background:#fff;border-radius:22px;width:100%;max-width:400px;padding:30px;position:relative;box-shadow:0 30px 80px rgba(26,21,48,0.3);transform:translateY(20px) scale(0.97);transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.callback-overlay.open .callback-modal{transform:none;}
+.callback-modal h3{font-family:'Outfit',sans-serif;font-size:18px;font-weight:800;margin-bottom:6px;}
+.callback-modal p{font-size:13px;color:var(--muted);margin-bottom:20px;}
+.callback-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;}
+</style>
+</head>
+<body>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#courses" onclick="closeMobile()">AI Courses</a>
+  <a href="#digimkt" onclick="closeMobile()">Digital Marketing</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
+  <a href="#mentors" onclick="closeMobile()">Mentors</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="#contact" onclick="closeMobile();openEnroll('')" class="mob-enroll-btn">🚀 Free Demo Class</a>
+</div>
+
+<!-- Nav -->
+<nav id="nav">
+  <a href="#home" class="nav-logo">
+    <div class="logo-icon">M</div>
+    <div><div class="logo-text">MPULSE <span>DIGITAL AI</span></div><div class="logo-sub">Bengaluru · Live Classes</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li>
+      <a href="#courses">AI Courses <i class="nav-caret">▾</i></a>
+      <div class="mega-menu">
+        <div>
+          <div class="mega-col-title">🌐 Generative AI</div>
+          <div class="mega-links">
+            <div class="mega-link" onclick="goToCourse('courses','genai','genai-prompt')"><b>Generative AI &amp; Prompt Engineering</b><span>Beginner · 6 Weeks</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','genai','ai-tools')"><b>AI Tools &amp; Productivity</b><span>Intermediate · 4 Weeks</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','genai','ai-agents')"><b>AI Agents &amp; Automation</b><span>Advanced · 8 Weeks</span></div>
+          </div>
+          <div class="mega-col-title" style="margin-top:16px;">📊 Data Science</div>
+          <div class="mega-links">
+            <div class="mega-link" onclick="goToCourse('courses','data','python-ai')"><b>Python for Data &amp; AI</b><span>Intermediate · 4 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','data','data-sci')"><b>Data Science &amp; Analytics</b><span>Advanced · 6 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','data','data-viz')"><b>Data Visualization &amp; Storytelling</b><span>Intermediate · 6 Weeks</span></div>
+          </div>
+        </div>
+        <div>
+          <div class="mega-col-title">🧠 ML &amp; Deep Learning</div>
+          <div class="mega-links">
+            <div class="mega-link" onclick="goToCourse('courses','ml','ml-eng')"><b>Machine Learning Engineering</b><span>Advanced · 6 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','ml','deep-learning')"><b>Deep Learning with TensorFlow</b><span>Advanced · 5 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','ml','cv-nlp')"><b>Computer Vision &amp; NLP</b><span>Advanced · 4 Months</span></div>
+          </div>
+          <div class="mega-col-title" style="margin-top:16px;">🚀 Advanced AI</div>
+          <div class="mega-links">
+            <div class="mega-link" onclick="goToCourse('courses','advai','mlops')"><b>MLOps &amp; AI Deployment</b><span>Expert · 5 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','advai','llm-rag')"><b>LLMs &amp; RAG Systems</b><span>Expert · 4 Months</span></div>
+            <div class="mega-link" onclick="goToCourse('courses','advai','ai-job-ready')"><b>AI Job Readiness Bootcamp</b><span>All Levels · 6 Months</span></div>
+          </div>
+          <div class="mega-view-all" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">View all AI courses →</div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a href="#digimkt">Digital Marketing <i class="nav-caret">▾</i></a>
+      <div class="mega-menu" style="width:480px;grid-template-columns:1fr;">
+        <div>
+          <div class="mega-col-title">📣 AI-Powered Digital Marketing Course</div>
+          <div class="mega-links">
+            <div class="mega-link" onclick="goToMilestone(0)"><b>Milestone 1: Websites &amp; Landing Pages</b><span>2 weeks</span></div>
+            <div class="mega-link" onclick="goToMilestone(1)"><b>Milestone 2: SEO &amp; Answer Engine Optimization</b><span>4 weeks</span></div>
+            <div class="mega-link" onclick="goToMilestone(2)"><b>Milestone 3: Social, Content &amp; Influencer Marketing</b><span>2 weeks</span></div>
+            <div class="mega-link" onclick="goToMilestone(3)"><b>Milestone 4: Performance Marketing</b><span>8 weeks</span></div>
+            <div class="mega-link" onclick="goToMilestone(4)"><b>Milestone 5: Email &amp; Affiliate Marketing</b><span>2 weeks</span></div>
+            <div class="mega-link" onclick="goToMilestone(5)"><b>Milestone 6: Capstone Project</b><span>2 weeks</span></div>
+          </div>
+          <div class="mega-view-all" onclick="document.getElementById('digimkt').scrollIntoView({behavior:'smooth'})">View full course →</div>
+        </div>
+      </div>
+    </li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#mentors">Mentors</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="nav-callback" onclick="openCallback()">📞 Request Callback</button>
+    <button class="nav-cta" onclick="openEnroll('')">🚀 Enroll Now</button>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-dots"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-grid-wrap">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="badge-dot"></span> Live Cohorts Enrolling Now</div>
+      <div class="referral-banner">
+        <div class="rb-icon">🎁</div>
+        <div class="rb-text"><b>Refer a friend, get ₹3,000 cashback!</b><span>Big referral offer on our Digital Marketing course — limited time</span></div>
+      </div>
+      <h1>Master <span class="grad-text">AI &amp; Digital Marketing</span><span class="l2">Skills That Pay For Life</span></h1>
+      <p class="hero-sub">Live, instructor-led classes that turn beginners into <strong>in-demand digital marketers and AI-powered professionals</strong>. Work on 20+ real projects, build a portfolio, and get career support.</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses</button>
+        <button class="btn-outline" onclick="openEnroll('')">🎯 Free Demo Class</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">4.8/5</div><div class="stat-label">Avg Rating</div></div>
+        <div><div class="stat-num">500+</div><div class="stat-label">Students Trained</div></div>
+        <div><div class="stat-num">20+</div><div class="stat-label">Live Projects</div></div>
+        <div><div class="stat-num">1 Yr</div><div class="stat-label">Career Support</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-card vc1"><div class="vc-icon">🤖</div><div class="vc-title">Generative AI Mastery</div><div class="vc-sub">Prompting, LLMs &amp; AI tools that save hours every week</div></div>
+      <div class="visual-card vc2"><div class="vc-icon">📈</div><div class="vc-title">Performance Marketing</div><div class="vc-sub">Real ad spend, real campaigns, real ROI</div>
+        <div class="vc-bars"><div style="height:40%;animation-delay:.1s"></div><div style="height:70%;animation-delay:.2s"></div><div style="height:55%;animation-delay:.3s"></div><div style="height:90%;animation-delay:.4s"></div><div style="height:65%;animation-delay:.5s"></div></div>
+      </div>
+      <div class="visual-card vc3"><div class="vc-icon">🎯</div><div class="vc-title">Live Mentorship</div><div class="vc-sub">Direct feedback from practitioners, every class</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- AI vs Digital Marketing — Side by Side Preview -->
+<section class="preview-section" id="preview">
+  <div class="preview-top reveal">
+    <div class="section-label">Two Paths, One Future</div>
+    <div class="section-title">Choose Your <span class="grad-text">Learning Path</span></div>
+    <p class="section-desc">Explore our flagship AI and Digital Marketing programs side by side — pick a card to jump straight to full course details.</p>
+  </div>
+  <div class="preview-grid">
+
+    <!-- AI Column -->
+    <div class="reveal">
+      <div class="preview-col-head">
+        <div class="preview-col-icon ai">🤖</div>
+        <div><h3>Artificial Intelligence</h3><p>12 live courses · Beginner to Expert</p></div>
+      </div>
+      <div class="preview-cards">
+        <div class="preview-card" onclick="goToCourse('courses','genai','genai-prompt')">
+          <div class="preview-img" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">
+            <svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="10" fill="#8b5cf6"/><rect x="14" y="36" width="36" height="20" rx="6" fill="#6d28d9"/><circle cx="24" cy="46" r="3" fill="#fff"/><circle cx="40" cy="46" r="3" fill="#fff"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Generative AI &amp; Prompt Engineering</h4>
+            <p>Master ChatGPT, Gemini, Claude &amp; Midjourney for daily workflows</p>
+            <div class="preview-meta-row"><span>6 Weeks</span><span>Beginner</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToCourse('courses','ml','ml-eng')">
+          <div class="preview-img" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
+            <svg viewBox="0 0 64 64"><circle cx="16" cy="20" r="5" fill="#059669"/><circle cx="48" cy="20" r="5" fill="#059669"/><circle cx="32" cy="38" r="6" fill="#047857"/><circle cx="16" cy="52" r="5" fill="#059669"/><circle cx="48" cy="52" r="5" fill="#059669"/><line x1="16" y1="20" x2="32" y2="38" stroke="#a7f3d0" stroke-width="2"/><line x1="48" y1="20" x2="32" y2="38" stroke="#a7f3d0" stroke-width="2"/><line x1="32" y1="38" x2="16" y2="52" stroke="#a7f3d0" stroke-width="2"/><line x1="32" y1="38" x2="48" y2="52" stroke="#a7f3d0" stroke-width="2"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Machine Learning Engineering</h4>
+            <p>Supervised/unsupervised learning, model training, real ML pipelines</p>
+            <div class="preview-meta-row"><span>6 Months</span><span>Advanced</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToCourse('courses','data','data-sci')">
+          <div class="preview-img" style="background:linear-gradient(135deg,#cffafe,#a5f3fc);">
+            <svg viewBox="0 0 64 64"><rect x="12" y="38" width="8" height="18" fill="#0891b2"/><rect x="24" y="28" width="8" height="28" fill="#06b6d4"/><rect x="36" y="18" width="8" height="38" fill="#0891b2"/><rect x="48" y="32" width="8" height="24" fill="#06b6d4"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Data Science &amp; Analytics</h4>
+            <p>EDA, SQL, Power BI, Tableau — complete analytics mastery</p>
+            <div class="preview-meta-row"><span>6 Months</span><span>Advanced</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToCourse('courses','advai','llm-rag')">
+          <div class="preview-img" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">
+            <svg viewBox="0 0 64 64"><rect x="14" y="16" width="36" height="26" rx="6" fill="#d97706"/><circle cx="24" cy="29" r="3" fill="#fff"/><circle cx="40" cy="29" r="3" fill="#fff"/><path d="M22 48h20l-10 10z" fill="#b45309"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>LLMs &amp; RAG Systems</h4>
+            <p>Fine-tuning, retrieval pipelines, LangChain, production chatbots</p>
+            <div class="preview-meta-row"><span>4 Months</span><span>Expert</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+      </div>
+      <div class="preview-view-all" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore all AI courses →</div>
+    </div>
+
+    <!-- Digital Marketing Column -->
+    <div class="reveal">
+      <div class="preview-col-head">
+        <div class="preview-col-icon dm">📣</div>
+        <div><h3>Digital Marketing</h3><p>1 complete course · 6 milestones · 20 weeks</p></div>
+      </div>
+      <div class="preview-cards">
+        <div class="preview-card" onclick="goToMilestone(0)">
+          <div class="preview-img" style="background:linear-gradient(135deg,#fce7f3,#fbcfe8);">
+            <svg viewBox="0 0 64 64"><rect x="10" y="14" width="44" height="30" rx="5" fill="#db2777"/><rect x="16" y="22" width="32" height="3" fill="#fff"/><rect x="16" y="29" width="20" height="3" fill="#fff"/><path d="M26 44h12l-2 10h-8z" fill="#9d174d"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Milestone 1: Websites &amp; Landing Pages</h4>
+            <p>Digital marketing foundations, WordPress, and conversion-focused landing pages</p>
+            <div class="preview-meta-row"><span>2 Weeks</span><span>Foundation</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToMilestone(1)">
+          <div class="preview-img" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+            <svg viewBox="0 0 64 64"><circle cx="26" cy="26" r="14" fill="none" stroke="#2563eb" stroke-width="5"/><line x1="36" y1="36" x2="50" y2="50" stroke="#1d4ed8" stroke-width="6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Milestone 2: SEO &amp; AEO</h4>
+            <p>Technical SEO, keyword research, and answer engine optimization for AI search</p>
+            <div class="preview-meta-row"><span>4 Weeks</span><span>Core Skill</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToMilestone(3)">
+          <div class="preview-img" style="background:linear-gradient(135deg,#ede9fe,#c4b5fd);">
+            <svg viewBox="0 0 64 64"><rect x="18" y="10" width="28" height="44" rx="6" fill="#7c3aed"/><circle cx="32" cy="46" r="3" fill="#fff"/><rect x="26" y="16" width="12" height="2" fill="#fff"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Milestone 4: Performance Marketing</h4>
+            <p>Meta Ads, Google Ads, GA4 and AI-powered campaign optimization</p>
+            <div class="preview-meta-row"><span>8 Weeks</span><span>Advanced</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+        <div class="preview-card" onclick="goToMilestone(4)">
+          <div class="preview-img" style="background:linear-gradient(135deg,#cffafe,#67e8f9);">
+            <svg viewBox="0 0 64 64"><rect x="16" y="20" width="32" height="22" rx="8" fill="#0e7490"/><circle cx="26" cy="31" r="3" fill="#fff"/><circle cx="38" cy="31" r="3" fill="#fff"/><rect x="29" y="10" width="6" height="10" fill="#0e7490"/><circle cx="32" cy="9" r="3" fill="#0e7490"/></svg>
+          </div>
+          <div class="preview-info">
+            <h4>Milestone 5: Email &amp; Affiliate Marketing</h4>
+            <p>Automated email flows, list building, and affiliate partnership programs</p>
+            <div class="preview-meta-row"><span>2 Weeks</span><span>Revenue Channel</span></div>
+          </div>
+          <div class="preview-arrow">→</div>
+        </div>
+      </div>
+      <div class="preview-view-all" onclick="document.getElementById('digimkt').scrollIntoView({behavior:'smooth'})">Explore the full course →</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Cohort Urgency Banner -->
+<div class="cohort-banner">
+  <div class="ci">📅 Next Cohort: <b id="cohortDate">Loading...</b></div>
+  <div class="ci">🕐 <b>9:30 PM – 11:30 PM</b> · Weekday (Mon/Wed/Fri)</div>
+  <div class="seats" id="seatsLeft">Filling Fast — 20 Seats Left</div>
+  <button class="cb-btn" onclick="openEnroll('')">Apply Now</button>
+</div>
+
+<!-- Marquee -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item">🤖 Generative AI <span class="sep">✦</span></span>
+    <span class="marquee-item">🧠 Machine Learning <span class="sep">✦</span></span>
+    <span class="marquee-item">📊 Data Science <span class="sep">✦</span></span>
+    <span class="marquee-item">📣 Digital Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">🔍 SEO &amp; Google Ads <span class="sep">✦</span></span>
+    <span class="marquee-item">📲 Social Media Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">✍️ Content &amp; Copywriting <span class="sep">✦</span></span>
+    <span class="marquee-item">🐍 Python for AI <span class="sep">✦</span></span>
+    <span class="marquee-item">🌐 LLMs &amp; RAG <span class="sep">✦</span></span>
+    <span class="marquee-item">🛒 E-Commerce Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">🤖 Generative AI <span class="sep">✦</span></span>
+    <span class="marquee-item">🧠 Machine Learning <span class="sep">✦</span></span>
+    <span class="marquee-item">📊 Data Science <span class="sep">✦</span></span>
+    <span class="marquee-item">📣 Digital Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">🔍 SEO &amp; Google Ads <span class="sep">✦</span></span>
+    <span class="marquee-item">📲 Social Media Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">✍️ Content &amp; Copywriting <span class="sep">✦</span></span>
+    <span class="marquee-item">🐍 Python for AI <span class="sep">✦</span></span>
+    <span class="marquee-item">🌐 LLMs &amp; RAG <span class="sep">✦</span></span>
+    <span class="marquee-item">🛒 E-Commerce Marketing <span class="sep">✦</span></span>
+  </div>
+</div>
+
+<!-- Outcomes Stat Band -->
+<div class="outcomes-band">
+  <div class="outcome-item"><h3><span>500+</span></h3><p>Students Trained</p></div>
+  <div class="outcome-item"><h3><span>4.8/5</span></h3><p>Average Rating</p></div>
+  <div class="outcome-item"><h3><span>20+</span></h3><p>Live Industry Projects</p></div>
+  <div class="outcome-item"><h3><span>1 Year</span></h3><p>Career Support Included</p></div>
+</div>
+
+<!-- Why Us -->
+<section class="why-section" id="why">
+  <div class="section-label">Why Choose Us</div>
+  <div class="section-title">What Makes This Program <span class="grad-text">Special</span></div>
+  <p class="section-desc">Experience learning that transforms careers through hands-on projects, expert mentorship, and AI-powered tools designed for real-world success.</p>
+  <div class="features-grid">
+    <div class="feature-card reveal"><div class="feature-icon">🎯</div><div class="feature-title">Applied Curriculum</div><div class="feature-desc">A fully industry-integrated curriculum where you build real strategies, not just learn theory.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">⚡</div><div class="feature-title">Live Sessions from Experts</div><div class="feature-desc">Learn directly from mentors who run AI-powered marketing and tech operations for real brands.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">💬</div><div class="feature-title">Community Access</div><div class="feature-desc">Learn, collaborate, and grow with a community that builds real-world skills together.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">🏆</div><div class="feature-title">Capstone Project + Demo Day</div><div class="feature-desc">Work on real-world projects across strategy, SEO, ads, content and AI — building a portfolio that proves your skills.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">📁</div><div class="feature-title">Free Portfolio Website</div><div class="feature-desc">A live, professional site to showcase your skills and real projects to recruiters.</div></div>
+    <div class="feature-card reveal"><div class="feature-icon">💼</div><div class="feature-title">3-Step Career Support</div><div class="feature-desc">Resume upgrades, portfolio reviews, mock interviews &amp; personalized guidance to help you land your next role.</div></div>
+  </div>
+</section>
+
+<!-- AI Courses -->
+<section class="courses-section" id="courses">
+  <div class="section-label">AI Training Programs</div>
+  <div class="section-title">Master <span class="grad-text">Artificial Intelligence</span></div>
+  <p class="section-desc">From your first prompt to deploying production AI systems — live courses for every level.</p>
+
+  <div class="course-tabs">
+    <button class="tab-btn active" onclick="switchTab('genai',this)">🌐 Generative AI</button>
+    <button class="tab-btn" onclick="switchTab('ml',this)">🧠 ML &amp; Deep Learning</button>
+    <button class="tab-btn" onclick="switchTab('data',this)">📊 Data Science</button>
+    <button class="tab-btn" onclick="switchTab('advai',this)">🚀 Advanced AI</button>
+  </div>
+
+  <div class="course-panel active" id="tab-genai">
+    <div class="courses-grid">
+      <div class="course-card reveal" data-course="genai-prompt">
+        <div class="course-card-top bg-v1"><div class="course-emoji">🌐</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-body">
+          <div class="course-level level-beginner">Beginner</div>
+          <div class="course-name">Generative AI &amp; Prompt Engineering</div>
+          <div class="course-desc-txt">Master ChatGPT, Gemini, Claude, and Midjourney to automate content, research, and daily workflows.</div>
+          <div class="course-meta"><span>⏱ 6 Weeks</span><span>📅 Weekend Intensive</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('genai-prompt')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Generative AI')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="ai-tools">
+        <div class="course-card-top bg-v2"><div class="course-emoji">🤖</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-body">
+          <div class="course-level level-intermediate">Intermediate</div>
+          <div class="course-name">AI Tools &amp; Productivity Mastery</div>
+          <div class="course-desc-txt">A practical toolkit of AI apps for research, writing, design, and workflow automation.</div>
+          <div class="course-meta"><span>⏱ 4 Weeks</span><span>📅 Evening Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('ai-tools')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('AI Tools')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="ai-agents">
+        <div class="course-card-top bg-v3"><div class="course-emoji">🦾</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Advanced</div>
+          <div class="course-name">AI Agents &amp; Automation Building</div>
+          <div class="course-desc-txt">Build autonomous AI agents and no-code/low-code automations using n8n for real business workflows.</div>
+          <div class="course-meta"><span>⏱ 8 Weeks</span><span>📅 Flexible Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('ai-agents')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('AI Agents')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-panel" id="tab-ml">
+    <div class="courses-grid">
+      <div class="course-card reveal" data-course="ml-eng">
+        <div class="course-card-top bg-v4"><div class="course-emoji">🧠</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Advanced</div>
+          <div class="course-name">Machine Learning Engineering</div>
+          <div class="course-desc-txt">Supervised/unsupervised learning, model training and evaluation, Scikit-learn, real ML pipelines.</div>
+          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Morning/Evening</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('ml-eng')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Machine Learning')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="deep-learning">
+        <div class="course-card-top bg-v5"><div class="course-emoji">🔥</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Advanced</div>
+          <div class="course-name">Deep Learning with TensorFlow</div>
+          <div class="course-desc-txt">Neural networks, CNNs, RNNs and transformers — build and deploy deep learning models end to end.</div>
+          <div class="course-meta"><span>⏱ 5 Months</span><span>📅 Flexible Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('deep-learning')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Deep Learning')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="cv-nlp">
+        <div class="course-card-top bg-v6"><div class="course-emoji">👁️</div></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Advanced</div>
+          <div class="course-name">Computer Vision &amp; NLP</div>
+          <div class="course-desc-txt">Image recognition, object detection, text and sentiment analysis with real project work.</div>
+          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('cv-nlp')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Computer Vision')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-panel" id="tab-data">
+    <div class="courses-grid">
+      <div class="course-card reveal" data-course="python-ai">
+        <div class="course-card-top bg-v1"><div class="course-emoji">🐍</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-body">
+          <div class="course-level level-intermediate">Intermediate</div>
+          <div class="course-name">Python for Data &amp; AI</div>
+          <div class="course-desc-txt">Python fundamentals with NumPy, Pandas, and Matplotlib — the foundation for every AI role.</div>
+          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('python-ai')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Python for AI')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="data-sci">
+        <div class="course-card-top bg-v2"><div class="course-emoji">📊</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Advanced</div>
+          <div class="course-name">Data Science &amp; Analytics</div>
+          <div class="course-desc-txt">EDA, feature engineering, SQL, Power BI, Tableau — complete data analytics mastery for industry roles.</div>
+          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Weekend Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('data-sci')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Data Science')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="data-viz">
+        <div class="course-card-top bg-v3"><div class="course-emoji">📈</div></div>
+        <div class="course-body">
+          <div class="course-level level-intermediate">Intermediate</div>
+          <div class="course-name">Data Visualization &amp; Storytelling</div>
+          <div class="course-desc-txt">Turn raw data into compelling dashboards and reports that drive real business decisions.</div>
+          <div class="course-meta"><span>⏱ 6 Weeks</span><span>📅 Weekend Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('data-viz')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('Data Visualization')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="course-panel" id="tab-advai">
+    <div class="courses-grid">
+      <div class="course-card reveal" data-course="mlops">
+        <div class="course-card-top bg-v4"><div class="course-emoji">🔬</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Expert</div>
+          <div class="course-name">MLOps &amp; AI Deployment</div>
+          <div class="course-desc-txt">Docker, Kubernetes, CI/CD for ML, FastAPI deployment, and cloud platforms (AWS, GCP, Azure).</div>
+          <div class="course-meta"><span>⏱ 5 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('mlops')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('MLOps')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="llm-rag">
+        <div class="course-card-top bg-v5"><div class="course-emoji">🤖</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-body">
+          <div class="course-level level-advanced">Expert</div>
+          <div class="course-name">LLMs &amp; RAG Systems</div>
+          <div class="course-desc-txt">Fine-tuning LLMs, Retrieval-Augmented Generation, LangChain, and building production AI chatbots.</div>
+          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Weekend Batches</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('llm-rag')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('LLMs and RAG')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+      <div class="course-card reveal" data-course="ai-job-ready">
+        <div class="course-card-top bg-v6"><div class="course-emoji">💼</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-body">
+          <div class="course-level level-all">All Levels</div>
+          <div class="course-name">AI Job Readiness Bootcamp</div>
+          <div class="course-desc-txt">Complete job training — Python, ML, projects, resume building, mock interviews, placement drives.</div>
+          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Flexible</span></div>
+          <div class="course-card-actions">
+            <button class="course-view" onclick="openDetail('ai-job-ready')">View Details</button>
+            <button class="course-enroll" onclick="openEnroll('AI Job Readiness')">Enroll →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI-Powered Digital Marketing — Single Comprehensive Course -->
+<section class="courses-section" id="digimkt" style="background:var(--bg);">
+  <div class="section-label">Digital Marketing Program</div>
+  <div class="section-title">The <span class="grad-text">AI-Powered Digital Marketing</span> Course</div>
+  <p class="section-desc">One complete, milestone-based program covering everything from foundations to a live capstone — taught with an AI-first approach throughout.</p>
+
+  <div class="dm-price-card reveal">
+    <div class="dm-price-left">
+      <b>₹30,000</b> <span>one-time course fee · flexible payment plans available</span>
+    </div>
+    <div class="dm-referral-pill">🎁 Refer a friend → get <b>₹3,000 cashback</b></div>
+  </div>
+
+  <div class="dm-hero-card reveal">
+    <div class="dm-hero-top">
+      <span class="dm-pill">🤖 AI Powered</span>
+      <span class="dm-pill">🔴 Live Online</span>
+      <span class="dm-pill">📜 Certification Included</span>
+    </div>
+    <h3>AI-Powered Digital Marketing Course</h3>
+    <p>A complete, six-milestone program covering websites, SEO, social &amp; content, performance marketing, email &amp; affiliate marketing, and a real capstone project — built around practical, AI-first workflows from day one.</p>
+    <div class="dm-hero-stats">
+      <div><b>6</b><span>Milestones</span></div>
+      <div><b>20 Weeks</b><span>Duration</span></div>
+      <div><b>100+ hrs</b><span>Live Sessions</span></div>
+      <div><b>20+</b><span>Projects</span></div>
+      <div><b>1 Year</b><span>Career Support</span></div>
+    </div>
+    <div class="dm-hero-actions">
+      <button class="dm-btn-primary" onclick="openEnroll('AI-Powered Digital Marketing')">Enroll / Book Free Demo</button>
+      <button class="dm-btn-outline" onclick="openCallback()">Request a Callback</button>
+    </div>
+  </div>
+
+  <div class="milestone-track" id="milestoneTrack"></div>
+
+  <!-- Career Outcomes & Job Support -->
+  <div class="dm-career-card reveal">
+    <div class="dm-career-head">
+      <div class="ic">💼</div>
+      <div><h3>Career Outcomes &amp; Job Support</h3><p>What this course can realistically do for your career</p></div>
+    </div>
+
+    <div class="dm-career-stats-grid">
+      <div class="dm-cstat"><b>₹3.5–6 LPA</b><span>Average Starting Package*</span></div>
+      <div class="dm-cstat"><b>1 Year</b><span>Placement Support Window</span></div>
+      <div class="dm-cstat"><b>20+</b><span>Hiring &amp; Freelance Partners</span></div>
+    </div>
+
+    <div class="dm-support-grid">
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>Resume &amp; LinkedIn Revamp</p><span>Performance-driven keywords, recruiter-ready profile</span></div></div>
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>Portfolio Review</p><span>Showcase your capstone &amp; campaign work professionally</span></div></div>
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>Mock Interviews</p><span>Practice with mentors before the real thing</span></div></div>
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>Referrals to Hiring Partners</p><span>Direct intros to agencies, startups &amp; businesses hiring</span></div></div>
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>Freelance Launch Support</p><span>Pricing, proposals &amp; client acquisition guidance</span></div></div>
+      <div class="dm-support-item"><div class="dot">✓</div><div><p>1 Year of Career Mentorship</p><span>Ongoing guidance even after the course ends</span></div></div>
+    </div>
+
+    <div class="dm-assurance-note">
+      <b>Our placement promise:</b> we don't guarantee a job offer — no honest institute can — but every student who completes the capstone project and maintains good attendance gets <b>unlimited interview referrals</b> through our hiring network for a full year, plus hands-on resume, portfolio and interview support until you're placed or confident going independent as a freelancer. *Package figures are indicative, based on entry-level digital marketing roles in Bengaluru as of 2026, and vary with experience, performance and the hiring company.
+    </div>
+
+    <div class="dm-career-cta">
+      <button class="dm-cta-primary" onclick="openEnroll('AI-Powered Digital Marketing')">Enroll Now &amp; Start Your Career →</button>
+      <button class="dm-cta-outline" onclick="openCallback()">Talk to a Program Advisor</button>
+    </div>
+  </div>
+</section>
+
+<!-- Tools Marquee -->
+<div class="tools-section">
+  <div class="tools-label">Tools You'll Master</div>
+  <div class="tools-title">Work With <span class="grad-text">20+ Industry Tools</span></div>
+  <div class="tools-marquee-wrap">
+    <div class="tools-track" id="toolsTrack"></div>
+  </div>
+</div>
+
+<!-- Benefits -->
+<section class="benefits-section" id="benefits">
+  <div class="section-label">Outcomes</div>
+  <div class="section-title">The Future-Ready Benefits of Learning With Us</div>
+  <p class="section-desc">Beyond the certificate — here's what you actually walk away with.</p>
+  <div class="benefits-grid">
+    <div class="benefit-card reveal"><div class="benefit-icon">🚀</div><h4>Career Acceleration</h4><p>Skills mapped directly to roles companies are hiring for right now in AI and digital marketing.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">🧠</div><h4>Future-Proof Skillset</h4><p>Stay ahead as AI reshapes marketing — learn the tools before they become industry standard.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">👥</div><h4>Live Mentorship</h4><p>Direct access to instructors for feedback on your real campaigns and projects.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">📜</div><h4>Certification</h4><p>Earn a recognized certificate to showcase on LinkedIn and strengthen your portfolio.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">💼</div><h4>Job &amp; Freelance Support</h4><p>Portfolio reviews, resume guidance, and access to our hiring/freelance partner network.</p></div>
+    <div class="benefit-card reveal"><div class="benefit-icon">🌐</div><h4>Lifetime Community Access</h4><p>Join an alumni network for continued learning, networking, and opportunity sharing.</p></div>
+  </div>
+</section>
+
+<!-- Projects Showcase -->
+<section class="projects-section" id="projects">
+  <div class="section-label">Learn by Doing</div>
+  <div class="section-title">Real Projects. <span class="grad-text">Real Impact.</span></div>
+  <p class="section-desc">Work on industry-style projects across AI and marketing. Scroll to see a sample of what you'll build — build a portfolio that speaks for itself.</p>
+  <div class="projects-scroll" id="projectsScroll"></div>
+</section>
+
+<!-- Process -->
+<section class="process-section" id="process">
+  <div class="section-label">How It Works</div>
+  <div class="section-title">Your Journey to <span class="grad-text">Mastery</span></div>
+  <p class="section-desc">A structured, supportive pathway from your first day to your dream career — every step guided by experts.</p>
+  <div class="process-steps">
+    <div class="step reveal"><div class="step-num">01</div><div class="step-title">Free Demo Class</div><div class="step-desc">Attend a free demo session and meet your faculty before you commit to anything.</div></div>
+    <div class="step reveal"><div class="step-num">02</div><div class="step-title">Assessment &amp; Enrollment</div><div class="step-desc">Quick skill assessment — we place you in the right batch and customize your learning path.</div></div>
+    <div class="step reveal"><div class="step-num">03</div><div class="step-title">Learn &amp; Build</div><div class="step-desc">Live classes, hands-on labs, and real AI/marketing project work every week.</div></div>
+    <div class="step reveal"><div class="step-num">04</div><div class="step-title">Certify &amp; Excel</div><div class="step-desc">Graduate with MPULSE certification, a project portfolio, and placement support.</div></div>
+  </div>
+</section>
+
+<!-- Career Support (Last Mile) -->
+<section class="career-section" id="career">
+  <div class="section-label">We Don't Stop Until You Succeed</div>
+  <div class="section-title">Last-Mile <span class="grad-text">Career Preparation</span></div>
+  <p class="section-desc">Your final sprint to becoming job-ready — resume, portfolio, LinkedIn, and interview prep, all guided by mentors.</p>
+  <div class="career-grid">
+    <div class="career-stage reveal"><div class="stage-num">1</div><h4>Gear Up</h4><p>Build your personal brand and professional identity — resume revamp and portfolio showcase.</p></div>
+    <div class="career-stage reveal"><div class="stage-num">2</div><h4>Pitch Perfect</h4><p>Present ideas, tell stories, and practice ace-ing interviews with mock sessions and feedback.</p></div>
+    <div class="career-stage reveal"><div class="stage-num">3</div><h4>Tech Skill Setup</h4><p>Master the practical side of hiring — LinkedIn optimization, profile audits, recruiter outreach.</p></div>
+  </div>
+</section>
+
+<!-- Mentors -->
+<section class="mentors-section" id="mentors">
+  <div class="section-label">Meet Your Mentors</div>
+  <div class="section-title">Learn From People Who've <span class="grad-text">Done It</span></div>
+  <p class="section-desc">Mentors with real industry experience running AI and marketing operations for brands and agencies.</p>
+  <div class="mentors-grid">
+    <div class="mentor-card reveal"><div class="mentor-avatar">PK</div><h4>Pawan Kumar</h4><div class="mrole">Sr. Digital Marketing Mentor</div><div class="mco">8+ years in performance marketing</div></div>
+    <div class="mentor-card reveal"><div class="mentor-avatar">SV</div><h4>Sumit Verma</h4><div class="mrole">AI &amp; Automation Lead</div><div class="mco">Ex-product, AI workflow specialist</div></div>
+    <div class="mentor-card reveal"><div class="mentor-avatar">AN</div><h4>Ananya Nair</h4><div class="mrole">SEO &amp; Content Strategist</div><div class="mco">6+ years scaling organic growth</div></div>
+    <div class="mentor-card reveal"><div class="mentor-avatar">RS</div><h4>Rohit Sinha</h4><div class="mrole">Data Science Mentor</div><div class="mco">ML engineer, ex-analytics consultant</div></div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials-section" id="testimonials">
+  <div class="section-label">Student Success</div>
+  <div class="section-title">What Our <span class="grad-text">Students</span> Say</div>
+  <p class="section-desc">Real outcomes from real students who showed up and did the work.</p>
+  <div class="testimonials-grid">
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The live format made all the difference. I could ask questions in real time and apply what I learned to my own brand the same week.</div><div class="testi-author"><div class="author-avatar">RS</div><div><div class="author-name">Riya Sharma</div><div class="author-class">Freelance Marketer</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">I went from zero AI tool knowledge to running my own AI-assisted ad campaigns within weeks. The mentorship was the real value here.</div><div class="testi-author"><div class="author-avatar">AK</div><div><div class="author-name">Arjun Kapoor</div><div class="author-class">Startup Founder</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">Landed a digital marketing role within a month of finishing the course. The instructors clearly know the industry inside out.</div><div class="testi-author"><div class="author-avatar">PN</div><div><div class="author-name">Priya Nair</div><div class="author-class">Marketing Executive</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The ML Engineering course completely transformed my career. I went from a non-tech background to a Data Analyst role at a top MNC in 6 months.</div><div class="testi-author"><div class="author-avatar">PR</div><div><div class="author-name">Preethi Rao</div><div class="author-class">Data Analyst, Infosys</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Generative AI crash course was an eye-opener. Within a week of finishing it, I automated half my work tasks. Pure gold for professionals.</div><div class="testi-author"><div class="author-avatar">RK</div><div><div class="author-name">Rajesh Kumar</div><div class="author-class">Marketing Manager, TCS</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Full-Stack Bootcamp gave me everything — SEO, ads, content, analytics — and the live client project sealed my first freelance contract.</div><div class="testi-author"><div class="author-avatar">SN</div><div><div class="author-name">Sneha Nair</div><div class="author-class">Freelance Strategist</div></div></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-label">Common Questions</div>
+  <div class="section-title">Frequently Asked <span class="grad-text">Questions</span></div>
+  <p class="section-desc">Quick answers about our AI courses and the Digital Marketing program. Still have a question? Reach out via the contact form below.</p>
+
+  <div class="faq-tabs">
+    <button class="tab-btn active" onclick="switchFaqTab('ai',this)">🤖 AI Courses</button>
+    <button class="tab-btn" onclick="switchFaqTab('dm',this)">📣 Digital Marketing</button>
+  </div>
+
+  <div class="faq-panel active" id="faq-ai">
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Do I need a coding or technical background to join the AI courses?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>No — most of our AI courses (like Generative AI &amp; Prompt Engineering or AI Tools &amp; Productivity) are built for complete beginners. The more advanced tracks like Machine Learning Engineering or MLOps do involve Python, but we teach that from the ground up if you start with our foundational courses first.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Are classes live or pre-recorded?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>All classes are conducted live by instructors, with recordings made available afterward so you never lose a session if you miss it. This is different from most online platforms that only offer pre-recorded videos.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Will I get a certificate after completing an AI course?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes, every AI course includes a certificate of completion once you finish the required projects and assessments. It's designed to be shared on LinkedIn and included in your portfolio.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Which AI course should I start with?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>If you're new to AI, start with Generative AI &amp; Prompt Engineering or AI Tools &amp; Productivity — both are short, practical, and don't require prior experience. If you already know Python and want a technical career path, Machine Learning Engineering or our Data Science track are better starting points.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Can I get a free demo class before enrolling?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes — every course includes a free demo class so you can meet the instructor and experience the teaching style before paying anything. Just click "Enroll / Book Demo" on any course card to schedule yours.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="faq-panel" id="faq-dm">
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>How long is the AI-Powered Digital Marketing course?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>The full program runs across six milestones over roughly 20 weeks, with 100+ hours of live sessions covering websites, SEO, social &amp; content, performance marketing, email &amp; affiliate marketing, and a final capstone project.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Is this course beginner-friendly?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes. The course starts from the absolute basics of digital marketing and website fundamentals in Milestone 1, then builds up gradually through SEO, social media, and paid advertising before reaching advanced topics — no prior marketing experience is required.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>What kind of job or career support is included?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>You get resume and LinkedIn revamping, portfolio reviews, mock interviews, referrals through our hiring and freelance partner network, and a full year of career mentorship after the course ends. Full details are in the Career Outcomes section above.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>Will I work on real projects, or is it only theory?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>The course is built around hands-on work — you'll set up real landing pages, run SEO audits, build actual ad campaigns, design email/affiliate flows, and finish with a capstone project where you build a complete marketing campaign for a real or simulated brand.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>What tools will I learn to use?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>You'll get hands-on with WordPress, Google Ads, Meta Ads Manager, Google Analytics 4, SEMrush, Google Search Console, Mailchimp, and AI tools like ChatGPT and Gemini for content and campaign work throughout the program.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact-section" id="contact">
+  <div class="section-label">Get In Touch</div>
+  <div class="section-title">Start Your <span class="grad-text">AI &amp; Marketing</span> Journey Today</div>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Let's talk</h3>
+      <p>Fill out the form and our team will get back to you within 24 hours, or reach us directly through the details below.</p>
+      <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><h4>Address</h4><p>MPULSE DIGITAL AI, Kanaka Nagar, R.T. Nagar, Bengaluru, Karnataka 560032</p></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><h4>Phone / WhatsApp</h4><p>+91 99644 76659<br>Mon – Sat, 9:00 AM – 7:00 PM</p></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><h4>Email</h4><p>hello@mpulsedigitalai.com</p></div></div>
+      <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-detail"><h4>Batch Timings</h4><p>Morning: 7–9 AM · Evening: 4–8 PM · Weekends: 9 AM–5 PM</p></div></div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-group"><label>Full Name</label><input type="text" id="fname" placeholder="Your name"></div>
+      <div class="form-row">
+        <div class="form-group"><label>Phone Number</label><input type="tel" id="fphone" placeholder="+91 00000 00000"></div>
+        <div class="form-group">
+          <label>Course of Interest</label>
+          <select id="fcourse">
+            <option value="">Select a course</option>
+            <optgroup label="AI Courses">
+              <option>Generative AI &amp; Prompt Engineering</option>
+              <option>AI Tools &amp; Productivity</option>
+              <option>AI Agents &amp; Automation</option>
+              <option>Machine Learning Engineering</option>
+              <option>Deep Learning with TensorFlow</option>
+              <option>Computer Vision &amp; NLP</option>
+              <option>Python for Data &amp; AI</option>
+              <option>Data Science &amp; Analytics</option>
+              <option>Data Visualization &amp; Storytelling</option>
+              <option>MLOps &amp; AI Deployment</option>
+              <option>LLMs &amp; RAG Systems</option>
+              <option>AI Job Readiness Bootcamp</option>
+            </optgroup>
+            <optgroup label="Digital Marketing">
+              <option>AI-Powered Digital Marketing Course</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Message</label><textarea id="fmsg" placeholder="Which course are you interested in?"></textarea></div>
+      <button type="button" class="submit-btn" onclick="submitForm()">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo" style="display:flex;align-items:center;gap:12px;">
+        <div class="logo-icon">M</div>
+        <div><div class="logo-text" style="color:#fff;">MPULSE <span style="color:var(--cyan-light)">DIGITAL AI</span></div><div class="logo-sub" style="color:#9d92c0">Bengaluru · Live Classes</div></div>
+      </div>
+      <p>Live, instructor-led AI and digital marketing courses built to make you job-ready, business-ready, and future-proof.</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/mpulse_digital_ai" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@mpulsedigitalai" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6Z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61590899464404" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.18 8.44 9.94v-7.03H7.9v-2.91h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.91h-2.34V22c4.78-.76 8.44-4.94 8.44-9.94Z"/></svg>
+        </a>
+        <a href="https://wa.me/919964476659" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.2-.3-.1-.5 0-.7.2-.2.4-.5.6-.7.2-.2.2-.4.1-.6-.1-.2-.6-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.8.4-.2.3-.9 1-.9 2.4s.9 2.8 1.1 3c.2.2 1.7 2.6 4.1 3.6 2.5 1 2.5.7 2.9.6.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1Zm-5.5 7.5h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1 15.4-12 9.9 9.9 0 0 1-7.1 16.6Zm8.4-18.3A11.8 11.8 0 0 0 12 0 11.9 11.9 0 0 0 1.7 17.8L0 24l6.3-1.6A11.9 11.9 0 0 0 12 24a11.9 11.9 0 0 0 8.4-20.4Z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>AI Courses</h4><ul>
+      <li><a href="#courses">Generative AI</a></li>
+      <li><a href="#courses">Machine Learning</a></li>
+      <li><a href="#courses">Deep Learning</a></li>
+      <li><a href="#courses">MLOps &amp; Deployment</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Marketing Courses</h4><ul>
+      <li><a href="#digimkt">SEO &amp; Google Ads</a></li>
+      <li><a href="#digimkt">Social Media Marketing</a></li>
+      <li><a href="#digimkt">AI-Powered Marketing</a></li>
+      <li><a href="#digimkt">Full-Stack Bootcamp</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="#why">Why Choose Us</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 MPULSE DIGITAL AI. All rights reserved.</div>
+    <div>Made with care in Bengaluru</div>
+  </div>
+</footer>
+
+<a href="#home" class="back-top" id="backTop">↑</a>
+
+<div class="fab-stack">
+  <a href="https://wa.me/919964476659" target="_blank" rel="noopener" class="fab-btn fab-whatsapp" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-1.6-.8-2.6-1.4-3.7-3.2-.2-.3-.1-.5 0-.7.2-.2.4-.5.6-.7.2-.2.2-.4.1-.6-.1-.2-.6-1.6-.9-2.1-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.8.4-.2.3-.9 1-.9 2.4s.9 2.8 1.1 3c.2.2 1.7 2.6 4.1 3.6 2.5 1 2.5.7 2.9.6.4 0 1.3-.5 1.5-1 .2-.5.2-.9.1-1Zm-5.5 7.5h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 0 1 15.4-12 9.9 9.9 0 0 1-7.1 16.6Zm8.4-18.3A11.8 11.8 0 0 0 12 0 11.9 11.9 0 0 0 1.7 17.8L0 24l6.3-1.6A11.9 11.9 0 0 0 12 24a11.9 11.9 0 0 0 8.4-20.4Z"/></svg>
+  </a>
+  <a href="tel:+919964476659" class="fab-btn fab-call" aria-label="Call us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+  </a>
+</div>
+
+<div id="formMsg" class="toast">✅ Enquiry submitted! We'll contact you within 24 hours.</div>
+
+<div class="mobile-sticky-cta">
+  <a href="tel:+919964476659" class="mob-cta-call">📞 Call Us</a>
+  <a href="https://wa.me/919964476659" target="_blank" rel="noopener" class="mob-cta-enroll">💬 WhatsApp Us</a>
+</div>
+
+<!-- ══════ ENROLLMENT MODAL ══════ -->
+<div class="enroll-overlay" id="enrollOverlay">
+  <div class="enroll-modal" id="enrollModal">
+    <div class="modal-header">
+      <div class="modal-header-left"><h2 id="modalTitle">📋 Book Free Demo Class</h2><p>Fill details · Attend demo · Pay &amp; enroll</p></div>
+      <button class="modal-close" onclick="closeEnroll()">✕</button>
+    </div>
+    <div class="step-progress">
+      <div class="sp-item active" id="sp1"><div class="sp-dot">01</div><div class="sp-label">Details</div></div>
+      <div class="sp-item" id="sp2"><div class="sp-dot">02</div><div class="sp-label">Schedule</div></div>
+      <div class="sp-item" id="sp3"><div class="sp-dot">03</div><div class="sp-label">Payment</div></div>
+    </div>
+    <div class="modal-body">
+      <div class="enroll-step active" id="estep1">
+        <div class="info-note"><span>🎉</span><div><strong>First demo class is FREE!</strong> Fill your details below and we'll confirm your slot.</div></div>
+        <div class="mf-row">
+          <div class="mf-group"><label>Full Name *</label><input type="text" id="e_name" placeholder="e.g. Arjun Sharma"></div>
+          <div class="mf-group"><label>Mobile Number *</label><input type="tel" id="e_phone" placeholder="+91 XXXXX XXXXX" maxlength="13"></div>
+        </div>
+        <div class="mf-row">
+          <div class="mf-group"><label>Email Address</label><input type="email" id="e_email" placeholder="your@email.com"></div>
+          <div class="mf-group"><label>Current Status *</label>
+            <select id="e_class">
+              <option value="">Select</option>
+              <option>College / Undergraduate</option>
+              <option>Working Professional</option>
+              <option>Job Seeker</option>
+              <option>Freelancer / Business Owner</option>
+            </select>
+          </div>
+        </div>
+        <div class="mf-group">
+          <label>Course of Interest *</label>
+          <select id="e_course">
+            <option value="">Select a course</option>
+            <optgroup label="🌐 Generative AI">
+              <option value="Generative AI & Prompt Engineering|₹5,999|6 weeks">Generative AI &amp; Prompt Engineering (₹5,999)</option>
+              <option value="AI Tools & Productivity|₹2,999|4 weeks">AI Tools &amp; Productivity (₹2,999)</option>
+              <option value="AI Agents & Automation|₹9,999|8 weeks">AI Agents &amp; Automation (₹9,999)</option>
+            </optgroup>
+            <optgroup label="🧠 ML / Deep Learning">
+              <option value="Machine Learning Engineering|₹14,999|6 months">Machine Learning Engineering (₹14,999)</option>
+              <option value="Deep Learning with TensorFlow|₹16,999|5 months">Deep Learning with TensorFlow (₹16,999)</option>
+              <option value="Computer Vision & NLP|₹13,999|4 months">Computer Vision &amp; NLP (₹13,999)</option>
+            </optgroup>
+            <optgroup label="📊 Data Science">
+              <option value="Python for Data & AI|₹6,999|4 months">Python for Data &amp; AI (₹6,999)</option>
+              <option value="Data Science & Analytics|₹15,999|6 months">Data Science &amp; Analytics (₹15,999)</option>
+              <option value="Data Visualization & Storytelling|₹4,999|6 weeks">Data Visualization &amp; Storytelling (₹4,999)</option>
+            </optgroup>
+            <optgroup label="🚀 Advanced AI">
+              <option value="MLOps & AI Deployment|₹17,999|5 months">MLOps &amp; AI Deployment (₹17,999)</option>
+              <option value="LLMs & RAG Systems|₹18,999|4 months">LLMs &amp; RAG Systems (₹18,999)</option>
+              <option value="AI Job Readiness Bootcamp|₹19,999|6 months">AI Job Readiness Bootcamp (₹19,999)</option>
+            </optgroup>
+            <optgroup label="📣 Digital Marketing">
+              <option value="AI-Powered Digital Marketing Course|₹30,000|20 weeks">AI-Powered Digital Marketing Course (₹30,000)</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="mf-group"><label>Any specific goal or message?</label><textarea id="e_msg" placeholder="e.g. I want to learn AI tools for my marketing job..."></textarea></div>
+        <div class="modal-nav"><button class="btn-next" style="flex:1" onclick="goStep(2)">Continue to Schedule 📅</button></div>
+      </div>
+
+      <div class="enroll-step" id="estep2">
+        <div class="info-note"><span>🎯</span><div>Your <strong>FREE demo class</strong> can be live online or at our Bengaluru campus. Choose a convenient day and time slot below.</div></div>
+        <div class="mf-group"><label>Preferred Demo Date *</label><input type="date" id="e_date" min=""></div>
+        <div class="mf-group"><label>Choose Time Slot *</label>
+          <div class="slot-grid">
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">7:00 AM</span>Morning</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">10:00 AM</span>Forenoon</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">4:00 PM</span>Evening</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">5:30 PM</span>Evening</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">7:00 PM</span>Night</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">8:30 PM</span>Night</div>
+          </div>
+        </div>
+        <div class="mf-group"><label>Mode of Class</label>
+          <select id="e_batch">
+            <option value="">Select preference</option>
+            <option>Live Online</option>
+            <option>In-Campus, Bengaluru</option>
+            <option>Either Works</option>
+          </select>
+        </div>
+        <div style="background:#d1fae5;border:1px solid #6ee7b7;border-radius:12px;padding:14px 16px;margin-top:4px;">
+          <div style="font-size:12px;color:#047857;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">✅ WHAT HAPPENS NEXT</div>
+          <div style="font-size:13px;color:#1a1530;line-height:1.8;">1. Our team will call you within <strong>2 hours</strong> to confirm the slot<br>2. Attend the <strong>FREE demo class</strong><br>3. If you love it — pay and enroll. No pressure.</div>
+        </div>
+        <div class="modal-nav"><button class="btn-back" onclick="goStep(1)">← Back</button><button class="btn-next" onclick="goStep(3)">Proceed to Payment 💳</button></div>
+      </div>
+
+      <div class="enroll-step" id="estep3">
+        <div class="fee-card" id="feeCard">
+          <div class="fee-info"><h4 id="feeCourseName">Course Name</h4><p id="feeDuration">Duration</p></div>
+          <div class="fee-amount"><div class="fee-demo">DEMO FREE ✓</div><div class="fee-full" id="feeAmount">₹0</div><div style="font-size:11px;color:var(--muted);">Full course fee</div></div>
+        </div>
+        <div class="mf-group"><label>💳 Choose Payment Plan</label>
+          <div class="emi-options">
+            <div class="emi-btn selected" onclick="selectEMI(this,'Full Payment')"><div class="emi-count">1×</div><div class="emi-label">Full Payment</div><div class="emi-amount" id="emi1">—</div></div>
+            <div class="emi-btn" onclick="selectEMI(this,'2 Instalments')"><div class="emi-count">2×</div><div class="emi-label">2 Instalments</div><div class="emi-amount" id="emi2">—</div></div>
+            <div class="emi-btn" onclick="selectEMI(this,'3 Instalments')"><div class="emi-count">3×</div><div class="emi-label">3 Instalments</div><div class="emi-amount" id="emi3">—</div></div>
+          </div>
+        </div>
+        <div class="razorpay-card">
+          <div class="rzp-logo-text">Razor<span>pay</span></div>
+          <p>Secure checkout — UPI, Cards, Net Banking &amp; Wallets. Click below to open the Razorpay payment window.</p>
+        </div>
+        <div id="payBtnArea">
+          <button class="pay-now-btn" id="payNowBtn" onclick="startRazorpay()"><span id="payBtnText">🔒 Pay Securely with Razorpay</span></button>
+          <div class="secure-badges"><span class="secure-badge">🔒 PCI-DSS Compliant</span><span class="secure-badge">✅ RBI Licensed</span><span class="secure-badge">🛡️ 100% Secure</span></div>
+        </div>
+        <div style="text-align:center;margin:16px 0;font-size:11.5px;color:var(--muted);">— or —</div>
+        <a href="https://razorpay.me/@mpulseeducationaltrust" target="_blank" rel="noopener" class="plan-btn" style="display:block;text-align:center;text-decoration:none;border:1.5px solid var(--border-strong);color:var(--violet);">Pay via Razorpay Payment Link →</a>
+        <div class="modal-nav" style="margin-top:12px;"><button class="btn-back" onclick="goStep(2)">← Back</button></div>
+      </div>
+
+      <div class="enroll-step" id="estep_processing">
+        <div class="pay-processing"><div class="proc-icon">🔐</div><h4>Opening Razorpay Checkout...</h4><p>Please do not close or refresh this page</p><div class="proc-bar"><div class="proc-fill"></div></div></div>
+      </div>
+
+      <div class="enroll-step" id="estep_success">
+        <div class="success-screen">
+          <div class="success-icon">✅</div>
+          <h3>Enrollment Confirmed! 🎉</h3>
+          <p>Welcome to MPULSE DIGITAL AI! Your demo class is booked. Our team will call you within 2 hours to confirm everything.</p>
+          <div class="success-id"><span>BOOKING REFERENCE ID</span><code id="bookingId">MPF-2026-000000</code></div>
+          <div class="success-actions"><button class="btn-whatsapp" onclick="shareWhatsApp()">💬 Share on WhatsApp</button><button class="btn-done" onclick="closeEnroll()">Done ✓</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ COURSE DETAIL MODAL ══════ -->
+<div class="detail-overlay" id="detailOverlay">
+  <div class="detail-modal" id="detailModal">
+    <div class="detail-header">
+      <button class="detail-close" onclick="closeDetail()">✕</button>
+      <div class="detail-badge-row" id="detailBadgeRow"></div>
+      <h2 id="detailTitle">Course Name</h2>
+      <p id="detailSubtitle">Short description</p>
+      <div class="detail-stats-row" id="detailStatsRow"></div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-section-title">📚 Curriculum Milestones</div>
+      <div id="detailMilestones"></div>
+      <div class="detail-section-title">🛠️ Tools You'll Use</div>
+      <div class="detail-tools-row" id="detailTools"></div>
+      <div class="detail-cta-row">
+        <button class="detail-enroll-btn" id="detailEnrollBtn" onclick="enrollFromDetail()">Enroll / Book Free Demo</button>
+        <button class="detail-callback-btn" onclick="closeDetail();openCallback()">Request Callback</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ SIGN-IN / SIGN-UP POPUP (appears 2 min after page load) ══════ -->
+<div class="signup-overlay" id="signupOverlay">
+  <div class="signup-modal">
+    <div class="signup-banner">
+      <button class="signup-close" onclick="closeSignup()">✕</button>
+      <div class="sb-icon">🎓</div>
+      <h3>Don't miss out!</h3>
+      <p>Sign up now and unlock a free demo class + exclusive early-bird pricing</p>
+    </div>
+    <div class="signup-body">
+      <div class="signup-perks">
+        <div><span class="check">✓</span> Free demo class on any AI or marketing course</div>
+        <div><span class="check">✓</span> Early-bird pricing on the next live cohort</div>
+        <div><span class="check">✓</span> Course brochure &amp; curriculum sent instantly</div>
+      </div>
+      <div class="signup-form-row">
+        <input type="text" id="su_name" placeholder="Your full name">
+        <input type="tel" id="su_phone" placeholder="Your phone number">
+        <input type="email" id="su_email" placeholder="Your email address">
+      </div>
+      <button class="signup-submit" onclick="submitSignup()">Enquiry Now</button>
+      <span class="signup-later" onclick="closeSignup()">Maybe later</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ CALLBACK MODAL ══════ -->
+<div class="callback-overlay" id="callbackOverlay">
+  <div class="callback-modal">
+    <button class="callback-close" onclick="closeCallback()">✕</button>
+    <h3>📞 Request a Callback</h3>
+    <p>Leave your number and our program advisor will call you within 2 hours.</p>
+    <div class="mf-group"><label>Full Name *</label><input type="text" id="cb_name" placeholder="Your name"></div>
+    <div class="mf-group"><label>Phone Number *</label><input type="tel" id="cb_phone" placeholder="+91 XXXXX XXXXX"></div>
+    <div class="mf-group"><label>Best Time to Call</label>
+      <select id="cb_time">
+        <option value="">Anytime</option>
+        <option>Morning (9 AM–12 PM)</option>
+        <option>Afternoon (12–4 PM)</option>
+        <option>Evening (4–8 PM)</option>
+      </select>
+    </div>
+    <button class="submit-btn" onclick="submitCallback()">Request Callback</button>
+  </div>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+const BACKEND_URL = "https://mpulse-digital-ai-web.onrender.com";
+
+// ── COURSE DATA (for detail modal) ──
+const courseDetails = {
+  "genai-prompt": { title:"Generative AI & Prompt Engineering", subtitle:"Master ChatGPT, Gemini, Claude & Midjourney for daily workflow automation", level:"Beginner", duration:"6 Weeks", sessions:"18+ hrs", projects:"6+",
+    milestones:[
+      {name:"AI Foundations & Prompting Basics", dur:"1 week", topics:"Prompt structures, context windows, system vs user prompts, common AI tools landscape"},
+      {name:"Content & Research with AI", dur:"2 weeks", topics:"AI-assisted writing, research workflows, summarization, fact-checking with citations"},
+      {name:"Visual & Multimedia AI", dur:"1 week", topics:"Midjourney, image generation, AI video and audio tools"},
+      {name:"Building Custom GPTs & Workflows", dur:"2 weeks", topics:"Custom instructions, AI workflow chaining, capstone project"}
+    ],
+    tools:["ChatGPT","Claude","Gemini","Midjourney","Perplexity","Notion AI"] },
+  "ai-tools": { title:"AI Tools & Productivity Mastery", subtitle:"A practical toolkit for research, writing, design and automation", level:"Intermediate", duration:"4 Weeks", sessions:"12+ hrs", projects:"4+",
+    milestones:[
+      {name:"Productivity AI Stack", dur:"1 week", topics:"Notion AI, Grammarly, task automation basics"},
+      {name:"Design & Content AI", dur:"1 week", topics:"Canva AI, design automation, content repurposing"},
+      {name:"Workflow Automation", dur:"1 week", topics:"Zapier/n8n basics, connecting tools, trigger-based flows"},
+      {name:"Capstone: Personal AI Stack", dur:"1 week", topics:"Build your own automated daily workflow"}
+    ],
+    tools:["Notion AI","Grammarly","Canva AI","Zapier","ChatGPT"] },
+  "ai-agents": { title:"AI Agents & Automation Building", subtitle:"Build autonomous AI agents and automations for real business workflows", level:"Advanced", duration:"8 Weeks", sessions:"24+ hrs", projects:"8+",
+    milestones:[
+      {name:"Automation Fundamentals", dur:"2 weeks", topics:"n8n basics, triggers, webhooks, nodes and logic"},
+      {name:"Connecting AI to Workflows", dur:"2 weeks", topics:"AI nodes for lead scoring, drafting replies, segmentation"},
+      {name:"Multi-Step Agent Building", dur:"2 weeks", topics:"Conditional flows, multi-step agents, real-time alerts"},
+      {name:"Capstone: End-to-End Automation", dur:"2 weeks", topics:"Build a hands-free lead nurturing system"}
+    ],
+    tools:["n8n","Webhooks","ChatGPT API","Google Sheets","Gmail API"] },
+  "ml-eng": { title:"Machine Learning Engineering", subtitle:"Supervised/unsupervised learning, model training and real ML pipelines", level:"Advanced", duration:"6 Months", sessions:"100+ hrs", projects:"12+",
+    milestones:[
+      {name:"ML Foundations", dur:"4 weeks", topics:"Statistics for ML, supervised vs unsupervised, evaluation metrics"},
+      {name:"Core Algorithms", dur:"6 weeks", topics:"Regression, classification, clustering, Scikit-learn"},
+      {name:"Feature Engineering & Pipelines", dur:"4 weeks", topics:"Data preprocessing, feature selection, pipeline design"},
+      {name:"Capstone Project", dur:"4 weeks", topics:"End-to-end ML project with real dataset, deployment-ready model"}
+    ],
+    tools:["Python","Scikit-learn","Pandas","NumPy","Jupyter"] },
+  "deep-learning": { title:"Deep Learning with TensorFlow", subtitle:"Neural networks, CNNs, RNNs and transformers end to end", level:"Advanced", duration:"5 Months", sessions:"90+ hrs", projects:"10+",
+    milestones:[
+      {name:"Neural Network Foundations", dur:"4 weeks", topics:"Perceptrons, backpropagation, activation functions"},
+      {name:"CNNs for Vision", dur:"4 weeks", topics:"Convolutional layers, image classification, transfer learning"},
+      {name:"RNNs & Sequence Models", dur:"4 weeks", topics:"RNN, LSTM, sequence prediction"},
+      {name:"Transformers & Capstone", dur:"4 weeks", topics:"Attention mechanisms, transformer basics, capstone deployment"}
+    ],
+    tools:["TensorFlow","Keras","Python","Google Colab"] },
+  "cv-nlp": { title:"Computer Vision & NLP", subtitle:"Image recognition, object detection, text and sentiment analysis", level:"Advanced", duration:"4 Months", sessions:"70+ hrs", projects:"8+",
+    milestones:[
+      {name:"Computer Vision Basics", dur:"4 weeks", topics:"Image processing, OpenCV, object detection"},
+      {name:"NLP Foundations", dur:"4 weeks", topics:"Tokenization, embeddings, sentiment analysis"},
+      {name:"Advanced Models", dur:"4 weeks", topics:"Pretrained models, fine-tuning, transfer learning"},
+      {name:"Capstone Project", dur:"4 weeks", topics:"Combined vision + language project"}
+    ],
+    tools:["OpenCV","spaCy","Hugging Face","Python"] },
+  "python-ai": { title:"Python for Data & AI", subtitle:"Python fundamentals with NumPy, Pandas, Matplotlib", level:"Intermediate", duration:"4 Months", sessions:"60+ hrs", projects:"8+",
+    milestones:[
+      {name:"Python Basics", dur:"4 weeks", topics:"Syntax, data structures, functions, OOP basics"},
+      {name:"Data Handling", dur:"4 weeks", topics:"NumPy arrays, Pandas DataFrames, data cleaning"},
+      {name:"Visualization", dur:"4 weeks", topics:"Matplotlib, Seaborn, exploratory data analysis"},
+      {name:"Capstone Project", dur:"4 weeks", topics:"End-to-end data analysis project"}
+    ],
+    tools:["Python","NumPy","Pandas","Matplotlib","Jupyter"] },
+  "data-sci": { title:"Data Science & Analytics", subtitle:"EDA, feature engineering, SQL, Power BI, Tableau", level:"Advanced", duration:"6 Months", sessions:"100+ hrs", projects:"12+",
+    milestones:[
+      {name:"Data Analysis Foundations", dur:"4 weeks", topics:"EDA, statistics, hypothesis testing"},
+      {name:"SQL & Databases", dur:"4 weeks", topics:"SQL queries, joins, database design"},
+      {name:"BI Tools", dur:"6 weeks", topics:"Power BI, Tableau dashboards, storytelling with data"},
+      {name:"Capstone Project", dur:"10 weeks", topics:"Full analytics project with business recommendations"}
+    ],
+    tools:["SQL","Power BI","Tableau","Python","Excel"] },
+  "data-viz": { title:"Data Visualization & Storytelling", subtitle:"Turn raw data into dashboards and reports", level:"Intermediate", duration:"6 Weeks", sessions:"18+ hrs", projects:"4+",
+    milestones:[
+      {name:"Visualization Principles", dur:"2 weeks", topics:"Chart types, design principles, color theory"},
+      {name:"Dashboard Building", dur:"2 weeks", topics:"Power BI/Tableau dashboard construction"},
+      {name:"Storytelling with Data", dur:"2 weeks", topics:"Narrative structure, presenting to stakeholders"}
+    ],
+    tools:["Power BI","Tableau","Excel"] },
+  "mlops": { title:"MLOps & AI Deployment", subtitle:"Docker, Kubernetes, CI/CD for ML, cloud deployment", level:"Expert", duration:"5 Months", sessions:"90+ hrs", projects:"10+",
+    milestones:[
+      {name:"Containerization", dur:"4 weeks", topics:"Docker basics, containerizing ML models"},
+      {name:"Orchestration", dur:"4 weeks", topics:"Kubernetes fundamentals, scaling deployments"},
+      {name:"CI/CD for ML", dur:"4 weeks", topics:"Automated testing, deployment pipelines"},
+      {name:"Cloud Deployment Capstone", dur:"4 weeks", topics:"Deploy on AWS/GCP/Azure, monitoring"}
+    ],
+    tools:["Docker","Kubernetes","FastAPI","AWS","GCP"] },
+  "llm-rag": { title:"LLMs & RAG Systems", subtitle:"Fine-tuning LLMs, RAG, LangChain, production chatbots", level:"Expert", duration:"4 Months", sessions:"70+ hrs", projects:"8+",
+    milestones:[
+      {name:"LLM Foundations", dur:"3 weeks", topics:"Transformer architecture, tokenization, fine-tuning basics"},
+      {name:"RAG Systems", dur:"4 weeks", topics:"Vector databases, embeddings, retrieval pipelines"},
+      {name:"LangChain & Agents", dur:"4 weeks", topics:"Chains, agents, tool integration"},
+      {name:"Capstone: Production Chatbot", dur:"5 weeks", topics:"Build and deploy a RAG-powered chatbot"}
+    ],
+    tools:["LangChain","OpenAI API","Pinecone","Python"] },
+  "ai-job-ready": { title:"AI Job Readiness Bootcamp", subtitle:"Complete job training with placement drives", level:"All Levels", duration:"6 Months", sessions:"120+ hrs", projects:"15+",
+    milestones:[
+      {name:"Python & ML Foundations", dur:"8 weeks", topics:"Python, statistics, core ML algorithms"},
+      {name:"Applied Projects", dur:"8 weeks", topics:"Real-world ML projects across domains"},
+      {name:"Portfolio & Resume", dur:"4 weeks", topics:"Resume building, GitHub portfolio, LinkedIn optimization"},
+      {name:"Interview Prep & Placement", dur:"4 weeks", topics:"Mock interviews, placement drives"}
+    ],
+    tools:["Python","Scikit-learn","SQL","Git","LinkedIn"] },
+  "dm-fund": { title:"Digital Marketing Fundamentals", subtitle:"SEO, SEM, social, email and content strategy basics", level:"Beginner", duration:"6 Weeks", sessions:"18+ hrs", projects:"4+",
+    milestones:[
+      {name:"Digital Marketing Ecosystem", dur:"1 week", topics:"Channels, funnels, customer journey, KPIs"},
+      {name:"SEO & SEM Basics", dur:"2 weeks", topics:"On-page SEO, keyword research, Google Ads intro"},
+      {name:"Social & Email Marketing", dur:"2 weeks", topics:"Platform strategy, email sequences, content calendars"},
+      {name:"Capstone Strategy Project", dur:"1 week", topics:"Build a complete marketing plan for a local business"}
+    ],
+    tools:["Google Ads","Google Analytics","Canva","Mailchimp"] },
+  "ecom": { title:"E-Commerce & Affiliate Marketing", subtitle:"Shopify setup, marketplace selling, affiliate networks", level:"Advanced", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
+    milestones:[
+      {name:"E-Commerce Setup", dur:"2 weeks", topics:"Shopify store setup, product listing, payment gateways"},
+      {name:"Marketplace Selling", dur:"2 weeks", topics:"Amazon/Flipkart seller setup, listing optimization"},
+      {name:"Affiliate & Scaling", dur:"4 weeks", topics:"Affiliate networks, dropshipping basics, scaling strategies"}
+    ],
+    tools:["Shopify","Amazon Seller Central","Google Ads","Meta Ads"] },
+  "dm-bootcamp": { title:"Full-Stack Digital Marketing Bootcamp", subtitle:"SEO, ads, social, email, analytics and freelancing combined", level:"All-in-One", duration:"4 Months", sessions:"112+ hrs", projects:"20+",
+    milestones:[
+      {name:"Digital Marketing, Websites & Landing Pages", dur:"2 weeks", topics:"Digital marketing ecosystem, AI mindset, WordPress, landing page design"},
+      {name:"SEO & Answer Engine Optimization", dur:"4 weeks", topics:"On-page/off-page SEO, AEO, AI-driven keyword research, technical audits"},
+      {name:"Social Media, Content & Influencer Marketing", dur:"2 weeks", topics:"Organic growth, content calendars, influencer campaigns"},
+      {name:"Performance Marketing", dur:"8 weeks", topics:"Meta Ads, Google Ads, YouTube Ads, Amazon Ads, conversion tracking"},
+      {name:"Marketing Automation & AI Agents", dur:"2 weeks", topics:"n8n workflows, CRM automation, AI lead scoring"},
+      {name:"Capstone Project", dur:"2 weeks", topics:"Full marketing campaign across channels with live brand"}
+    ],
+    tools:["WordPress","Google Ads","Meta Ads Manager","GA4","SEMrush","ChatGPT","n8n","Mailchimp"] },
+  "seo-ads": { title:"SEO & Google Ads Mastery", subtitle:"On-page/off-page SEO, keyword research, Google Ads", level:"Beginner-Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
+    milestones:[
+      {name:"On-Page & Off-Page SEO", dur:"3 weeks", topics:"Keyword research, content optimization, backlinks"},
+      {name:"Technical SEO", dur:"2 weeks", topics:"Site audits, Search Console, page speed"},
+      {name:"Google Ads", dur:"3 weeks", topics:"Campaign setup, Quality Score, bidding strategies"}
+    ],
+    tools:["Google Search Console","SEMrush","Ahrefs","Google Ads"] },
+  "perf-mkt": { title:"Performance Marketing & Analytics", subtitle:"GA4, Meta Ads, conversion tracking, A/B testing", level:"Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
+    milestones:[
+      {name:"Analytics Setup", dur:"2 weeks", topics:"GA4 configuration, event tracking, conversions"},
+      {name:"Meta Ads Manager", dur:"3 weeks", topics:"Campaign structure, audiences, pixel setup"},
+      {name:"Optimization", dur:"3 weeks", topics:"A/B testing, ROI measurement, funnel optimization"}
+    ],
+    tools:["Google Analytics 4","Meta Ads Manager","Google Tag Manager"] },
+  "paid-ads": { title:"Paid Ads & Conversion Funnels", subtitle:"Meta & Google Ads with real budgets and funnels", level:"Advanced", duration:"6 Weeks", sessions:"20+ hrs", projects:"5+",
+    milestones:[
+      {name:"Funnel Strategy", dur:"2 weeks", topics:"TOFU-MOFU-BOFU, landing page design, lead magnets"},
+      {name:"Paid Campaign Execution", dur:"2 weeks", topics:"Meta & Google campaign setup with live budgets"},
+      {name:"Optimization Capstone", dur:"2 weeks", topics:"Analyze, optimize and report on live campaign results"}
+    ],
+    tools:["Meta Ads","Google Ads","Unbounce","GA4"] },
+  "social-mkt": { title:"Social Media Marketing", subtitle:"Instagram, YouTube & LinkedIn growth strategies", level:"Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
+    milestones:[
+      {name:"Platform Strategy", dur:"2 weeks", topics:"Instagram Reels, YouTube SEO, LinkedIn B2B"},
+      {name:"Content Creation", dur:"2 weeks", topics:"Content calendars, hashtag research, creative production"},
+      {name:"Analytics & Growth", dur:"2 weeks", topics:"Platform analytics, growth hacking tactics"}
+    ],
+    tools:["Instagram","YouTube Studio","LinkedIn","Canva","Meta Business Suite"] },
+  "content-mkt": { title:"Content Marketing & Copywriting", subtitle:"Blogs, scripts, email sequences and AI-assisted content", level:"Intermediate", duration:"6 Weeks", sessions:"18+ hrs", projects:"5+",
+    milestones:[
+      {name:"Copywriting Foundations", dur:"2 weeks", topics:"Headlines, CTAs, persuasive writing frameworks"},
+      {name:"Content Formats", dur:"2 weeks", topics:"Blog writing, video scripts, email sequences"},
+      {name:"AI-Assisted Content", dur:"2 weeks", topics:"ChatGPT/Claude workflows for content production"}
+    ],
+    tools:["ChatGPT","Claude","Grammarly","Canva"] },
+  "influencer-mkt": { title:"Influencer Marketing & Personal Branding", subtitle:"Personal brand or influencer partnership management", level:"Intermediate", duration:"4 Weeks", sessions:"12+ hrs", projects:"4+",
+    milestones:[
+      {name:"Brand Identity", dur:"1 week", topics:"Personal/brand positioning, niche selection"},
+      {name:"Influencer Outreach", dur:"1 week", topics:"Creator identification, outreach templates, deal structuring"},
+      {name:"Campaign Execution", dur:"2 weeks", topics:"Content collaboration, performance tracking"}
+    ],
+    tools:["Instagram","LinkedIn","Upfluence","Modash"] },
+  "ai-dm": { title:"AI-Powered Digital Marketing", subtitle:"Automate campaigns with AI tools and CRM systems", level:"Advanced", duration:"3 Months", sessions:"45+ hrs", projects:"8+",
+    milestones:[
+      {name:"AI Content & Creative", dur:"4 weeks", topics:"ChatGPT for copy, Midjourney for creatives"},
+      {name:"AI-Driven Campaign Optimization", dur:"4 weeks", topics:"Predictive analytics, smart bidding, AI audience targeting"},
+      {name:"Capstone: AI Marketing System", dur:"4 weeks", topics:"Build a complete AI-assisted marketing workflow"}
+    ],
+    tools:["ChatGPT","Midjourney","Meta Ads","HubSpot"] },
+  "mkt-auto": { title:"Marketing Automation & CRM", subtitle:"Email/WhatsApp flows, lead scoring, AI chatbots", level:"Advanced", duration:"6 Weeks", sessions:"18+ hrs", projects:"5+",
+    milestones:[
+      {name:"Automation Foundations", dur:"2 weeks", topics:"CRM pipelines, lead scoring models"},
+      {name:"Multi-Channel Flows", dur:"2 weeks", topics:"Email + WhatsApp automation sequences"},
+      {name:"AI Chatbots", dur:"2 weeks", topics:"Chatbot design and deployment for lead capture"}
+    ],
+    tools:["Mailchimp","Interakt","n8n","HubSpot"] },
+  "freelance-agency": { title:"Freelance & Agency Growth Track", subtitle:"Client acquisition, pricing, and agency scaling", level:"All Levels", duration:"4 Weeks", sessions:"12+ hrs", projects:"4+",
+    milestones:[
+      {name:"Positioning & Pricing", dur:"1 week", topics:"Service packaging, pricing models"},
+      {name:"Client Acquisition", dur:"2 weeks", topics:"Outreach, proposals, portfolio building"},
+      {name:"Scaling Capstone", dur:"1 week", topics:"Systems for scaling from freelancer to agency"}
+    ],
+    tools:["Notion","Upwork","LinkedIn","Google Workspace"] }
+};
+
+const toolsList = ["WordPress","ChatGPT","Claude","Gemini","Midjourney","Canva","Google Ads","Meta Ads Manager","Google Analytics 4","Google Tag Manager","SEMrush","Ahrefs","Google Search Console","Mailchimp","HubSpot","n8n","Notion","Power BI","Tableau","Python","TensorFlow","Scikit-learn","LangChain","Hugging Face"];
+
+// ── DIGITAL MARKETING COURSE: 6 MILESTONES (Milestone 5 = Email & Affiliate Marketing) ──
+const dmMilestones = [
+  {
+    title: "Digital Marketing, Websites & Landing Pages",
+    duration: "2 weeks",
+    stats: "6 Live Sessions · 2 Projects · 2 Case Studies",
+    modules: [
+      { name: "Digital Marketing Foundation & AI Mindset", topics: [
+        "Digital marketing ecosystem & growth levers",
+        "Brand, performance & growth marketing models",
+        "Business models — D2C, B2B, EdTech, Local, SaaS",
+        "Customer journey & funnel frameworks (TOFU–MOFU–BOFU)",
+        "Consumer behavior & buying triggers",
+        "Audience research & competitor analysis using AI tools"
+      ]},
+      { name: "Website & Landing Page Design", topics: [
+        "Website fundamentals & the role of digital marketing",
+        "WordPress basics, dashboard & theme setup",
+        "Domain, hosting & website environment setup",
+        "Page hierarchy & content management",
+        "Conversion-focused landing page design",
+        "AI-assisted landing page ideation & no-code page building"
+      ]}
+    ]
+  },
+  {
+    title: "Search Engine Optimization (SEO) & Answer Engine Optimization (AEO)",
+    duration: "4 weeks",
+    stats: "Live Sessions · Projects · Case Studies",
+    modules: [
+      { name: "On-Page & Technical SEO", topics: [
+        "Keyword research & search intent mapping",
+        "On-page optimization — titles, meta, headers, content structure",
+        "Technical SEO audits, site speed & crawlability",
+        "Google Search Console setup & monitoring"
+      ]},
+      { name: "Answer Engine Optimization (AEO) & AI Search", topics: [
+        "AEO, SGE & AI Overviews — optimizing beyond traditional Google",
+        "Zero-click search strategies & voice-first SEO",
+        "AI-powered keyword research & content mapping",
+        "Optimizing content for featured snippets using AI tools"
+      ]},
+      { name: "Local & Off-Page SEO", topics: [
+        "Google Business Profile setup & optimization",
+        "Backlink strategy & authority building",
+        "Local SEO for service-based businesses"
+      ]}
+    ]
+  },
+  {
+    title: "Social Media, Content & Influencer Marketing",
+    duration: "2 weeks",
+    stats: "Live Sessions · Projects · Case Studies",
+    modules: [
+      { name: "Social Media Strategy", topics: [
+        "Platform strategy — Instagram, YouTube, LinkedIn, X",
+        "Content calendars & organic growth planning",
+        "Reels, Shorts & short-form video strategy",
+        "Meta Business Suite & native analytics"
+      ]},
+      { name: "Content Marketing with AI", topics: [
+        "AI-assisted content planning with ChatGPT, Gemini & Perplexity",
+        "Blogs, scripts, captions & long-form content using AI",
+        "Matching content to search intent (SXO)"
+      ]},
+      { name: "Influencer & Community Marketing", topics: [
+        "Creator identification & outreach strategy",
+        "Influencer collaboration & campaign tracking",
+        "Community-led and founder-led growth approaches"
+      ]}
+    ]
+  },
+  {
+    title: "Performance Marketing",
+    duration: "8 weeks",
+    stats: "Live Sessions · Projects · Case Studies",
+    modules: [
+      { name: "Meta Ads & Performance Marketing with AI", topics: [
+        "Smart targeting with Advantage+ & dynamic audiences",
+        "AI-generated ad copy & creative ideation",
+        "Pixel setup & Conversions API integration",
+        "Campaign optimization using AI-powered tools"
+      ]},
+      { name: "Google Ads Mastery", topics: [
+        "Search, Display, and Video (YouTube) campaign setup",
+        "Keyword match types, bidding strategies & ad extensions",
+        "Performance Max with AI-driven insights",
+        "Conversion tracking via Google Tag Manager & GA4"
+      ]},
+      { name: "Analytics & Conversion Tracking", topics: [
+        "GA4 setup, events & custom conversions",
+        "Funnel analysis & A/B testing",
+        "ROI measurement & performance reporting"
+      ]},
+      { name: "Marketplace & Other Ad Platforms", topics: [
+        "Amazon Sponsored Ads fundamentals",
+        "Cross-platform budget allocation strategy"
+      ]}
+    ]
+  },
+  {
+    title: "Email Marketing & Affiliate Marketing",
+    duration: "2 weeks",
+    stats: "Live Sessions · Projects · Case Studies",
+    modules: [
+      { name: "Email Marketing", topics: [
+        "Email strategy, list building & segmentation",
+        "Automated drip campaigns & lifecycle emails",
+        "Subject lines, copywriting & AI-assisted email content",
+        "Tools: Mailchimp, automation flows & performance tracking",
+        "Deliverability, open rates & A/B testing for email"
+      ]},
+      { name: "Affiliate Marketing", topics: [
+        "Affiliate marketing fundamentals & business models",
+        "Setting up and managing affiliate/referral programs",
+        "Identifying and onboarding the right affiliate partners",
+        "Commission structures, tracking links & attribution",
+        "Scaling revenue through affiliate & partnership channels"
+      ]}
+    ]
+  },
+  {
+    title: "Capstone Project",
+    duration: "2 weeks",
+    stats: "Final Project · Portfolio Review · Demo Day",
+    modules: [
+      { name: "Capstone: Full Digital Marketing Campaign", topics: [
+        "Pick a real brand and build a full-funnel marketing strategy",
+        "Apply SEO, social, paid ads, and email/affiliate tactics together",
+        "Present results and strategy on Demo Day to mentors & peers",
+        "Build a portfolio case study to showcase to recruiters"
+      ]}
+    ]
+  }
+];
+
+function buildMilestones(){
+  const track = document.getElementById('milestoneTrack');
+  if (!track) return;
+  track.innerHTML = dmMilestones.map((m, i) => `
+    <div class="milestone-block${i===0 ? ' expanded' : ''}" id="ms-block-${i}">
+      <div class="milestone-head-row" onclick="toggleMilestone(${i})">
+        <div class="milestone-badge">${i+1}</div>
+        <div class="milestone-head-text">
+          <h4>Milestone ${i+1}: ${m.title}</h4>
+          <span>Duration: ${m.duration} · ${m.stats}</span>
+        </div>
+        <div class="milestone-chevron">▾</div>
+      </div>
+      <div class="milestone-content">
+        <div class="milestone-inner">
+          ${m.modules.map((mod, j) => `
+            <div class="module-card">
+              <h5>📘 Module ${j+1}: ${mod.name}</h5>
+              <div class="module-topics">
+                ${mod.topics.map(t => `<div>${t}</div>`).join('')}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+function toggleMilestone(i){
+  const block = document.getElementById('ms-block-' + i);
+  block.classList.toggle('expanded');
+}
+buildMilestones();
+
+// ── FAQ ACCORDION ──
+function switchFaqTab(tab, btnEl){
+  document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+  btnEl.closest('.faq-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('faq-' + tab).classList.add('active');
+  btnEl.classList.add('active');
+}
+function toggleFaq(el){
+  const item = el.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+const projectsList = [
+  { num:"01", title:"Brand & Marketing Strategy for a Local Business", desc:"Analyze customers, competitors, and build an AI-powered marketing strategy with measurable KPIs.", tools:["ChatGPT","Google Trends","Meta"] },
+  { num:"02", title:"Website & Landing Page Setup", desc:"Build a professional website and a high-converting, lead-focused landing page using AI-assisted design.", tools:["WordPress","Claude","Elementor"] },
+  { num:"03", title:"AI-Driven Keyword Research for SEO", desc:"Use AI tools to identify high-impact keywords and build a strategic SEO content plan.", tools:["SEMrush","Ahrefs","ChatGPT"] },
+  { num:"04", title:"Meta Ads Campaign for a D2C Brand", desc:"Set up audience targeting, ad creatives, and conversion tracking for a real product catalogue.", tools:["Meta Ads","Pixel","Canva"] },
+  { num:"05", title:"Google Search Campaign Setup", desc:"Draft a complete Google Search Ads campaign with keyword match types and AI-powered ad copy.", tools:["Google Ads","Gemini"] },
+  { num:"06", title:"Build Your First AI Agent (n8n)", desc:"Design a multi-step automation agent connecting forms, AI nodes, and marketing platforms.", tools:["n8n","Webhooks","ChatGPT"] },
+  { num:"07", title:"Lead Nurturing Campaign (Email + WhatsApp)", desc:"Build segmented, automated nurture flows and package it as a freelance service offering.", tools:["Mailchimp","Interakt"] },
+  { num:"08", title:"Organic Social Media Launch Plan", desc:"Build a 30-day content calendar and DM-based lead generation flow for a new brand.", tools:["Instagram","Canva","ChatGPT"] }
+];
+
+// ── NAV ──
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
+  document.getElementById('backTop').classList.toggle('show', scrollY > 400);
+});
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileNav').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('mobileClose').addEventListener('click', closeMobile);
+function closeMobile(){ document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── TABS ──
+function switchTab(tab, btnEl) {
+  const panel = document.getElementById('tab-' + tab);
+  const tabsWrap = btnEl.closest('.course-tabs');
+  const section = btnEl.closest('section');
+  section.querySelectorAll('.course-panel').forEach(p => p.classList.remove('active'));
+  tabsWrap.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  panel.classList.add('active');
+  btnEl.classList.add('active');
+}
+
+// ── MEGA MENU NAVIGATION: scroll to section, activate tab, highlight card ──
+function goToCourse(sectionId, tabKey, courseKey) {
+  const section = document.getElementById(sectionId);
+  const panel = document.getElementById('tab-' + tabKey);
+  if (section && panel) {
+    section.querySelectorAll('.course-panel').forEach(p => p.classList.remove('active'));
+    section.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    panel.classList.add('active');
+    const tabBtns = section.querySelectorAll('.tab-btn');
+    tabBtns.forEach(b => { if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + tabKey + "'")) b.classList.add('active'); });
+  }
+  section.scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const card = document.querySelector('[data-course="' + courseKey + '"]');
+    if (card) {
+      card.style.transition = 'box-shadow .3s, transform .3s';
+      card.style.boxShadow = '0 0 0 3px var(--violet), var(--shadow-lg)';
+      card.style.transform = 'translateY(-6px)';
+      setTimeout(() => { card.style.boxShadow = ''; card.style.transform = ''; }, 2200);
+    }
+  }, 500);
+}
+
+// ── Jump to a specific milestone in the Digital Marketing course, expand it, and highlight it ──
+function goToMilestone(index){
+  document.getElementById('digimkt').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const block = document.getElementById('ms-block-' + index);
+    if (block) {
+      document.querySelectorAll('.milestone-block').forEach(b => b.classList.remove('expanded'));
+      block.classList.add('expanded');
+      block.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      block.style.boxShadow = '0 0 0 3px var(--violet)';
+      setTimeout(() => { block.style.boxShadow = ''; }, 2200);
+    }
+  }, 500);
+}
+
+// ── COHORT BANNER: next Mon/Wed/Fri, real countdown-style date ──
+(function setCohortDate(){
+  const days = [1,3,5]; // Mon, Wed, Fri
+  const today = new Date();
+  let next = new Date(today);
+  for (let i=1;i<=14;i++){
+    next.setDate(today.getDate()+i);
+    if (days.includes(next.getDay())) break;
+  }
+  const opts = { day:'numeric', month:'short', year:'numeric' };
+  document.getElementById('cohortDate').textContent = next.toLocaleDateString('en-IN', opts);
+})();
+
+// Seats left — fetched from backend if available, else a sensible static fallback
+(async function loadSeats(){
+  try {
+    const res = await fetch(`${BACKEND_URL}/api/seats`);
+    if (res.ok) {
+      const data = await res.json();
+      document.getElementById('seatsLeft').textContent = `Filling Fast — ${data.seatsLeft} Seats Left`;
+    }
+  } catch (e) { /* keep static fallback already in HTML */ }
+})();
+
+// ── TOOLS MARQUEE ──
+(function buildToolsMarquee(){
+  const track = document.getElementById('toolsTrack');
+  const doubled = [...toolsList, ...toolsList];
+  track.innerHTML = doubled.map(t => `<div class="tool-chip">⚡ ${t}</div>`).join('');
+})();
+
+// ── PROJECTS SHOWCASE ──
+(function buildProjects(){
+  const scroll = document.getElementById('projectsScroll');
+  scroll.innerHTML = projectsList.map(p => `
+    <div class="project-card">
+      <div class="project-num">PROJECT ${p.num}</div>
+      <h4>${p.title}</h4>
+      <p>${p.desc}</p>
+      <div class="project-tools">${p.tools.map(t => `<span class="proj-tool-tag">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+})();
+
+// ── CONTACT FORM ──
+function submitForm() {
+  const name = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const course = document.getElementById('fcourse').value;
+  const message = document.getElementById('fmsg').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number'); return; }
+
+  fetch(`${BACKEND_URL}/api/enquiry`, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ name, phone, course, message })
+  }).catch(()=>{});
+
+  const toast = document.getElementById('formMsg');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 5000);
+  document.getElementById('fname').value = '';
+  document.getElementById('fphone').value = '';
+  document.getElementById('fcourse').selectedIndex = 0;
+  document.getElementById('fmsg').value = '';
+}
+
+// ══════════ SIGN-UP POPUP (appears 2 minutes after page load) ══════════
+let signupShown = false;
+function openSignup(){
+  if (signupShown) return;
+  signupShown = true;
+  document.getElementById('signupOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSignup(){
+  document.getElementById('signupOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('signupOverlay').addEventListener('click', function(e){ if(e.target===this) closeSignup(); });
+
+function submitSignup(){
+  const name = document.getElementById('su_name').value.trim();
+  const phone = document.getElementById('su_phone').value.trim();
+  const email = document.getElementById('su_email').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number'); return; }
+
+  fetch(`${BACKEND_URL}/api/enquiry`, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ name, phone, course: 'Early-bird signup', message: 'Signed up via 2-minute popup. Email: ' + (email || '—') })
+  }).catch(()=>{});
+
+  closeSignup();
+  const toast = document.getElementById('formMsg');
+  toast.textContent = "Welcome aboard! We'll be in touch with your free demo class details.";
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); toast.textContent = "Enquiry submitted! We'll contact you within 24 hours."; }, 5000);
+}
+
+setTimeout(openSignup, 120000);
+
+// ══════════ CALLBACK MODAL ══════════
+function openCallback(){ document.getElementById('callbackOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeCallback(){ document.getElementById('callbackOverlay').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('callbackOverlay').addEventListener('click', function(e){ if(e.target===this) closeCallback(); });
+
+function submitCallback(){
+  const name = document.getElementById('cb_name').value.trim();
+  const phone = document.getElementById('cb_phone').value.trim();
+  const time = document.getElementById('cb_time').value;
+  if (!name || !phone) { alert('Please enter your name and phone number'); return; }
+
+  fetch(`${BACKEND_URL}/api/callback`, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({ name, phone, preferredTime: time })
+  }).catch(()=>{});
+
+  closeCallback();
+  const toast = document.getElementById('formMsg');
+  toast.textContent = "Callback requested! We'll call you soon.";
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); toast.textContent = "Enquiry submitted! We'll contact you within 24 hours."; }, 5000);
+  document.getElementById('cb_name').value = '';
+  document.getElementById('cb_phone').value = '';
+}
+
+// ══════════ COURSE DETAIL MODAL ══════════
+let currentDetailCourse = null;
+
+function openDetail(courseKey){
+  const c = courseDetails[courseKey];
+  if (!c) return;
+  currentDetailCourse = courseKey;
+  document.getElementById('detailTitle').textContent = c.title;
+  document.getElementById('detailSubtitle').textContent = c.subtitle;
+  document.getElementById('detailBadgeRow').innerHTML = `<span class="detail-pill">AI Powered</span><span class="detail-pill">Live Online</span>`;
+  document.getElementById('detailStatsRow').innerHTML = `
+    <div class="detail-stat"><b>${c.level}</b><span>Level</span></div>
+    <div class="detail-stat"><b>${c.duration}</b><span>Duration</span></div>
+    <div class="detail-stat"><b>${c.sessions}</b><span>Live Sessions</span></div>
+    <div class="detail-stat"><b>${c.projects}</b><span>Projects</span></div>
+  `;
+  document.getElementById('detailMilestones').innerHTML = c.milestones.map((m,i) => `
+    <div class="milestone-item">
+      <div class="milestone-head"><b>Milestone ${i+1}: ${m.name}</b><span class="milestone-dur">${m.dur}</span></div>
+      <div class="milestone-topics">${m.topics}</div>
+    </div>
+  `).join('');
+  document.getElementById('detailTools').innerHTML = c.tools.map(t => `<span class="detail-tool-chip">${t}</span>`).join('');
+  document.getElementById('detailOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDetail(){ document.getElementById('detailOverlay').classList.remove('open'); document.body.style.overflow=''; }
+document.getElementById('detailOverlay').addEventListener('click', function(e){ if(e.target===this) closeDetail(); });
+function enrollFromDetail(){
+  const c = courseDetails[currentDetailCourse];
+  closeDetail();
+  openEnroll(c ? c.title.split(' ').slice(0,2).join(' ') : '');
+}
+
+// ══════════ ENROLLMENT MODAL LOGIC ══════════
+let enrollData = { step: 1, selectedSlot: null, courseData: null, planLabel: 'Full Payment' };
+
+function openEnroll(courseStr) {
+  document.getElementById('enrollOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const tomorrow = new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+  const dd = String(tomorrow.getDate()).padStart(2,'0');
+  const mm = String(tomorrow.getMonth()+1).padStart(2,'0');
+  const yyyy = tomorrow.getFullYear();
+  document.getElementById('e_date').min = `${yyyy}-${mm}-${dd}`;
+  if (courseStr) {
+    const sel = document.getElementById('e_course');
+    for (let i=0;i<sel.options.length;i++) {
+      if (sel.options[i].value.startsWith(courseStr)) { sel.selectedIndex = i; break; }
+    }
+  }
+  goStepDirect(1);
+}
+function closeEnroll() {
+  document.getElementById('enrollOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('enrollOverlay').addEventListener('click', function(e){ if(e.target === this) closeEnroll(); });
+
+function goStep(n) {
+  if (n === 2) {
+    const name = document.getElementById('e_name').value.trim();
+    const phone = document.getElementById('e_phone').value.trim();
+    const cls = document.getElementById('e_class').value;
+    const course = document.getElementById('e_course').value;
+    if (!name) { document.getElementById('e_name').focus(); return; }
+    if (!phone) { document.getElementById('e_phone').focus(); return; }
+    if (!cls) { document.getElementById('e_class').focus(); return; }
+    if (!course) { document.getElementById('e_course').focus(); return; }
+  }
+  if (n === 3) {
+    const date = document.getElementById('e_date').value;
+    if (!date) { document.getElementById('e_date').focus(); return; }
+    if (!enrollData.selectedSlot) { alert('Please select a time slot'); return; }
+    const parts = document.getElementById('e_course').value.split('|');
+    if (parts.length >= 2) {
+      enrollData.courseData = { name: parts[0], fee: parts[1], dur: parts[2]||'' };
+      document.getElementById('feeCourseName').textContent = parts[0];
+      document.getElementById('feeDuration').textContent = parts[2] ? '⏱ ' + parts[2] : '';
+      document.getElementById('feeAmount').textContent = parts[1];
+      const numericFee = parseInt(parts[1].replace(/[^0-9]/g,'')) || 0;
+      document.getElementById('emi1').textContent = parts[1];
+      document.getElementById('emi2').textContent = '₹' + Math.ceil(numericFee/2).toLocaleString('en-IN') + ' × 2';
+      document.getElementById('emi3').textContent = '₹' + Math.ceil(numericFee/3).toLocaleString('en-IN') + ' × 3';
+    }
+  }
+  goStepDirect(n);
+}
+function goStepDirect(n) {
+  enrollData.step = n;
+  document.querySelectorAll('.enroll-step').forEach(s => s.classList.remove('active'));
+  const stepMap = {1:'estep1', 2:'estep2', 3:'estep3', 'processing':'estep_processing', 'success':'estep_success'};
+  document.getElementById(stepMap[n]).classList.add('active');
+  if (typeof n === 'number') {
+    [1,2,3].forEach(i => {
+      const sp = document.getElementById('sp'+i);
+      sp.classList.remove('active','done');
+      if (i < n) sp.classList.add('done'); else if (i === n) sp.classList.add('active');
+    });
+  }
+  const titles = {1:'📋 Book Free Demo Class', 2:'📅 Schedule Your Demo', 3:'💳 Payment'};
+  if (titles[n]) document.getElementById('modalTitle').textContent = titles[n];
+  document.getElementById('enrollModal').scrollTo({top:0, behavior:'smooth'});
+}
+function selectSlot(el) {
+  document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  enrollData.selectedSlot = el.querySelector('.slot-time').textContent;
+}
+function selectEMI(el, plan) {
+  document.querySelectorAll('.emi-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+  enrollData.planLabel = plan;
+}
+
+// ── RAZORPAY CHECKOUT (connected to backend) ──
+async function startRazorpay() {
+  if (!enrollData.courseData) { alert('Please select a course first'); return; }
+  const name = document.getElementById('e_name').value;
+  const phone = document.getElementById('e_phone').value;
+  const email = document.getElementById('e_email').value;
+  const numericFee = parseInt(enrollData.courseData.fee.replace(/[^0-9]/g,'')) || 0;
+
+  const payBtn = document.getElementById('payNowBtn');
+  const payBtnText = document.getElementById('payBtnText');
+  payBtn.disabled = true;
+  payBtnText.textContent = '⏳ Preparing secure checkout...';
+
+  try {
+    const orderRes = await fetch(`${BACKEND_URL}/api/create-order`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount: numericFee, courseName: enrollData.courseData.name, studentName: name, studentPhone: phone })
+    });
+    if (!orderRes.ok) throw new Error('order-create-failed');
+    const order = await orderRes.json();
+
+    payBtnText.textContent = '🔒 Pay Securely with Razorpay';
+    payBtn.disabled = false;
+
+    const options = {
+      key: order.keyId, amount: order.amount, currency: order.currency, order_id: order.orderId,
+      name: "MPULSE DIGITAL AI",
+      description: enrollData.courseData.name + " — " + enrollData.planLabel,
+      prefill: { name, contact: phone, email },
+      theme: { color: "#6d28d9" },
+      handler: async function (response) {
+        goStepDirect('processing');
+        try {
+          const verifyRes = await fetch(`${BACKEND_URL}/api/verify-payment`, {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature,
+              enrollment: {
+                name, phone, email,
+                course: enrollData.courseData.name, fee: enrollData.courseData.fee, plan: enrollData.planLabel,
+                date: document.getElementById('e_date').value, slot: enrollData.selectedSlot, mode: document.getElementById('e_batch').value
+              }
+            })
+          });
+          const verifyData = await verifyRes.json();
+          if (verifyData.verified) { showSuccess(verifyData.bookingId); }
+          else { alert('Payment could not be verified. If money was deducted, please contact us with your payment ID: ' + response.razorpay_payment_id); goStepDirect(3); }
+        } catch (err) {
+          alert('We received your payment but verification failed to load. Please contact us with payment ID: ' + response.razorpay_payment_id);
+          goStepDirect(3);
+        }
+      },
+      modal: { ondismiss: function () {} }
+    };
+
+    if (typeof Razorpay === 'undefined') { alert('Razorpay checkout could not load. Please check your connection and try again.'); return; }
+    const rzp = new Razorpay(options);
+    rzp.open();
+  } catch (err) {
+    console.error(err);
+    payBtn.disabled = false;
+    payBtnText.textContent = '🔒 Pay Securely with Razorpay';
+    alert('Could not start checkout. Please check your connection and try again.');
+  }
+}
+
+function showSuccess(bookingId) {
+  goStepDirect('success');
+  document.getElementById('bookingId').textContent = bookingId || ('MPF-' + new Date().getFullYear() + '-' + Math.floor(100000+Math.random()*900000));
+  [1,2,3].forEach(i => { document.getElementById('sp'+i).classList.remove('active'); document.getElementById('sp'+i).classList.add('done'); });
+  document.getElementById('modalTitle').textContent = '🎉 Enrollment Confirmed!';
+}
+function shareWhatsApp() {
+  const name = document.getElementById('e_name').value;
+  const course = enrollData.courseData ? enrollData.courseData.name : 'Course';
+  const id = document.getElementById('bookingId').textContent;
+  const msg = encodeURIComponent(`Hi MPULSE DIGITAL AI! I just enrolled for *${course}*.\\nName: ${name}\\nBooking ID: ${id}\\nPlease confirm my demo class slot. Thank you! 🙏`);
+  window.open('https://wa.me/919964476659?text=' + msg, '_blank');
+}
+</script>
+
+</body>
+</html>
