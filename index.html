@@ -2278,7 +2278,7 @@ function enrollFromDetail(){
 }
 
 // ══════════ ENROLLMENT MODAL LOGIC ══════════
-let enrollData = { step: 1, selectedSlot: null, courseData: null, planType: 'one-time', installmentNumber: null, planLabel: 'Pay in Full — Save ₹3,000', amount: 27000 };
+let enrollData = { step: 1, selectedSlot: null, courseData: null, planType: 'one-time', installmentNumber: null, planLabel: 'Pay in Full — Save ₹3,000', amount: 0 };
 
 function openEnroll(courseStr) {
   document.getElementById('enrollOverlay').classList.add('open');
@@ -2357,7 +2357,7 @@ function selectEMI(el, planType, installmentNumber, label) {
   enrollData.planType = planType;
   enrollData.installmentNumber = installmentNumber;
   enrollData.planLabel = label;
-  enrollData.amount = planType === 'one-time' ? 27000 : (installmentNumber === 1 ? 15000 : 7500);
+  enrollData.amount = planType === 'one-time' ? 0 : (installmentNumber === 1 ? 15000 : 7500);
   document.getElementById('emiScheduleNote').style.display = planType === 'installments' ? 'block' : 'none';
   updateFeeDisplay();
 }
