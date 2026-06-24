@@ -1160,7 +1160,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 
   <div class="dm-price-card reveal">
     <div class="dm-price-left">
-      <b>₹30,000</b> <span>one-time course fee · flexible payment plans available</span>
+      <b>₹27,000</b> <span>one-time payment (₹3,000 off ₹30,000) · or 3 installments of ₹15,000 / ₹7,500 / ₹7,500</span>
     </div>
     <div class="dm-referral-pill">🎁 Refer a friend → get <b>₹3,000 cashback</b></div>
   </div>
@@ -1582,9 +1582,15 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
         </div>
         <div class="mf-group"><label>💳 Choose Payment Plan</label>
           <div class="emi-options">
-            <div class="emi-btn selected" onclick="selectEMI(this,'Full Payment')"><div class="emi-count">1×</div><div class="emi-label">Full Payment</div><div class="emi-amount" id="emi1">—</div></div>
-            <div class="emi-btn" onclick="selectEMI(this,'2 Instalments')"><div class="emi-count">2×</div><div class="emi-label">2 Instalments</div><div class="emi-amount" id="emi2">—</div></div>
-            <div class="emi-btn" onclick="selectEMI(this,'3 Instalments')"><div class="emi-count">3×</div><div class="emi-label">3 Instalments</div><div class="emi-amount" id="emi3">—</div></div>
+            <div class="emi-btn selected" onclick="selectEMI(this,'one-time',null,'Pay in Full — Save ₹3,000')"><div class="emi-count">1×</div><div class="emi-label">Full Payment</div><div class="emi-amount">₹27,000</div></div>
+            <div class="emi-btn" onclick="selectEMI(this,'installments',1,'Installment 1 of 3')"><div class="emi-count">3×</div><div class="emi-label">Installments</div><div class="emi-amount">₹15,000 + ₹7,500 + ₹7,500</div></div>
+          </div>
+          <div id="emiScheduleNote" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.7;">
+            <b style="color:var(--text);">Installment schedule:</b><br>
+            • ₹15,000 (50%) — due now, at enrollment<br>
+            • ₹7,500 (25%) — due 20 days after enrollment<br>
+            • ₹7,500 (25%) — due 40 days after enrollment<br>
+            <span style="color:var(--violet);">Total: ₹30,000 (no discount on installment plan)</span>
           </div>
         </div>
         <div class="razorpay-card">
@@ -1689,7 +1695,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
-const BACKEND_URL = "https://mpulse-digital-ai-web.onrender.com";
+const BACKEND_URL = "https://YOUR-BACKEND-URL.onrender.com";
 
 // ── COURSE DATA (for detail modal) ──
 const courseDetails = {
@@ -2158,7 +2164,7 @@ function goToMilestone(index){
 // Seats left — fetched from backend if available, else a sensible static fallback
 (async function loadSeats(){
   try {
-  //  const res = await fetch(`${BACKEND_URL}/api/seats`);
+    const res = await fetch(`${BACKEND_URL}/api/seats`);
     if (res.ok) {
       const data = await res.json();
       document.getElementById('seatsLeft').textContent = `Filling Fast — ${data.seatsLeft} Seats Left`;
@@ -2228,9 +2234,9 @@ function submitSignup(){
   const email = document.getElementById('su_email').value.trim();
   if (!name || !phone) { alert('Please enter your name and phone number'); return; }
 
-  fetch(`${BACKEND_URL}/api/enquiry`, {
+  fetch(`${BACKEND_URL}/api/signup`, {
     method: 'POST', headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({ name, phone, course: 'Early-bird signup', message: 'Signed up via 2-minute popup. Email: ' + (email || '—') })
+    body: JSON.stringify({ name, phone, email })
   }).catch(()=>{});
 
   closeSignup();
@@ -2302,7 +2308,7 @@ function enrollFromDetail(){
 }
 
 // ══════════ ENROLLMENT MODAL LOGIC ══════════
-let enrollData = { step: 1, selectedSlot: null, courseData: null, planLabel: 'Full Payment' };
+let enrollData = { step: 1, selectedSlot: null, courseData: null, planType: 'one-time', installmentNumber: null, planLabel: 'Pay in Full — Save ₹3,000', amount: 27000 };
 
 function openEnroll(courseStr) {
   document.getElementById('enrollOverlay').classList.add('open');
@@ -2343,17 +2349,16 @@ function goStep(n) {
     if (!enrollData.selectedSlot) { alert('Please select a time slot'); return; }
     const parts = document.getElementById('e_course').value.split('|');
     if (parts.length >= 2) {
-      enrollData.courseData = { name: parts[0], fee: parts[1], dur: parts[2]||'' };
+      enrollData.courseData = { name: parts[0], dur: parts[2]||'' };
       document.getElementById('feeCourseName').textContent = parts[0];
       document.getElementById('feeDuration').textContent = parts[2] ? '⏱ ' + parts[2] : '';
-      document.getElementById('feeAmount').textContent = parts[1];
-      const numericFee = parseInt(parts[1].replace(/[^0-9]/g,'')) || 0;
-      document.getElementById('emi1').textContent = parts[1];
-      document.getElementById('emi2').textContent = '₹' + Math.ceil(numericFee/2).toLocaleString('en-IN') + ' × 2';
-      document.getElementById('emi3').textContent = '₹' + Math.ceil(numericFee/3).toLocaleString('en-IN') + ' × 3';
+      updateFeeDisplay();
     }
   }
   goStepDirect(n);
+}
+function updateFeeDisplay(){
+  document.getElementById('feeAmount').textContent = '₹' + enrollData.amount.toLocaleString('en-IN');
 }
 function goStepDirect(n) {
   enrollData.step = n;
@@ -2376,10 +2381,15 @@ function selectSlot(el) {
   el.classList.add('selected');
   enrollData.selectedSlot = el.querySelector('.slot-time').textContent;
 }
-function selectEMI(el, plan) {
+function selectEMI(el, planType, installmentNumber, label) {
   document.querySelectorAll('.emi-btn').forEach(b => b.classList.remove('selected'));
   el.classList.add('selected');
-  enrollData.planLabel = plan;
+  enrollData.planType = planType;
+  enrollData.installmentNumber = installmentNumber;
+  enrollData.planLabel = label;
+  enrollData.amount = planType === 'one-time' ? 27000 : (installmentNumber === 1 ? 15000 : 7500);
+  document.getElementById('emiScheduleNote').style.display = planType === 'installments' ? 'block' : 'none';
+  updateFeeDisplay();
 }
 
 // ── RAZORPAY CHECKOUT (connected to backend) ──
@@ -2388,7 +2398,6 @@ async function startRazorpay() {
   const name = document.getElementById('e_name').value;
   const phone = document.getElementById('e_phone').value;
   const email = document.getElementById('e_email').value;
-  const numericFee = parseInt(enrollData.courseData.fee.replace(/[^0-9]/g,'')) || 0;
 
   const payBtn = document.getElementById('payNowBtn');
   const payBtnText = document.getElementById('payBtnText');
@@ -2398,7 +2407,13 @@ async function startRazorpay() {
   try {
     const orderRes = await fetch(`${BACKEND_URL}/api/create-order`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ amount: numericFee, courseName: enrollData.courseData.name, studentName: name, studentPhone: phone })
+      body: JSON.stringify({
+        planType: enrollData.planType,
+        installmentNumber: enrollData.installmentNumber,
+        courseName: enrollData.courseData.name,
+        studentName: name,
+        studentPhone: phone
+      })
     });
     if (!orderRes.ok) throw new Error('order-create-failed');
     const order = await orderRes.json();
@@ -2409,7 +2424,7 @@ async function startRazorpay() {
     const options = {
       key: order.keyId, amount: order.amount, currency: order.currency, order_id: order.orderId,
       name: "MPULSE DIGITAL AI",
-      description: enrollData.courseData.name + " — " + enrollData.planLabel,
+      description: enrollData.courseData.name + " — " + order.planLabel,
       prefill: { name, contact: phone, email },
       theme: { color: "#6d28d9" },
       handler: async function (response) {
@@ -2421,9 +2436,11 @@ async function startRazorpay() {
               razorpay_order_id: response.razorpay_order_id,
               razorpay_payment_id: response.razorpay_payment_id,
               razorpay_signature: response.razorpay_signature,
+              planType: enrollData.planType,
+              installmentNumber: enrollData.installmentNumber,
               enrollment: {
                 name, phone, email,
-                course: enrollData.courseData.name, fee: enrollData.courseData.fee, plan: enrollData.planLabel,
+                course: enrollData.courseData.name,
                 date: document.getElementById('e_date').value, slot: enrollData.selectedSlot, mode: document.getElementById('e_batch').value
               }
             })
