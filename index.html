@@ -2216,7 +2216,7 @@ function submitSignup(){
   setTimeout(() => { toast.classList.remove('show'); toast.textContent = "Enquiry submitted! We'll contact you within 24 hours."; }, 5000);
 }
 
-setTimeout(openSignup, 120000);
+setTimeout(openSignup, 60000);
 
 // ══════════ CALLBACK MODAL ══════════
 function openCallback(){ document.getElementById('callbackOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
@@ -2357,7 +2357,7 @@ function selectEMI(el, planType, installmentNumber, label) {
   enrollData.planType = planType;
   enrollData.installmentNumber = installmentNumber;
   enrollData.planLabel = label;
-  enrollData.amount = planType === 'one-time' ? 0 : (installmentNumber === 1 ? 15000 : 7500);
+  enrollData.amount = planType === 'one-time' ? 27000 : (installmentNumber === 1 ? 15000 : 7500);
   document.getElementById('emiScheduleNote').style.display = planType === 'installments' ? 'block' : 'none';
   updateFeeDisplay();
 }
