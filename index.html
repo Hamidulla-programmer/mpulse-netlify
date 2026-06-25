@@ -195,12 +195,10 @@ nav.scrolled{padding:10px 5%;box-shadow:0 4px 24px rgba(109,40,217,0.06);}
   border:1.5px solid #f59e0b;border-radius:16px;padding:13px 20px;margin-bottom:24px;
   box-shadow:0 8px 22px rgba(245,158,11,0.18);position:relative;z-index:2;
 }
-.referral-banner .rb-icon{font-size:24px;flex-shrink:0;}
 .referral-banner .rb-text b{font-family:'Outfit',sans-serif;font-size:14px;color:#92400e;display:block;}
 .referral-banner .rb-text span{font-size:11.5px;color:#92400e;opacity:0.85;}
 @media (max-width:768px){
   .referral-banner{padding:11px 16px;gap:10px;}
-  .referral-banner .rb-icon{font-size:20px;}
   .referral-banner .rb-text b{font-size:12.5px;}
   .referral-banner .rb-text span{font-size:10.5px;}
 }
@@ -255,7 +253,6 @@ nav.scrolled{padding:10px 5%;box-shadow:0 4px 24px rgba(109,40,217,0.06);}
 .signup-overlay.open .signup-modal{transform:none;}
 .signup-banner{background:linear-gradient(135deg,var(--violet),var(--cyan));padding:28px;text-align:center;color:#fff;position:relative;}
 .signup-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:9px;background:rgba(255,255,255,0.22);border:none;color:#fff;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
-.signup-banner .sb-icon{font-size:34px;margin-bottom:8px;}
 .signup-banner h3{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;margin-bottom:4px;}
 .signup-banner p{font-size:12.5px;opacity:0.92;}
 .signup-body{padding:24px 26px 26px;}
@@ -267,14 +264,6 @@ nav.scrolled{padding:10px 5%;box-shadow:0 4px 24px rgba(109,40,217,0.06);}
 .signup-form-row input:focus{border-color:var(--violet);box-shadow:0 0 0 3px rgba(109,40,217,0.1);}
 .signup-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;margin-top:6px;box-shadow:0 8px 22px rgba(109,40,217,0.3);}
 .signup-later{display:block;text-align:center;margin-top:12px;font-size:12px;color:var(--muted);cursor:pointer;text-decoration:underline;}
-
-/* COHORT BANNER */
-.cohort-banner{background:linear-gradient(135deg,var(--violet),var(--cyan));padding:14px 5%;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;color:#fff;}
-.cohort-banner .ci{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;}
-.cohort-banner .ci b{font-weight:800;}
-.cohort-banner .seats{background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:100px;font-size:12px;font-weight:700;animation:pulseSeat 2s infinite;}
-@keyframes pulseSeat{0%,100%{background:rgba(255,255,255,0.2)}50%{background:rgba(255,255,255,0.35)}}
-.cohort-banner .cb-btn{background:#fff;color:var(--violet);padding:8px 20px;border-radius:100px;font-weight:800;font-size:12.5px;border:none;cursor:pointer;}
 
 /* MARQUEE */
 .marquee-section{padding:18px 0;background:var(--surface2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;}
@@ -329,9 +318,7 @@ section{padding:90px 5%;position:relative;}
 .courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;}
 .course-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer;}
 .course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-.course-card-top{height:120px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
-.course-emoji{font-size:46px;z-index:1;animation:iconFloat 3s ease-in-out infinite;}
-@keyframes iconFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.course-card-top{height:70px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .course-badge{position:absolute;top:12px;right:12px;padding:4px 11px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;}
 .badge-new{background:#d1fae5;color:#047857;}
 .badge-hot{background:#fee2e2;color:#dc2626;}
@@ -403,24 +390,6 @@ section{padding:90px 5%;position:relative;}
 .mentor-card h4{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:4px;}
 .mentor-card .mrole{font-size:12px;color:var(--violet);font-weight:600;margin-bottom:6px;}
 .mentor-card .mco{font-size:11.5px;color:var(--muted);}
-
-/* PRICING */
-.pricing-section{background:var(--bg2);}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
-.price-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;transition:transform .3s;}
-.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-.price-card.featured{border:1px solid transparent;background:linear-gradient(var(--surface),var(--surface)) padding-box,linear-gradient(135deg,var(--violet),var(--cyan)) border-box;position:relative;}
-.featured-tag{position:absolute;top:-13px;right:26px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;font-size:11px;font-weight:800;padding:5px 14px;border-radius:100px;}
-.plan-name{font-size:13px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
-.plan-price{font-size:36px;font-weight:800;margin:12px 0 4px;font-family:'Outfit',sans-serif;color:var(--text);}
-.plan-price span{font-size:13px;color:var(--muted);font-weight:500;}
-.plan-desc{font-size:13px;color:var(--muted);margin-bottom:24px;}
-.plan-features{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;flex-grow:1;}
-.plan-features div{display:flex;gap:9px;font-size:13.5px;align-items:flex-start;color:var(--text);}
-.check{color:var(--green);font-weight:800;flex-shrink:0;}
-.plan-btn{padding:13px;border-radius:10px;text-align:center;font-weight:700;font-size:13.5px;border:1.5px solid var(--border-strong);background:transparent;color:var(--violet);cursor:pointer;transition:all .25s;}
-.plan-btn.primary{background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;}
-.plan-btn:hover{transform:translateY(-2px);}
 
 /* TESTIMONIALS */
 .testimonials-section{background:var(--bg);}
@@ -505,7 +474,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   .hero-actions{flex-direction:column;}
   .btn-primary,.btn-outline{width:100%;text-align:center;}
   .hero-stats{gap:20px;}
-  .cohort-banner{flex-direction:column;gap:10px;text-align:center;}
   section{padding:56px 5%;}
   .section-title{font-size:23px;}
   .features-grid,.benefits-grid,.testimonials-grid,.mentors-grid,.career-grid{grid-template-columns:1fr;}
@@ -517,7 +485,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   .contact-form{padding:24px;}
   .form-row{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;}
-  .pricing-grid{grid-template-columns:1fr;}
   .process-steps::before{display:none;}
   .outcomes-band{grid-template-columns:repeat(2,1fr);padding:36px 5%;gap:24px;}
   .toast{right:16px;left:16px;bottom:80px;}
@@ -561,7 +528,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 .mf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 @media (max-width:480px){.mf-row{grid-template-columns:1fr;}}
 .info-note{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:13px 15px;margin-bottom:16px;font-size:12.5px;color:#4338ca;line-height:1.6;display:flex;gap:10px;align-items:flex-start;}
-.info-note span{font-size:16px;flex-shrink:0;}
 .modal-nav{display:flex;gap:12px;margin-top:18px;}
 .btn-back{flex:1;padding:13px;background:transparent;border:1.5px solid var(--border-strong);color:var(--muted);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .25s;}
 .btn-back:hover{border-color:var(--violet);color:var(--violet);}
@@ -580,7 +546,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 .fee-demo{font-size:11px;color:var(--green);font-weight:700;letter-spacing:0.5px;}
 .fee-full{font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:var(--text);}
 
-.emi-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px;}
+.emi-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:16px;}
 .emi-btn{padding:11px 8px;border-radius:10px;text-align:center;border:1px solid var(--border);background:var(--surface2);cursor:pointer;transition:all .2s;}
 .emi-btn:hover,.emi-btn.selected{border-color:var(--gold);background:#fef3c7;}
 .emi-count{font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--gold);}
@@ -609,8 +575,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 .btn-done{flex:1;padding:13px;background:linear-gradient(135deg,var(--violet),var(--cyan));color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;}
 
 .pay-processing{text-align:center;padding:36px 20px;}
-.pay-processing .proc-icon{font-size:48px;animation:procFloat 1s ease-in-out infinite alternate;margin-bottom:14px;}
-@keyframes procFloat{from{transform:translateY(0)}to{transform:translateY(-8px)}}
 .pay-processing h4{font-family:'Outfit',sans-serif;font-size:16px;color:var(--text);margin-bottom:8px;font-weight:700;}
 .pay-processing p{font-size:13px;color:var(--muted);}
 .proc-bar{width:100%;height:4px;background:var(--surface2);border-radius:2px;margin-top:20px;overflow:hidden;}
@@ -672,9 +636,8 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <a href="#digimkt" onclick="closeMobile()">Digital Marketing</a>
   <a href="#projects" onclick="closeMobile()">Projects</a>
   <a href="#mentors" onclick="closeMobile()">Mentors</a>
-  <a href="#pricing" onclick="closeMobile()">Pricing</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
-  <a href="#contact" onclick="closeMobile();openEnroll('')" class="mob-enroll-btn">🚀 Free Demo Class</a>
+  <a href="#contact" onclick="closeMobile();openEnroll('')" class="mob-enroll-btn">Free Demo Class</a>
 </div>
 
 <!-- Nav -->
@@ -689,13 +652,13 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       <a href="#courses">AI Courses <i class="nav-caret">▾</i></a>
       <div class="mega-menu">
         <div>
-          <div class="mega-col-title">🌐 Generative AI</div>
+          <div class="mega-col-title">Generative AI</div>
           <div class="mega-links">
             <div class="mega-link" onclick="goToCourse('courses','genai','genai-prompt')"><b>Generative AI &amp; Prompt Engineering</b><span>Beginner · 6 Weeks</span></div>
             <div class="mega-link" onclick="goToCourse('courses','genai','ai-tools')"><b>AI Tools &amp; Productivity</b><span>Intermediate · 4 Weeks</span></div>
             <div class="mega-link" onclick="goToCourse('courses','genai','ai-agents')"><b>AI Agents &amp; Automation</b><span>Advanced · 8 Weeks</span></div>
           </div>
-          <div class="mega-col-title" style="margin-top:16px;">📊 Data Science</div>
+          <div class="mega-col-title" style="margin-top:16px;">Data Science</div>
           <div class="mega-links">
             <div class="mega-link" onclick="goToCourse('courses','data','python-ai')"><b>Python for Data &amp; AI</b><span>Intermediate · 4 Months</span></div>
             <div class="mega-link" onclick="goToCourse('courses','data','data-sci')"><b>Data Science &amp; Analytics</b><span>Advanced · 6 Months</span></div>
@@ -703,13 +666,13 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
           </div>
         </div>
         <div>
-          <div class="mega-col-title">🧠 ML &amp; Deep Learning</div>
+          <div class="mega-col-title">ML &amp; Deep Learning</div>
           <div class="mega-links">
             <div class="mega-link" onclick="goToCourse('courses','ml','ml-eng')"><b>Machine Learning Engineering</b><span>Advanced · 6 Months</span></div>
             <div class="mega-link" onclick="goToCourse('courses','ml','deep-learning')"><b>Deep Learning with TensorFlow</b><span>Advanced · 5 Months</span></div>
             <div class="mega-link" onclick="goToCourse('courses','ml','cv-nlp')"><b>Computer Vision &amp; NLP</b><span>Advanced · 4 Months</span></div>
           </div>
-          <div class="mega-col-title" style="margin-top:16px;">🚀 Advanced AI</div>
+          <div class="mega-col-title" style="margin-top:16px;">Advanced AI</div>
           <div class="mega-links">
             <div class="mega-link" onclick="goToCourse('courses','advai','mlops')"><b>MLOps &amp; AI Deployment</b><span>Expert · 5 Months</span></div>
             <div class="mega-link" onclick="goToCourse('courses','advai','llm-rag')"><b>LLMs &amp; RAG Systems</b><span>Expert · 4 Months</span></div>
@@ -723,7 +686,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       <a href="#digimkt">Digital Marketing <i class="nav-caret">▾</i></a>
       <div class="mega-menu" style="width:480px;grid-template-columns:1fr;">
         <div>
-          <div class="mega-col-title">📣 AI-Powered Digital Marketing Course</div>
+          <div class="mega-col-title">AI-Powered Digital Marketing Course</div>
           <div class="mega-links">
             <div class="mega-link" onclick="goToMilestone(0)"><b>Milestone 1: Websites &amp; Landing Pages</b><span>2 weeks</span></div>
             <div class="mega-link" onclick="goToMilestone(1)"><b>Milestone 2: SEO &amp; Answer Engine Optimization</b><span>4 weeks</span></div>
@@ -738,12 +701,11 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
     </li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#mentors">Mentors</a></li>
-    <li><a href="#pricing">Pricing</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-actions">
-    <button class="nav-callback" onclick="openCallback()">📞 Request Callback</button>
-    <button class="nav-cta" onclick="openEnroll('')">🚀 Enroll Now</button>
+    <button class="nav-callback" onclick="openCallback()">Request Callback</button>
+    <button class="nav-cta" onclick="openEnroll('')">Enroll Now</button>
   </div>
   <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
 </nav>
@@ -757,14 +719,13 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
     <div class="hero-content">
       <div class="hero-badge"><span class="badge-dot"></span> Live Cohorts Enrolling Now</div>
       <div class="referral-banner">
-        <div class="rb-icon">🎁</div>
         <div class="rb-text"><b>Refer a friend, get ₹3,000 cashback!</b><span>Big referral offer on our Digital Marketing course — limited time</span></div>
       </div>
       <h1>Master <span class="grad-text">AI &amp; Digital Marketing</span><span class="l2">Skills That Pay For Life</span></h1>
       <p class="hero-sub">Live, instructor-led classes that turn beginners into <strong>in-demand digital marketers and AI-powered professionals</strong>. Work on 20+ real projects, build a portfolio, and get career support.</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore Courses</button>
-        <button class="btn-outline" onclick="openEnroll('')">🎯 Free Demo Class</button>
+        <button class="btn-outline" onclick="openEnroll('')">Free Demo Class</button>
       </div>
       <div class="hero-stats">
         <div><div class="stat-num">4.8/5</div><div class="stat-label">Avg Rating</div></div>
@@ -774,11 +735,11 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       </div>
     </div>
     <div class="hero-visual">
-      <div class="visual-card vc1"><div class="vc-icon">🤖</div><div class="vc-title">Generative AI Mastery</div><div class="vc-sub">Prompting, LLMs &amp; AI tools that save hours every week</div></div>
-      <div class="visual-card vc2"><div class="vc-icon">📈</div><div class="vc-title">Performance Marketing</div><div class="vc-sub">Real ad spend, real campaigns, real ROI</div>
+      <div class="visual-card vc1"><div class="vc-title">Generative AI Mastery</div><div class="vc-sub">Prompting, LLMs &amp; AI tools that save hours every week</div></div>
+      <div class="visual-card vc2"><div class="vc-title">Performance Marketing</div><div class="vc-sub">Real ad spend, real campaigns, real ROI</div>
         <div class="vc-bars"><div style="height:40%;animation-delay:.1s"></div><div style="height:70%;animation-delay:.2s"></div><div style="height:55%;animation-delay:.3s"></div><div style="height:90%;animation-delay:.4s"></div><div style="height:65%;animation-delay:.5s"></div></div>
       </div>
-      <div class="visual-card vc3"><div class="vc-icon">🎯</div><div class="vc-title">Live Mentorship</div><div class="vc-sub">Direct feedback from practitioners, every class</div></div>
+      <div class="visual-card vc3"><div class="vc-title">Live Mentorship</div><div class="vc-sub">Direct feedback from practitioners, every class</div></div>
     </div>
   </div>
 </section>
@@ -792,10 +753,9 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   </div>
   <div class="preview-grid">
 
-    <!-- AI Column -->
     <div class="reveal">
       <div class="preview-col-head">
-        <div class="preview-col-icon ai">🤖</div>
+        <div class="preview-col-icon ai"></div>
         <div><h3>Artificial Intelligence</h3><p>12 live courses · Beginner to Expert</p></div>
       </div>
       <div class="preview-cards">
@@ -847,11 +807,10 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       <div class="preview-view-all" onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">Explore all AI courses →</div>
     </div>
 
-    <!-- Digital Marketing Column -->
     <div class="reveal">
       <div class="preview-col-head">
-        <div class="preview-col-icon dm">📣</div>
-        <div><h3>Digital Marketing</h3><p>1 complete course · 6 milestones · 20 weeks</p></div>
+        <div class="preview-col-icon dm"></div>
+        <div><h3>Digital Marketing</h3><p>1 complete course · 6 milestones · 3 months</p></div>
       </div>
       <div class="preview-cards">
         <div class="preview-card" onclick="goToMilestone(0)">
@@ -908,26 +867,26 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 <!-- Marquee -->
 <div class="marquee-section">
   <div class="marquee-track" id="marquee">
-    <span class="marquee-item">🤖 Generative AI <span class="sep">✦</span></span>
-    <span class="marquee-item">🧠 Machine Learning <span class="sep">✦</span></span>
-    <span class="marquee-item">📊 Data Science <span class="sep">✦</span></span>
-    <span class="marquee-item">📣 Digital Marketing <span class="sep">✦</span></span>
-    <span class="marquee-item">🔍 SEO &amp; Google Ads <span class="sep">✦</span></span>
-    <span class="marquee-item">📲 Social Media Marketing <span class="sep">✦</span></span>
-    <span class="marquee-item">✍️ Content &amp; Copywriting <span class="sep">✦</span></span>
-    <span class="marquee-item">🐍 Python for AI <span class="sep">✦</span></span>
-    <span class="marquee-item">🌐 LLMs &amp; RAG <span class="sep">✦</span></span>
-    <span class="marquee-item">🛒 E-Commerce Marketing <span class="sep">✦</span></span>
-    <span class="marquee-item">🤖 Generative AI <span class="sep">✦</span></span>
-    <span class="marquee-item">🧠 Machine Learning <span class="sep">✦</span></span>
-    <span class="marquee-item">📊 Data Science <span class="sep">✦</span></span>
-    <span class="marquee-item">📣 Digital Marketing <span class="sep">✦</span></span>
-    <span class="marquee-item">🔍 SEO &amp; Google Ads <span class="sep">✦</span></span>
-    <span class="marquee-item">📲 Social Media Marketing <span class="sep">✦</span></span>
-    <span class="marquee-item">✍️ Content &amp; Copywriting <span class="sep">✦</span></span>
-    <span class="marquee-item">🐍 Python for AI <span class="sep">✦</span></span>
-    <span class="marquee-item">🌐 LLMs &amp; RAG <span class="sep">✦</span></span>
-    <span class="marquee-item">🛒 E-Commerce Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">Generative AI <span class="sep">✦</span></span>
+    <span class="marquee-item">Machine Learning <span class="sep">✦</span></span>
+    <span class="marquee-item">Data Science <span class="sep">✦</span></span>
+    <span class="marquee-item">Digital Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">SEO &amp; Google Ads <span class="sep">✦</span></span>
+    <span class="marquee-item">Social Media Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">Content &amp; Copywriting <span class="sep">✦</span></span>
+    <span class="marquee-item">Python for AI <span class="sep">✦</span></span>
+    <span class="marquee-item">LLMs &amp; RAG <span class="sep">✦</span></span>
+    <span class="marquee-item">E-Commerce Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">Generative AI <span class="sep">✦</span></span>
+    <span class="marquee-item">Machine Learning <span class="sep">✦</span></span>
+    <span class="marquee-item">Data Science <span class="sep">✦</span></span>
+    <span class="marquee-item">Digital Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">SEO &amp; Google Ads <span class="sep">✦</span></span>
+    <span class="marquee-item">Social Media Marketing <span class="sep">✦</span></span>
+    <span class="marquee-item">Content &amp; Copywriting <span class="sep">✦</span></span>
+    <span class="marquee-item">Python for AI <span class="sep">✦</span></span>
+    <span class="marquee-item">LLMs &amp; RAG <span class="sep">✦</span></span>
+    <span class="marquee-item">E-Commerce Marketing <span class="sep">✦</span></span>
   </div>
 </div>
 
@@ -945,12 +904,12 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="section-title">What Makes This Program <span class="grad-text">Special</span></div>
   <p class="section-desc">Experience learning that transforms careers through hands-on projects, expert mentorship, and AI-powered tools designed for real-world success.</p>
   <div class="features-grid">
-    <div class="feature-card reveal"><div class="feature-icon">🎯</div><div class="feature-title">Applied Curriculum</div><div class="feature-desc">A fully industry-integrated curriculum where you build real strategies, not just learn theory.</div></div>
-    <div class="feature-card reveal"><div class="feature-icon">⚡</div><div class="feature-title">Live Sessions from Experts</div><div class="feature-desc">Learn directly from mentors who run AI-powered marketing and tech operations for real brands.</div></div>
-    <div class="feature-card reveal"><div class="feature-icon">💬</div><div class="feature-title">Community Access</div><div class="feature-desc">Learn, collaborate, and grow with a community that builds real-world skills together.</div></div>
-    <div class="feature-card reveal"><div class="feature-icon">🏆</div><div class="feature-title">Capstone Project + Demo Day</div><div class="feature-desc">Work on real-world projects across strategy, SEO, ads, content and AI — building a portfolio that proves your skills.</div></div>
-    <div class="feature-card reveal"><div class="feature-icon">📁</div><div class="feature-title">Free Portfolio Website</div><div class="feature-desc">A live, professional site to showcase your skills and real projects to recruiters.</div></div>
-    <div class="feature-card reveal"><div class="feature-icon">💼</div><div class="feature-title">3-Step Career Support</div><div class="feature-desc">Resume upgrades, portfolio reviews, mock interviews &amp; personalized guidance to help you land your next role.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">Applied Curriculum</div><div class="feature-desc">A fully industry-integrated curriculum where you build real strategies, not just learn theory.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">Live Sessions from Experts</div><div class="feature-desc">Learn directly from mentors who run AI-powered marketing and tech operations for real brands.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">Community Access</div><div class="feature-desc">Learn, collaborate, and grow with a community that builds real-world skills together.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">Capstone Project + Demo Day</div><div class="feature-desc">Work on real-world projects across strategy, SEO, ads, content and AI — building a portfolio that proves your skills.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">Free Portfolio Website</div><div class="feature-desc">A live, professional site to showcase your skills and real projects to recruiters.</div></div>
+    <div class="feature-card reveal"><div class="feature-title">3-Step Career Support</div><div class="feature-desc">Resume upgrades, portfolio reviews, mock interviews &amp; personalized guidance to help you land your next role.</div></div>
   </div>
 </section>
 
@@ -958,53 +917,53 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 <section class="courses-section" id="courses">
   <div class="section-label">AI Training Programs</div>
   <div class="section-title">Master <span class="grad-text">Artificial Intelligence</span></div>
-  <p class="section-desc">From your first prompt to deploying production AI systems — live courses for every level.</p>
+  <p class="section-desc">From your first prompt to deploying production AI systems — live courses for every level. All AI courses start with a free, no-obligation demo class.</p>
 
   <div class="course-tabs">
-    <button class="tab-btn active" onclick="switchTab('genai',this)">🌐 Generative AI</button>
-    <button class="tab-btn" onclick="switchTab('ml',this)">🧠 ML &amp; Deep Learning</button>
-    <button class="tab-btn" onclick="switchTab('data',this)">📊 Data Science</button>
-    <button class="tab-btn" onclick="switchTab('advai',this)">🚀 Advanced AI</button>
+    <button class="tab-btn active" onclick="switchTab('genai',this)">Generative AI</button>
+    <button class="tab-btn" onclick="switchTab('ml',this)">ML &amp; Deep Learning</button>
+    <button class="tab-btn" onclick="switchTab('data',this)">Data Science</button>
+    <button class="tab-btn" onclick="switchTab('advai',this)">Advanced AI</button>
   </div>
 
   <div class="course-panel active" id="tab-genai">
     <div class="courses-grid">
       <div class="course-card reveal" data-course="genai-prompt">
-        <div class="course-card-top bg-v1"><div class="course-emoji">🌐</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-card-top bg-v1"><span class="course-badge badge-hot">Hot</span></div>
         <div class="course-body">
           <div class="course-level level-beginner">Beginner</div>
           <div class="course-name">Generative AI &amp; Prompt Engineering</div>
           <div class="course-desc-txt">Master ChatGPT, Gemini, Claude, and Midjourney to automate content, research, and daily workflows.</div>
-          <div class="course-meta"><span>⏱ 6 Weeks</span><span>📅 Weekend Intensive</span></div>
+          <div class="course-meta"><span>6 Weeks</span><span>Weekend Intensive</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('genai-prompt')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Generative AI')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Generative AI')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="ai-tools">
-        <div class="course-card-top bg-v2"><div class="course-emoji">🤖</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-card-top bg-v2"><span class="course-badge badge-new">New</span></div>
         <div class="course-body">
           <div class="course-level level-intermediate">Intermediate</div>
           <div class="course-name">AI Tools &amp; Productivity Mastery</div>
           <div class="course-desc-txt">A practical toolkit of AI apps for research, writing, design, and workflow automation.</div>
-          <div class="course-meta"><span>⏱ 4 Weeks</span><span>📅 Evening Batches</span></div>
+          <div class="course-meta"><span>4 Weeks</span><span>Evening Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('ai-tools')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('AI Tools')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('AI Tools')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="ai-agents">
-        <div class="course-card-top bg-v3"><div class="course-emoji">🦾</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-card-top bg-v3"><span class="course-badge badge-popular">Popular</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Advanced</div>
           <div class="course-name">AI Agents &amp; Automation Building</div>
           <div class="course-desc-txt">Build autonomous AI agents and no-code/low-code automations using n8n for real business workflows.</div>
-          <div class="course-meta"><span>⏱ 8 Weeks</span><span>📅 Flexible Batches</span></div>
+          <div class="course-meta"><span>8 Weeks</span><span>Flexible Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('ai-agents')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('AI Agents')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('AI Agents')">Book for Demo</button>
           </div>
         </div>
       </div>
@@ -1014,41 +973,41 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="course-panel" id="tab-ml">
     <div class="courses-grid">
       <div class="course-card reveal" data-course="ml-eng">
-        <div class="course-card-top bg-v4"><div class="course-emoji">🧠</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-card-top bg-v4"><span class="course-badge badge-hot">Hot</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Advanced</div>
           <div class="course-name">Machine Learning Engineering</div>
           <div class="course-desc-txt">Supervised/unsupervised learning, model training and evaluation, Scikit-learn, real ML pipelines.</div>
-          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Morning/Evening</span></div>
+          <div class="course-meta"><span>6 Months</span><span>Morning/Evening</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('ml-eng')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Machine Learning')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Machine Learning')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="deep-learning">
-        <div class="course-card-top bg-v5"><div class="course-emoji">🔥</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-card-top bg-v5"><span class="course-badge badge-popular">Popular</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Advanced</div>
           <div class="course-name">Deep Learning with TensorFlow</div>
           <div class="course-desc-txt">Neural networks, CNNs, RNNs and transformers — build and deploy deep learning models end to end.</div>
-          <div class="course-meta"><span>⏱ 5 Months</span><span>📅 Flexible Batches</span></div>
+          <div class="course-meta"><span>5 Months</span><span>Flexible Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('deep-learning')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Deep Learning')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Deep Learning')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="cv-nlp">
-        <div class="course-card-top bg-v6"><div class="course-emoji">👁️</div></div>
+        <div class="course-card-top bg-v6"></div>
         <div class="course-body">
           <div class="course-level level-advanced">Advanced</div>
           <div class="course-name">Computer Vision &amp; NLP</div>
           <div class="course-desc-txt">Image recognition, object detection, text and sentiment analysis with real project work.</div>
-          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-meta"><span>4 Months</span><span>Evening Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('cv-nlp')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Computer Vision')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Computer Vision')">Book for Demo</button>
           </div>
         </div>
       </div>
@@ -1058,41 +1017,41 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="course-panel" id="tab-data">
     <div class="courses-grid">
       <div class="course-card reveal" data-course="python-ai">
-        <div class="course-card-top bg-v1"><div class="course-emoji">🐍</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-card-top bg-v1"><span class="course-badge badge-popular">Popular</span></div>
         <div class="course-body">
           <div class="course-level level-intermediate">Intermediate</div>
           <div class="course-name">Python for Data &amp; AI</div>
           <div class="course-desc-txt">Python fundamentals with NumPy, Pandas, and Matplotlib — the foundation for every AI role.</div>
-          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-meta"><span>4 Months</span><span>Evening Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('python-ai')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Python for AI')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Python for AI')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="data-sci">
-        <div class="course-card-top bg-v2"><div class="course-emoji">📊</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-card-top bg-v2"><span class="course-badge badge-new">New</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Advanced</div>
           <div class="course-name">Data Science &amp; Analytics</div>
           <div class="course-desc-txt">EDA, feature engineering, SQL, Power BI, Tableau — complete data analytics mastery for industry roles.</div>
-          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Weekend Batches</span></div>
+          <div class="course-meta"><span>6 Months</span><span>Weekend Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('data-sci')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Data Science')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Data Science')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="data-viz">
-        <div class="course-card-top bg-v3"><div class="course-emoji">📈</div></div>
+        <div class="course-card-top bg-v3"></div>
         <div class="course-body">
           <div class="course-level level-intermediate">Intermediate</div>
           <div class="course-name">Data Visualization &amp; Storytelling</div>
           <div class="course-desc-txt">Turn raw data into compelling dashboards and reports that drive real business decisions.</div>
-          <div class="course-meta"><span>⏱ 6 Weeks</span><span>📅 Weekend Batches</span></div>
+          <div class="course-meta"><span>6 Weeks</span><span>Weekend Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('data-viz')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('Data Visualization')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('Data Visualization')">Book for Demo</button>
           </div>
         </div>
       </div>
@@ -1102,41 +1061,41 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="course-panel" id="tab-advai">
     <div class="courses-grid">
       <div class="course-card reveal" data-course="mlops">
-        <div class="course-card-top bg-v4"><div class="course-emoji">🔬</div><span class="course-badge badge-hot">Hot</span></div>
+        <div class="course-card-top bg-v4"><span class="course-badge badge-hot">Hot</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Expert</div>
           <div class="course-name">MLOps &amp; AI Deployment</div>
           <div class="course-desc-txt">Docker, Kubernetes, CI/CD for ML, FastAPI deployment, and cloud platforms (AWS, GCP, Azure).</div>
-          <div class="course-meta"><span>⏱ 5 Months</span><span>📅 Evening Batches</span></div>
+          <div class="course-meta"><span>5 Months</span><span>Evening Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('mlops')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('MLOps')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('MLOps')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="llm-rag">
-        <div class="course-card-top bg-v5"><div class="course-emoji">🤖</div><span class="course-badge badge-new">New</span></div>
+        <div class="course-card-top bg-v5"><span class="course-badge badge-new">New</span></div>
         <div class="course-body">
           <div class="course-level level-advanced">Expert</div>
           <div class="course-name">LLMs &amp; RAG Systems</div>
           <div class="course-desc-txt">Fine-tuning LLMs, Retrieval-Augmented Generation, LangChain, and building production AI chatbots.</div>
-          <div class="course-meta"><span>⏱ 4 Months</span><span>📅 Weekend Batches</span></div>
+          <div class="course-meta"><span>4 Months</span><span>Weekend Batches</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('llm-rag')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('LLMs and RAG')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('LLMs and RAG')">Book for Demo</button>
           </div>
         </div>
       </div>
       <div class="course-card reveal" data-course="ai-job-ready">
-        <div class="course-card-top bg-v6"><div class="course-emoji">💼</div><span class="course-badge badge-popular">Popular</span></div>
+        <div class="course-card-top bg-v6"><span class="course-badge badge-popular">Popular</span></div>
         <div class="course-body">
           <div class="course-level level-all">All Levels</div>
           <div class="course-name">AI Job Readiness Bootcamp</div>
           <div class="course-desc-txt">Complete job training — Python, ML, projects, resume building, mock interviews, placement drives.</div>
-          <div class="course-meta"><span>⏱ 6 Months</span><span>📅 Flexible</span></div>
+          <div class="course-meta"><span>6 Months</span><span>Flexible</span></div>
           <div class="course-card-actions">
             <button class="course-view" onclick="openDetail('ai-job-ready')">View Details</button>
-            <button class="course-enroll" onclick="openEnroll('AI Job Readiness')">Enroll →</button>
+            <button class="course-enroll" onclick="openEnroll('AI Job Readiness')">Book for Demo</button>
           </div>
         </div>
       </div>
@@ -1154,26 +1113,26 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
     <div class="dm-price-left">
       <b>₹27,000</b> <span>one-time payment (₹3,000 off ₹30,000) · or 3 installments of ₹15,000 / ₹7,500 / ₹7,500</span>
     </div>
-    <div class="dm-referral-pill">🎁 Refer a friend → get <b>₹3,000 cashback</b></div>
+    <div class="dm-referral-pill">Refer a friend → get <b>₹3,000 cashback</b></div>
   </div>
 
   <div class="dm-hero-card reveal">
     <div class="dm-hero-top">
-      <span class="dm-pill">🤖 AI Powered</span>
-      <span class="dm-pill">🔴 Live Online</span>
-      <span class="dm-pill">📜 Certification Included</span>
+      <span class="dm-pill">AI Powered</span>
+      <span class="dm-pill">Live Online</span>
+      <span class="dm-pill">Certification Included</span>
     </div>
     <h3>AI-Powered Digital Marketing Course</h3>
     <p>A complete, six-milestone program covering websites, SEO, social &amp; content, performance marketing, email &amp; affiliate marketing, and a real capstone project — built around practical, AI-first workflows from day one.</p>
     <div class="dm-hero-stats">
       <div><b>6</b><span>Milestones</span></div>
-      <div><b>20 Weeks</b><span>Duration</span></div>
+      <div><b>3 Months</b><span>Duration</span></div>
       <div><b>100+ hrs</b><span>Live Sessions</span></div>
       <div><b>20+</b><span>Projects</span></div>
       <div><b>1 Year</b><span>Career Support</span></div>
     </div>
     <div class="dm-hero-actions">
-      <button class="dm-btn-primary" onclick="openEnroll('AI-Powered Digital Marketing')">Enroll / Book Free Demo</button>
+      <button class="dm-btn-primary" onclick="openEnroll('AI-Powered Digital Marketing')">Enroll / Book for Demo</button>
       <button class="dm-btn-outline" onclick="openCallback()">Request a Callback</button>
     </div>
   </div>
@@ -1183,7 +1142,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <!-- Career Outcomes & Job Support -->
   <div class="dm-career-card reveal">
     <div class="dm-career-head">
-      <div class="ic">💼</div>
       <div><h3>Career Outcomes &amp; Job Support</h3><p>What this course can realistically do for your career</p></div>
     </div>
 
@@ -1228,12 +1186,12 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="section-title">The Future-Ready Benefits of Learning With Us</div>
   <p class="section-desc">Beyond the certificate — here's what you actually walk away with.</p>
   <div class="benefits-grid">
-    <div class="benefit-card reveal"><div class="benefit-icon">🚀</div><h4>Career Acceleration</h4><p>Skills mapped directly to roles companies are hiring for right now in AI and digital marketing.</p></div>
-    <div class="benefit-card reveal"><div class="benefit-icon">🧠</div><h4>Future-Proof Skillset</h4><p>Stay ahead as AI reshapes marketing — learn the tools before they become industry standard.</p></div>
-    <div class="benefit-card reveal"><div class="benefit-icon">👥</div><h4>Live Mentorship</h4><p>Direct access to instructors for feedback on your real campaigns and projects.</p></div>
-    <div class="benefit-card reveal"><div class="benefit-icon">📜</div><h4>Certification</h4><p>Earn a recognized certificate to showcase on LinkedIn and strengthen your portfolio.</p></div>
-    <div class="benefit-card reveal"><div class="benefit-icon">💼</div><h4>Job &amp; Freelance Support</h4><p>Portfolio reviews, resume guidance, and access to our hiring/freelance partner network.</p></div>
-    <div class="benefit-card reveal"><div class="benefit-icon">🌐</div><h4>Lifetime Community Access</h4><p>Join an alumni network for continued learning, networking, and opportunity sharing.</p></div>
+    <div class="benefit-card reveal"><h4>Career Acceleration</h4><p>Skills mapped directly to roles companies are hiring for right now in AI and digital marketing.</p></div>
+    <div class="benefit-card reveal"><h4>Future-Proof Skillset</h4><p>Stay ahead as AI reshapes marketing — learn the tools before they become industry standard.</p></div>
+    <div class="benefit-card reveal"><h4>Live Mentorship</h4><p>Direct access to instructors for feedback on your real campaigns and projects.</p></div>
+    <div class="benefit-card reveal"><h4>Certification</h4><p>Earn a recognized certificate to showcase on LinkedIn and strengthen your portfolio.</p></div>
+    <div class="benefit-card reveal"><h4>Job &amp; Freelance Support</h4><p>Portfolio reviews, resume guidance, and access to our hiring/freelance partner network.</p></div>
+    <div class="benefit-card reveal"><h4>Lifetime Community Access</h4><p>Join an alumni network for continued learning, networking, and opportunity sharing.</p></div>
   </div>
 </section>
 
@@ -1290,11 +1248,11 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <p class="section-desc">Real outcomes from real students who showed up and did the work.</p>
   <div class="testimonials-grid">
     <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The live format made all the difference. I could ask questions in real time and apply what I learned to my own brand the same week.</div><div class="testi-author"><div class="author-avatar">RS</div><div><div class="author-name">Riya Sharma</div><div class="author-class">Freelance Marketer</div></div></div></div>
-    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">I went from zero AI tool knowledge to running my own AI-assisted ad campaigns within weeks. The mentorship was the real value here.</div><div class="testi-author"><div class="author-avatar">AK</div><div><div class="author-name">Arjun Kapoor</div><div class="author-class">Startup Founder</div></div></div></div>
-    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">Landed a digital marketing role within a month of finishing the course. The instructors clearly know the industry inside out.</div><div class="testi-author"><div class="author-avatar">PN</div><div><div class="author-name">Priya Nair</div><div class="author-class">Marketing Executive</div></div></div></div>
-    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The ML Engineering course completely transformed my career. I went from a non-tech background to a Data Analyst role at a top MNC in 6 months.</div><div class="testi-author"><div class="author-avatar">PR</div><div><div class="author-name">Preethi Rao</div><div class="author-class">Data Analyst, Infosys</div></div></div></div>
-    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Generative AI crash course was an eye-opener. Within a week of finishing it, I automated half my work tasks. Pure gold for professionals.</div><div class="testi-author"><div class="author-avatar">RK</div><div><div class="author-name">Rajesh Kumar</div><div class="author-class">Marketing Manager, TCS</div></div></div></div>
-    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Full-Stack Bootcamp gave me everything — SEO, ads, content, analytics — and the live client project sealed my first freelance contract.</div><div class="testi-author"><div class="author-avatar">SN</div><div><div class="author-name">Sneha Nair</div><div class="author-class">Freelance Strategist</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">I went from zero AI tool knowledge to running my own AI-assisted ad campaigns within weeks. The mentorship was the real value here.</div><div class="testi-author"><div class="author-avatar">AK</div><div><div class="author-name">Arjun Kapoor</div><div class="author-class">Founder, Bloomline Bakery</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">Landed a digital marketing role within a month of finishing the course. The instructors clearly know the industry inside out.</div><div class="testi-author"><div class="author-avatar">PN</div><div><div class="author-name">Priya Nair</div><div class="author-class">Marketing Executive, Urban Threads Apparel</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The ML Engineering course completely transformed my career. I went from a non-tech background to a Data Analyst role at a growing fintech startup in 6 months.</div><div class="testi-author"><div class="author-avatar">PR</div><div><div class="author-name">Preethi Rao</div><div class="author-class">Data Analyst, PayBridge Solutions</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Generative AI crash course was an eye-opener. Within a week of finishing it, I automated half my work tasks. Pure gold for professionals.</div><div class="testi-author"><div class="author-avatar">RK</div><div><div class="author-name">Rajesh Kumar</div><div class="author-class">Marketing Manager, GreenLeaf Organics</div></div></div></div>
+    <div class="testi-card reveal"><div class="stars">★★★★★</div><div class="testi-text">The Digital Marketing course gave me everything — SEO, ads, content, analytics — and the live capstone project sealed my first freelance contract.</div><div class="testi-author"><div class="author-avatar">SN</div><div><div class="author-name">Sneha Nair</div><div class="author-class">Freelance Strategist</div></div></div></div>
   </div>
 </section>
 
@@ -1305,8 +1263,8 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <p class="section-desc">Quick answers about our AI courses and the Digital Marketing program. Still have a question? Reach out via the contact form below.</p>
 
   <div class="faq-tabs">
-    <button class="tab-btn active" onclick="switchFaqTab('ai',this)">🤖 AI Courses</button>
-    <button class="tab-btn" onclick="switchFaqTab('dm',this)">📣 Digital Marketing</button>
+    <button class="tab-btn active" onclick="switchFaqTab('ai',this)">AI Courses</button>
+    <button class="tab-btn" onclick="switchFaqTab('dm',this)">Digital Marketing</button>
   </div>
 
   <div class="faq-panel active" id="faq-ai">
@@ -1328,8 +1286,8 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
         <div class="faq-a"><p>If you're new to AI, start with Generative AI &amp; Prompt Engineering or AI Tools &amp; Productivity — both are short, practical, and don't require prior experience. If you already know Python and want a technical career path, Machine Learning Engineering or our Data Science track are better starting points.</p></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q" onclick="toggleFaq(this)"><h4>Can I get a free demo class before enrolling?</h4><span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Yes — every course includes a free demo class so you can meet the instructor and experience the teaching style before paying anything. Just click "Enroll / Book Demo" on any course card to schedule yours.</p></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>How do I book a demo for an AI course?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>All AI courses currently start with a free demo booking — just click "Book for Demo" on any course card and our team will confirm a slot with you. There's no payment required to attend the demo.</p></div>
       </div>
     </div>
   </div>
@@ -1338,7 +1296,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
     <div class="faq-list">
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)"><h4>How long is the AI-Powered Digital Marketing course?</h4><span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>The full program runs across six milestones over roughly 20 weeks, with 100+ hours of live sessions covering websites, SEO, social &amp; content, performance marketing, email &amp; affiliate marketing, and a final capstone project.</p></div>
+        <div class="faq-a"><p>The full program runs across six milestones over roughly 3 months, with 100+ hours of live sessions covering websites, SEO, social &amp; content, performance marketing, email &amp; affiliate marketing, and a final capstone project.</p></div>
       </div>
       <div class="faq-item reveal">
         <div class="faq-q" onclick="toggleFaq(this)"><h4>Is this course beginner-friendly?</h4><span class="faq-icon">+</span></div>
@@ -1353,8 +1311,8 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
         <div class="faq-a"><p>The course is built around hands-on work — you'll set up real landing pages, run SEO audits, build actual ad campaigns, design email/affiliate flows, and finish with a capstone project where you build a complete marketing campaign for a real or simulated brand.</p></div>
       </div>
       <div class="faq-item reveal">
-        <div class="faq-q" onclick="toggleFaq(this)"><h4>What tools will I learn to use?</h4><span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>You'll get hands-on with WordPress, Google Ads, Meta Ads Manager, Google Analytics 4, SEMrush, Google Search Console, Mailchimp, and AI tools like ChatGPT and Gemini for content and campaign work throughout the program.</p></div>
+        <div class="faq-q" onclick="toggleFaq(this)"><h4>What payment options are available?</h4><span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>You can pay the full ₹27,000 (after a ₹3,000 discount) in one go, or split it into 3 installments of ₹15,000, ₹7,500, and ₹7,500 over 40 days. Payment can be made through our secure Razorpay checkout or via a direct payment link.</p></div>
       </div>
     </div>
   </div>
@@ -1369,10 +1327,10 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
     <div class="contact-info reveal">
       <h3>Let's talk</h3>
       <p>Fill out the form and our team will get back to you within 24 hours, or reach us directly through the details below.</p>
-      <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><h4>Address</h4><p>MPULSE DIGITAL AI, Kanaka Nagar, R.T. Nagar, Bengaluru, Karnataka 560032</p></div></div>
+      <div class="contact-item"><div class="contact-icon">📍</div><div class="contact-detail"><h4>Address</h4><p>Mpulse Career Institute, 15, KHB Colony Main Road, next to RK Palace, opp Bilal Masjid Kaverinagar, 2nd Cross Rd, Kanaka Nagar, Bengaluru, Karnataka 560032</p></div></div>
       <div class="contact-item"><div class="contact-icon">📞</div><div class="contact-detail"><h4>Phone / WhatsApp</h4><p>+91 99644 76659<br>Mon – Sat, 9:00 AM – 7:00 PM</p></div></div>
-      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><h4>Email</h4><p>hello@mpulsedigitalai.com</p></div></div>
-      <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-detail"><h4>Batch Timings</h4><p>Morning: 7–9 AM · Evening: 4–8 PM · Weekends: 9 AM–5 PM</p></div></div>
+      <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><h4>Email</h4><p>mpulsedigitalai@gmail.com</p></div></div>
+      <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-detail"><h4>Batch Timings</h4><p><strong>Online:</strong> 6:00 PM – 7:00 PM &amp; 9:00 PM – 10:00 PM<br><strong>Offline:</strong> 10:00 AM – 11:00 AM &amp; 4:00 PM – 5:00 PM</p></div></div>
     </div>
     <div class="contact-form reveal">
       <div class="form-group"><label>Full Name</label><input type="text" id="fname" placeholder="Your name"></div>
@@ -1418,7 +1376,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       </div>
       <p>Live, instructor-led AI and digital marketing courses built to make you job-ready, business-ready, and future-proof.</p>
       <div class="footer-social">
-        <a href="https://www.instagram.com/mpulse_digital_ai" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
+        <a href="https://www.instagram.com/mpulse_digi_ai/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
         </a>
         <a href="https://www.youtube.com/@mpulsedigitalai" target="_blank" rel="noopener" class="social-btn" aria-label="YouTube">
@@ -1438,16 +1396,15 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       <li><a href="#courses">Deep Learning</a></li>
       <li><a href="#courses">MLOps &amp; Deployment</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Marketing Courses</h4><ul>
-      <li><a href="#digimkt">SEO &amp; Google Ads</a></li>
-      <li><a href="#digimkt">Social Media Marketing</a></li>
-      <li><a href="#digimkt">AI-Powered Marketing</a></li>
-      <li><a href="#digimkt">Full-Stack Bootcamp</a></li>
+    <div class="footer-col"><h4>Marketing Course</h4><ul>
+      <li><a href="#digimkt">AI-Powered Digital Marketing</a></li>
+      <li><a href="#digimkt">Curriculum &amp; Milestones</a></li>
+      <li><a href="#digimkt">Career Support</a></li>
     </ul></div>
     <div class="footer-col"><h4>Quick Links</h4><ul>
       <li><a href="#why">Why Choose Us</a></li>
-      <li><a href="#pricing">Pricing</a></li>
       <li><a href="#mentors">Mentors</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul></div>
   </div>
@@ -1468,28 +1425,28 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   </a>
 </div>
 
-<div id="formMsg" class="toast">✅ Enquiry submitted! We'll contact you within 24 hours.</div>
+<div id="formMsg" class="toast">Enquiry submitted! We'll contact you within 24 hours.</div>
 
 <div class="mobile-sticky-cta">
-  <a href="tel:+919964476659" class="mob-cta-call">📞 Call Us</a>
-  <a href="https://wa.me/919964476659" target="_blank" rel="noopener" class="mob-cta-enroll">💬 WhatsApp Us</a>
+  <a href="tel:+919964476659" class="mob-cta-call">Call Us</a>
+  <a href="https://wa.me/919964476659" target="_blank" rel="noopener" class="mob-cta-enroll">WhatsApp Us</a>
 </div>
 
 <!-- ══════ ENROLLMENT MODAL ══════ -->
 <div class="enroll-overlay" id="enrollOverlay">
   <div class="enroll-modal" id="enrollModal">
     <div class="modal-header">
-      <div class="modal-header-left"><h2 id="modalTitle">📋 Book Free Demo Class</h2><p>Fill details · Attend demo · Pay &amp; enroll</p></div>
+      <div class="modal-header-left"><h2 id="modalTitle">Book Free Demo Class</h2><p>Fill details · Attend demo · Pay &amp; enroll</p></div>
       <button class="modal-close" onclick="closeEnroll()">✕</button>
     </div>
     <div class="step-progress">
       <div class="sp-item active" id="sp1"><div class="sp-dot">01</div><div class="sp-label">Details</div></div>
       <div class="sp-item" id="sp2"><div class="sp-dot">02</div><div class="sp-label">Schedule</div></div>
-      <div class="sp-item" id="sp3"><div class="sp-dot">03</div><div class="sp-label">Payment</div></div>
+      <div class="sp-item" id="sp3"><div class="sp-dot">03</div><div class="sp-label">Next Step</div></div>
     </div>
     <div class="modal-body">
       <div class="enroll-step active" id="estep1">
-        <div class="info-note"><span>🎉</span><div><strong>First demo class is FREE!</strong> Fill your details below and we'll confirm your slot.</div></div>
+        <div class="info-note"><div><strong>First demo class is FREE!</strong> Fill your details below and we'll confirm your slot.</div></div>
         <div class="mf-row">
           <div class="mf-group"><label>Full Name *</label><input type="text" id="e_name" placeholder="e.g. Arjun Sharma"></div>
           <div class="mf-group"><label>Mobile Number *</label><input type="tel" id="e_phone" placeholder="+91 XXXXX XXXXX" maxlength="13"></div>
@@ -1510,46 +1467,44 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
           <label>Course of Interest *</label>
           <select id="e_course">
             <option value="">Select a course</option>
-            <optgroup label="🌐 Generative AI">
-              <option value="Generative AI & Prompt Engineering|₹5,999|6 weeks">Generative AI &amp; Prompt Engineering (₹5,999)</option>
-              <option value="AI Tools & Productivity|₹2,999|4 weeks">AI Tools &amp; Productivity (₹2,999)</option>
-              <option value="AI Agents & Automation|₹9,999|8 weeks">AI Agents &amp; Automation (₹9,999)</option>
+            <optgroup label="Generative AI">
+              <option value="Generative AI & Prompt Engineering|Demo|6 weeks">Generative AI &amp; Prompt Engineering</option>
+              <option value="AI Tools & Productivity|Demo|4 weeks">AI Tools &amp; Productivity</option>
+              <option value="AI Agents & Automation|Demo|8 weeks">AI Agents &amp; Automation</option>
             </optgroup>
-            <optgroup label="🧠 ML / Deep Learning">
-              <option value="Machine Learning Engineering|₹14,999|6 months">Machine Learning Engineering (₹14,999)</option>
-              <option value="Deep Learning with TensorFlow|₹16,999|5 months">Deep Learning with TensorFlow (₹16,999)</option>
-              <option value="Computer Vision & NLP|₹13,999|4 months">Computer Vision &amp; NLP (₹13,999)</option>
+            <optgroup label="ML / Deep Learning">
+              <option value="Machine Learning Engineering|Demo|6 months">Machine Learning Engineering</option>
+              <option value="Deep Learning with TensorFlow|Demo|5 months">Deep Learning with TensorFlow</option>
+              <option value="Computer Vision & NLP|Demo|4 months">Computer Vision &amp; NLP</option>
             </optgroup>
-            <optgroup label="📊 Data Science">
-              <option value="Python for Data & AI|₹6,999|4 months">Python for Data &amp; AI (₹6,999)</option>
-              <option value="Data Science & Analytics|₹15,999|6 months">Data Science &amp; Analytics (₹15,999)</option>
-              <option value="Data Visualization & Storytelling|₹4,999|6 weeks">Data Visualization &amp; Storytelling (₹4,999)</option>
+            <optgroup label="Data Science">
+              <option value="Python for Data & AI|Demo|4 months">Python for Data &amp; AI</option>
+              <option value="Data Science & Analytics|Demo|6 months">Data Science &amp; Analytics</option>
+              <option value="Data Visualization & Storytelling|Demo|6 weeks">Data Visualization &amp; Storytelling</option>
             </optgroup>
-            <optgroup label="🚀 Advanced AI">
-              <option value="MLOps & AI Deployment|₹17,999|5 months">MLOps &amp; AI Deployment (₹17,999)</option>
-              <option value="LLMs & RAG Systems|₹18,999|4 months">LLMs &amp; RAG Systems (₹18,999)</option>
-              <option value="AI Job Readiness Bootcamp|₹19,999|6 months">AI Job Readiness Bootcamp (₹19,999)</option>
+            <optgroup label="Advanced AI">
+              <option value="MLOps & AI Deployment|Demo|5 months">MLOps &amp; AI Deployment</option>
+              <option value="LLMs & RAG Systems|Demo|4 months">LLMs &amp; RAG Systems</option>
+              <option value="AI Job Readiness Bootcamp|Demo|6 months">AI Job Readiness Bootcamp</option>
             </optgroup>
-            <optgroup label="📣 Digital Marketing">
-              <option value="AI-Powered Digital Marketing Course|₹30,000|20 weeks">AI-Powered Digital Marketing Course (₹30,000)</option>
+            <optgroup label="Digital Marketing">
+              <option value="AI-Powered Digital Marketing Course|₹30,000|3 months">AI-Powered Digital Marketing Course (₹30,000)</option>
             </optgroup>
           </select>
         </div>
         <div class="mf-group"><label>Any specific goal or message?</label><textarea id="e_msg" placeholder="e.g. I want to learn AI tools for my marketing job..."></textarea></div>
-        <div class="modal-nav"><button class="btn-next" style="flex:1" onclick="goStep(2)">Continue to Schedule 📅</button></div>
+        <div class="modal-nav"><button class="btn-next" style="flex:1" onclick="goStep(2)">Continue to Schedule</button></div>
       </div>
 
       <div class="enroll-step" id="estep2">
-        <div class="info-note"><span>🎯</span><div>Your <strong>FREE demo class</strong> can be live online or at our Bengaluru campus. Choose a convenient day and time slot below.</div></div>
+        <div class="info-note"><div>Your <strong>FREE demo class</strong> can be live online or at our Bengaluru campus. Choose a convenient day and time slot below.</div></div>
         <div class="mf-group"><label>Preferred Demo Date *</label><input type="date" id="e_date" min=""></div>
         <div class="mf-group"><label>Choose Time Slot *</label>
           <div class="slot-grid">
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">7:00 AM</span>Morning</div>
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">10:00 AM</span>Forenoon</div>
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">4:00 PM</span>Evening</div>
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">5:30 PM</span>Evening</div>
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">7:00 PM</span>Night</div>
-            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">8:30 PM</span>Night</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">10:00 AM</span>Offline</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">4:00 PM</span>Offline</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">6:00 PM</span>Online</div>
+            <div class="slot-btn" onclick="selectSlot(this)"><span class="slot-time">9:00 PM</span>Online</div>
           </div>
         </div>
         <div class="mf-group"><label>Mode of Class</label>
@@ -1561,52 +1516,63 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
           </select>
         </div>
         <div style="background:#d1fae5;border:1px solid #6ee7b7;border-radius:12px;padding:14px 16px;margin-top:4px;">
-          <div style="font-size:12px;color:#047857;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">✅ WHAT HAPPENS NEXT</div>
-          <div style="font-size:13px;color:#1a1530;line-height:1.8;">1. Our team will call you within <strong>2 hours</strong> to confirm the slot<br>2. Attend the <strong>FREE demo class</strong><br>3. If you love it — pay and enroll. No pressure.</div>
+          <div style="font-size:12px;color:#047857;font-weight:700;letter-spacing:0.5px;margin-bottom:6px;">WHAT HAPPENS NEXT</div>
+          <div style="font-size:13px;color:#1a1530;line-height:1.8;">1. Our team will call you within <strong>2 hours</strong> to confirm the slot<br>2. Attend the <strong>FREE demo class</strong><br>3. If you love it — enroll. No pressure.</div>
         </div>
-        <div class="modal-nav"><button class="btn-back" onclick="goStep(1)">← Back</button><button class="btn-next" onclick="goStep(3)">Proceed to Payment 💳</button></div>
+        <div class="modal-nav"><button class="btn-back" onclick="goStep(1)">Back</button><button class="btn-next" onclick="goStep(3)">Continue</button></div>
       </div>
 
       <div class="enroll-step" id="estep3">
         <div class="fee-card" id="feeCard">
           <div class="fee-info"><h4 id="feeCourseName">Course Name</h4><p id="feeDuration">Duration</p></div>
-          <div class="fee-amount"><div class="fee-demo">DEMO FREE ✓</div><div class="fee-full" id="feeAmount">₹0</div><div style="font-size:11px;color:var(--muted);">Full course fee</div></div>
+          <div class="fee-amount"><div class="fee-demo" id="feeDemoLabel">DEMO FREE</div><div class="fee-full" id="feeAmount">₹0</div><div style="font-size:11px;color:var(--muted);" id="feeAmountLabel">Full course fee</div></div>
         </div>
-        <div class="mf-group"><label>💳 Choose Payment Plan</label>
-          <div class="emi-options">
-            <div class="emi-btn selected" onclick="selectEMI(this,'one-time',null,'Pay in Full — Save ₹3,000')"><div class="emi-count">1×</div><div class="emi-label">Full Payment</div><div class="emi-amount">₹27,000</div></div>
-            <div class="emi-btn" onclick="selectEMI(this,'installments',1,'Installment 1 of 3')"><div class="emi-count">3×</div><div class="emi-label">Installments</div><div class="emi-amount">₹15,000 + ₹7,500 + ₹7,500</div></div>
+
+        <div id="dmPaymentSection">
+          <div class="mf-group"><label>Choose Payment Plan</label>
+            <div class="emi-options">
+              <div class="emi-btn selected" onclick="selectEMI(this,'one-time',null,'Pay in Full — Save ₹3,000')"><div class="emi-count">1×</div><div class="emi-label">Full Payment</div><div class="emi-amount">₹27,000</div></div>
+              <div class="emi-btn" onclick="selectEMI(this,'installments',1,'Installment 1 of 3')"><div class="emi-count">3×</div><div class="emi-label">Installments</div><div class="emi-amount">₹15,000+₹7,500+₹7,500</div></div>
+            </div>
+            <div id="emiScheduleNote" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.7;">
+              <b style="color:var(--text);">Installment schedule:</b><br>
+              ₹15,000 (50%) — due now, at enrollment<br>
+              ₹7,500 (25%) — due 20 days after enrollment<br>
+              ₹7,500 (25%) — due 40 days after enrollment<br>
+              <span style="color:var(--violet);">Total: ₹30,000 (no discount on installment plan)</span>
+            </div>
           </div>
-          <div id="emiScheduleNote" style="display:none;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:13px 15px;margin-top:8px;font-size:12px;color:var(--muted);line-height:1.7;">
-            <b style="color:var(--text);">Installment schedule:</b><br>
-            • ₹15,000 (50%) — due now, at enrollment<br>
-            • ₹7,500 (25%) — due 20 days after enrollment<br>
-            • ₹7,500 (25%) — due 40 days after enrollment<br>
-            <span style="color:var(--violet);">Total: ₹30,000 (no discount on installment plan)</span>
+          <div class="razorpay-card">
+            <div class="rzp-logo-text">Razor<span>pay</span></div>
+            <p>Secure checkout — UPI, Cards, Net Banking &amp; Wallets. Choose either option below.</p>
           </div>
+          <div id="payBtnArea">
+            <button class="pay-now-btn" id="payNowBtn" onclick="startRazorpay()"><span id="payBtnText">Pay Securely with Razorpay</span></button>
+            <div class="secure-badges"><span class="secure-badge">PCI-DSS Compliant</span><span class="secure-badge">RBI Licensed</span><span class="secure-badge">100% Secure</span></div>
+          </div>
+          <div style="text-align:center;margin:14px 0;font-size:11.5px;color:var(--muted);">— or —</div>
+          <a href="https://razorpay.me/@mpulseeducationaltrust" target="_blank" rel="noopener" class="plan-btn" style="display:block;text-align:center;text-decoration:none;border:1.5px solid var(--border-strong);color:var(--violet);padding:13px;border-radius:10px;font-weight:700;font-size:13.5px;">Pay via Razorpay Payment Link (Test)</a>
         </div>
-        <div class="razorpay-card">
-          <div class="rzp-logo-text">Razor<span>pay</span></div>
-          <p>Secure checkout — UPI, Cards, Net Banking &amp; Wallets. Click below to open the Razorpay payment window.</p>
+
+        <div id="aiDemoSection" style="display:none;">
+          <div class="info-note"><div>This is a free demo booking — no payment required. Click below to confirm your demo class.</div></div>
+          <button class="pay-now-btn" id="confirmDemoBtn" onclick="confirmFreeDemo()"><span>Confirm Free Demo Booking</span></button>
         </div>
-        <div id="payBtnArea">
-          <button class="pay-now-btn" id="payNowBtn" onclick="startRazorpay()"><span id="payBtnText">🔒 Pay Securely with Razorpay</span></button>
-          <div class="secure-badges"><span class="secure-badge">🔒 PCI-DSS Compliant</span><span class="secure-badge">✅ RBI Licensed</span><span class="secure-badge">🛡️ 100% Secure</span></div>
-        </div>
-        <div class="modal-nav" style="margin-top:12px;"><button class="btn-back" onclick="goStep(2)">← Back</button></div>
+
+        <div class="modal-nav" style="margin-top:12px;"><button class="btn-back" onclick="goStep(2)">Back</button></div>
       </div>
 
       <div class="enroll-step" id="estep_processing">
-        <div class="pay-processing"><div class="proc-icon">🔐</div><h4>Opening Razorpay Checkout...</h4><p>Please do not close or refresh this page</p><div class="proc-bar"><div class="proc-fill"></div></div></div>
+        <div class="pay-processing"><h4>Opening Razorpay Checkout...</h4><p>Please do not close or refresh this page</p><div class="proc-bar"><div class="proc-fill"></div></div></div>
       </div>
 
       <div class="enroll-step" id="estep_success">
         <div class="success-screen">
-          <div class="success-icon">✅</div>
-          <h3>Enrollment Confirmed! 🎉</h3>
+          <div class="success-icon">✓</div>
+          <h3>Booking Confirmed!</h3>
           <p>Welcome to MPULSE DIGITAL AI! Your demo class is booked. Our team will call you within 2 hours to confirm everything.</p>
           <div class="success-id"><span>BOOKING REFERENCE ID</span><code id="bookingId">MPF-2026-000000</code></div>
-          <div class="success-actions"><button class="btn-whatsapp" onclick="shareWhatsApp()">💬 Share on WhatsApp</button><button class="btn-done" onclick="closeEnroll()">Done ✓</button></div>
+          <div class="success-actions"><button class="btn-whatsapp" onclick="shareWhatsApp()">Share on WhatsApp</button><button class="btn-done" onclick="closeEnroll()">Done</button></div>
         </div>
       </div>
     </div>
@@ -1624,12 +1590,12 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
       <div class="detail-stats-row" id="detailStatsRow"></div>
     </div>
     <div class="detail-body">
-      <div class="detail-section-title">📚 Curriculum Milestones</div>
+      <div class="detail-section-title">Curriculum Milestones</div>
       <div id="detailMilestones"></div>
-      <div class="detail-section-title">🛠️ Tools You'll Use</div>
+      <div class="detail-section-title">Tools You'll Use</div>
       <div class="detail-tools-row" id="detailTools"></div>
       <div class="detail-cta-row">
-        <button class="detail-enroll-btn" id="detailEnrollBtn" onclick="enrollFromDetail()">Enroll / Book Free Demo</button>
+        <button class="detail-enroll-btn" id="detailEnrollBtn" onclick="enrollFromDetail()">Book for Demo</button>
         <button class="detail-callback-btn" onclick="closeDetail();openCallback()">Request Callback</button>
       </div>
     </div>
@@ -1641,7 +1607,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
   <div class="signup-modal">
     <div class="signup-banner">
       <button class="signup-close" onclick="closeSignup()">✕</button>
-      <div class="sb-icon">🎓</div>
       <h3>Don't miss out!</h3>
       <p>Sign up now and unlock a free demo class + exclusive early-bird pricing</p>
     </div>
@@ -1666,7 +1631,7 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 <div class="callback-overlay" id="callbackOverlay">
   <div class="callback-modal">
     <button class="callback-close" onclick="closeCallback()">✕</button>
-    <h3>📞 Request a Callback</h3>
+    <h3>Request a Callback</h3>
     <p>Leave your number and our program advisor will call you within 2 hours.</p>
     <div class="mf-group"><label>Full Name *</label><input type="text" id="cb_name" placeholder="Your name"></div>
     <div class="mf-group"><label>Phone Number *</label><input type="tel" id="cb_phone" placeholder="+91 XXXXX XXXXX"></div>
@@ -1687,7 +1652,6 @@ footer{background:#1a1530;color:#e3def5;padding:56px 5% 28px;}
 <script>
 const BACKEND_URL = "https://mpulse-digital-ai-web.onrender.com";
 
-// ── COURSE DATA (for detail modal) ──
 const courseDetails = {
   "genai-prompt": { title:"Generative AI & Prompt Engineering", subtitle:"Master ChatGPT, Gemini, Claude & Midjourney for daily workflow automation", level:"Beginner", duration:"6 Weeks", sessions:"18+ hrs", projects:"6+",
     milestones:[
@@ -1783,100 +1747,11 @@ const courseDetails = {
       {name:"Portfolio & Resume", dur:"4 weeks", topics:"Resume building, GitHub portfolio, LinkedIn optimization"},
       {name:"Interview Prep & Placement", dur:"4 weeks", topics:"Mock interviews, placement drives"}
     ],
-    tools:["Python","Scikit-learn","SQL","Git","LinkedIn"] },
-  "dm-fund": { title:"Digital Marketing Fundamentals", subtitle:"SEO, SEM, social, email and content strategy basics", level:"Beginner", duration:"6 Weeks", sessions:"18+ hrs", projects:"4+",
-    milestones:[
-      {name:"Digital Marketing Ecosystem", dur:"1 week", topics:"Channels, funnels, customer journey, KPIs"},
-      {name:"SEO & SEM Basics", dur:"2 weeks", topics:"On-page SEO, keyword research, Google Ads intro"},
-      {name:"Social & Email Marketing", dur:"2 weeks", topics:"Platform strategy, email sequences, content calendars"},
-      {name:"Capstone Strategy Project", dur:"1 week", topics:"Build a complete marketing plan for a local business"}
-    ],
-    tools:["Google Ads","Google Analytics","Canva","Mailchimp"] },
-  "ecom": { title:"E-Commerce & Affiliate Marketing", subtitle:"Shopify setup, marketplace selling, affiliate networks", level:"Advanced", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
-    milestones:[
-      {name:"E-Commerce Setup", dur:"2 weeks", topics:"Shopify store setup, product listing, payment gateways"},
-      {name:"Marketplace Selling", dur:"2 weeks", topics:"Amazon/Flipkart seller setup, listing optimization"},
-      {name:"Affiliate & Scaling", dur:"4 weeks", topics:"Affiliate networks, dropshipping basics, scaling strategies"}
-    ],
-    tools:["Shopify","Amazon Seller Central","Google Ads","Meta Ads"] },
-  "dm-bootcamp": { title:"Full-Stack Digital Marketing Bootcamp", subtitle:"SEO, ads, social, email, analytics and freelancing combined", level:"All-in-One", duration:"4 Months", sessions:"112+ hrs", projects:"20+",
-    milestones:[
-      {name:"Digital Marketing, Websites & Landing Pages", dur:"2 weeks", topics:"Digital marketing ecosystem, AI mindset, WordPress, landing page design"},
-      {name:"SEO & Answer Engine Optimization", dur:"4 weeks", topics:"On-page/off-page SEO, AEO, AI-driven keyword research, technical audits"},
-      {name:"Social Media, Content & Influencer Marketing", dur:"2 weeks", topics:"Organic growth, content calendars, influencer campaigns"},
-      {name:"Performance Marketing", dur:"8 weeks", topics:"Meta Ads, Google Ads, YouTube Ads, Amazon Ads, conversion tracking"},
-      {name:"Marketing Automation & AI Agents", dur:"2 weeks", topics:"n8n workflows, CRM automation, AI lead scoring"},
-      {name:"Capstone Project", dur:"2 weeks", topics:"Full marketing campaign across channels with live brand"}
-    ],
-    tools:["WordPress","Google Ads","Meta Ads Manager","GA4","SEMrush","ChatGPT","n8n","Mailchimp"] },
-  "seo-ads": { title:"SEO & Google Ads Mastery", subtitle:"On-page/off-page SEO, keyword research, Google Ads", level:"Beginner-Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
-    milestones:[
-      {name:"On-Page & Off-Page SEO", dur:"3 weeks", topics:"Keyword research, content optimization, backlinks"},
-      {name:"Technical SEO", dur:"2 weeks", topics:"Site audits, Search Console, page speed"},
-      {name:"Google Ads", dur:"3 weeks", topics:"Campaign setup, Quality Score, bidding strategies"}
-    ],
-    tools:["Google Search Console","SEMrush","Ahrefs","Google Ads"] },
-  "perf-mkt": { title:"Performance Marketing & Analytics", subtitle:"GA4, Meta Ads, conversion tracking, A/B testing", level:"Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
-    milestones:[
-      {name:"Analytics Setup", dur:"2 weeks", topics:"GA4 configuration, event tracking, conversions"},
-      {name:"Meta Ads Manager", dur:"3 weeks", topics:"Campaign structure, audiences, pixel setup"},
-      {name:"Optimization", dur:"3 weeks", topics:"A/B testing, ROI measurement, funnel optimization"}
-    ],
-    tools:["Google Analytics 4","Meta Ads Manager","Google Tag Manager"] },
-  "paid-ads": { title:"Paid Ads & Conversion Funnels", subtitle:"Meta & Google Ads with real budgets and funnels", level:"Advanced", duration:"6 Weeks", sessions:"20+ hrs", projects:"5+",
-    milestones:[
-      {name:"Funnel Strategy", dur:"2 weeks", topics:"TOFU-MOFU-BOFU, landing page design, lead magnets"},
-      {name:"Paid Campaign Execution", dur:"2 weeks", topics:"Meta & Google campaign setup with live budgets"},
-      {name:"Optimization Capstone", dur:"2 weeks", topics:"Analyze, optimize and report on live campaign results"}
-    ],
-    tools:["Meta Ads","Google Ads","Unbounce","GA4"] },
-  "social-mkt": { title:"Social Media Marketing", subtitle:"Instagram, YouTube & LinkedIn growth strategies", level:"Intermediate", duration:"2 Months", sessions:"30+ hrs", projects:"6+",
-    milestones:[
-      {name:"Platform Strategy", dur:"2 weeks", topics:"Instagram Reels, YouTube SEO, LinkedIn B2B"},
-      {name:"Content Creation", dur:"2 weeks", topics:"Content calendars, hashtag research, creative production"},
-      {name:"Analytics & Growth", dur:"2 weeks", topics:"Platform analytics, growth hacking tactics"}
-    ],
-    tools:["Instagram","YouTube Studio","LinkedIn","Canva","Meta Business Suite"] },
-  "content-mkt": { title:"Content Marketing & Copywriting", subtitle:"Blogs, scripts, email sequences and AI-assisted content", level:"Intermediate", duration:"6 Weeks", sessions:"18+ hrs", projects:"5+",
-    milestones:[
-      {name:"Copywriting Foundations", dur:"2 weeks", topics:"Headlines, CTAs, persuasive writing frameworks"},
-      {name:"Content Formats", dur:"2 weeks", topics:"Blog writing, video scripts, email sequences"},
-      {name:"AI-Assisted Content", dur:"2 weeks", topics:"ChatGPT/Claude workflows for content production"}
-    ],
-    tools:["ChatGPT","Claude","Grammarly","Canva"] },
-  "influencer-mkt": { title:"Influencer Marketing & Personal Branding", subtitle:"Personal brand or influencer partnership management", level:"Intermediate", duration:"4 Weeks", sessions:"12+ hrs", projects:"4+",
-    milestones:[
-      {name:"Brand Identity", dur:"1 week", topics:"Personal/brand positioning, niche selection"},
-      {name:"Influencer Outreach", dur:"1 week", topics:"Creator identification, outreach templates, deal structuring"},
-      {name:"Campaign Execution", dur:"2 weeks", topics:"Content collaboration, performance tracking"}
-    ],
-    tools:["Instagram","LinkedIn","Upfluence","Modash"] },
-  "ai-dm": { title:"AI-Powered Digital Marketing", subtitle:"Automate campaigns with AI tools and CRM systems", level:"Advanced", duration:"3 Months", sessions:"45+ hrs", projects:"8+",
-    milestones:[
-      {name:"AI Content & Creative", dur:"4 weeks", topics:"ChatGPT for copy, Midjourney for creatives"},
-      {name:"AI-Driven Campaign Optimization", dur:"4 weeks", topics:"Predictive analytics, smart bidding, AI audience targeting"},
-      {name:"Capstone: AI Marketing System", dur:"4 weeks", topics:"Build a complete AI-assisted marketing workflow"}
-    ],
-    tools:["ChatGPT","Midjourney","Meta Ads","HubSpot"] },
-  "mkt-auto": { title:"Marketing Automation & CRM", subtitle:"Email/WhatsApp flows, lead scoring, AI chatbots", level:"Advanced", duration:"6 Weeks", sessions:"18+ hrs", projects:"5+",
-    milestones:[
-      {name:"Automation Foundations", dur:"2 weeks", topics:"CRM pipelines, lead scoring models"},
-      {name:"Multi-Channel Flows", dur:"2 weeks", topics:"Email + WhatsApp automation sequences"},
-      {name:"AI Chatbots", dur:"2 weeks", topics:"Chatbot design and deployment for lead capture"}
-    ],
-    tools:["Mailchimp","Interakt","n8n","HubSpot"] },
-  "freelance-agency": { title:"Freelance & Agency Growth Track", subtitle:"Client acquisition, pricing, and agency scaling", level:"All Levels", duration:"4 Weeks", sessions:"12+ hrs", projects:"4+",
-    milestones:[
-      {name:"Positioning & Pricing", dur:"1 week", topics:"Service packaging, pricing models"},
-      {name:"Client Acquisition", dur:"2 weeks", topics:"Outreach, proposals, portfolio building"},
-      {name:"Scaling Capstone", dur:"1 week", topics:"Systems for scaling from freelancer to agency"}
-    ],
-    tools:["Notion","Upwork","LinkedIn","Google Workspace"] }
+    tools:["Python","Scikit-learn","SQL","Git","LinkedIn"] }
 };
 
 const toolsList = ["WordPress","ChatGPT","Claude","Gemini","Midjourney","Canva","Google Ads","Meta Ads Manager","Google Analytics 4","Google Tag Manager","SEMrush","Ahrefs","Google Search Console","Mailchimp","HubSpot","n8n","Notion","Power BI","Tableau","Python","TensorFlow","Scikit-learn","LangChain","Hugging Face"];
 
-// ── DIGITAL MARKETING COURSE: 6 MILESTONES (Milestone 5 = Email & Affiliate Marketing) ──
 const dmMilestones = [
   {
     title: "Digital Marketing, Websites & Landing Pages",
@@ -2029,7 +1904,7 @@ function buildMilestones(){
         <div class="milestone-inner">
           ${m.modules.map((mod, j) => `
             <div class="module-card">
-              <h5>📘 Module ${j+1}: ${mod.name}</h5>
+              <h5>Module ${j+1}: ${mod.name}</h5>
               <div class="module-topics">
                 ${mod.topics.map(t => `<div>${t}</div>`).join('')}
               </div>
@@ -2046,7 +1921,6 @@ function toggleMilestone(i){
 }
 buildMilestones();
 
-// ── FAQ ACCORDION ──
 function switchFaqTab(tab, btnEl){
   document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
   btnEl.closest('.faq-tabs').querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -2071,7 +1945,6 @@ const projectsList = [
   { num:"08", title:"Organic Social Media Launch Plan", desc:"Build a 30-day content calendar and DM-based lead generation flow for a new brand.", tools:["Instagram","Canva","ChatGPT"] }
 ];
 
-// ── NAV ──
 window.addEventListener('scroll', () => {
   document.getElementById('nav').classList.toggle('scrolled', scrollY > 50);
   document.getElementById('backTop').classList.toggle('show', scrollY > 400);
@@ -2083,13 +1956,11 @@ document.getElementById('hamburger').addEventListener('click', () => {
 document.getElementById('mobileClose').addEventListener('click', closeMobile);
 function closeMobile(){ document.getElementById('mobileNav').classList.remove('open'); document.body.style.overflow=''; }
 
-// ── SCROLL REVEAL ──
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ── TABS ──
 function switchTab(tab, btnEl) {
   const panel = document.getElementById('tab-' + tab);
   const tabsWrap = btnEl.closest('.course-tabs');
@@ -2100,7 +1971,6 @@ function switchTab(tab, btnEl) {
   btnEl.classList.add('active');
 }
 
-// ── MEGA MENU NAVIGATION: scroll to section, activate tab, highlight card ──
 function goToCourse(sectionId, tabKey, courseKey) {
   const section = document.getElementById(sectionId);
   const panel = document.getElementById('tab-' + tabKey);
@@ -2123,7 +1993,6 @@ function goToCourse(sectionId, tabKey, courseKey) {
   }, 500);
 }
 
-// ── Jump to a specific milestone in the Digital Marketing course, expand it, and highlight it ──
 function goToMilestone(index){
   document.getElementById('digimkt').scrollIntoView({ behavior: 'smooth' });
   setTimeout(() => {
@@ -2138,18 +2007,12 @@ function goToMilestone(index){
   }, 500);
 }
 
-// (Cohort date display removed along with the seats banner)
-
-// (Seats-left banner removed — backend no longer exposes /api/seats)
-
-// ── TOOLS MARQUEE ──
 (function buildToolsMarquee(){
   const track = document.getElementById('toolsTrack');
   const doubled = [...toolsList, ...toolsList];
-  track.innerHTML = doubled.map(t => `<div class="tool-chip">⚡ ${t}</div>`).join('');
+  track.innerHTML = doubled.map(t => `<div class="tool-chip">${t}</div>`).join('');
 })();
 
-// ── PROJECTS SHOWCASE ──
 (function buildProjects(){
   const scroll = document.getElementById('projectsScroll');
   scroll.innerHTML = projectsList.map(p => `
@@ -2162,7 +2025,6 @@ function goToMilestone(index){
   `).join('');
 })();
 
-// ── CONTACT FORM ──
 function submitForm() {
   const name = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
@@ -2184,7 +2046,6 @@ function submitForm() {
   document.getElementById('fmsg').value = '';
 }
 
-// ══════════ SIGN-UP POPUP (appears 2 minutes after page load) ══════════
 let signupShown = false;
 function openSignup(){
   if (signupShown) return;
@@ -2216,9 +2077,8 @@ function submitSignup(){
   setTimeout(() => { toast.classList.remove('show'); toast.textContent = "Enquiry submitted! We'll contact you within 24 hours."; }, 5000);
 }
 
-setTimeout(openSignup, 60000);
+setTimeout(openSignup, 120000);
 
-// ══════════ CALLBACK MODAL ══════════
 function openCallback(){ document.getElementById('callbackOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeCallback(){ document.getElementById('callbackOverlay').classList.remove('open'); document.body.style.overflow=''; }
 document.getElementById('callbackOverlay').addEventListener('click', function(e){ if(e.target===this) closeCallback(); });
@@ -2243,7 +2103,6 @@ function submitCallback(){
   document.getElementById('cb_phone').value = '';
 }
 
-// ══════════ COURSE DETAIL MODAL ══════════
 let currentDetailCourse = null;
 
 function openDetail(courseKey){
@@ -2277,7 +2136,6 @@ function enrollFromDetail(){
   openEnroll(c ? c.title.split(' ').slice(0,2).join(' ') : '');
 }
 
-// ══════════ ENROLLMENT MODAL LOGIC ══════════
 let enrollData = { step: 1, selectedSlot: null, courseData: null, planType: 'one-time', installmentNumber: null, planLabel: 'Pay in Full — Save ₹3,000', amount: 0 };
 
 function openEnroll(courseStr) {
@@ -2319,16 +2177,49 @@ function goStep(n) {
     if (!enrollData.selectedSlot) { alert('Please select a time slot'); return; }
     const parts = document.getElementById('e_course').value.split('|');
     if (parts.length >= 2) {
-      enrollData.courseData = { name: parts[0], dur: parts[2]||'' };
+      enrollData.courseData = { name: parts[0], fee: parts[1], dur: parts[2]||'' };
       document.getElementById('feeCourseName').textContent = parts[0];
-      document.getElementById('feeDuration').textContent = parts[2] ? '⏱ ' + parts[2] : '';
-      updateFeeDisplay();
+      document.getElementById('feeDuration').textContent = parts[2] ? parts[2] : '';
+
+      const isPaidCourse = parts[1] !== 'Demo';
+      document.getElementById('dmPaymentSection').style.display = isPaidCourse ? 'block' : 'none';
+      document.getElementById('aiDemoSection').style.display = isPaidCourse ? 'none' : 'block';
+
+      if (isPaidCourse) {
+        document.getElementById('feeAmountLabel').textContent = 'Full course fee';
+        enrollData.planType = 'one-time';
+        enrollData.installmentNumber = null;
+        enrollData.amount = 27000;
+        updateFeeDisplay();
+      } else {
+        document.getElementById('feeAmount').textContent = 'Free';
+        document.getElementById('feeAmountLabel').textContent = 'No payment required for demo';
+      }
     }
   }
   goStepDirect(n);
 }
 function updateFeeDisplay(){
   document.getElementById('feeAmount').textContent = '₹' + enrollData.amount.toLocaleString('en-IN');
+}
+function confirmFreeDemo(){
+  const btn = document.getElementById('confirmDemoBtn');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Booking your demo...';
+
+  fetch(`${BACKEND_URL}/api/enquiry`, {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({
+      name: document.getElementById('e_name').value,
+      phone: document.getElementById('e_phone').value,
+      course: enrollData.courseData ? enrollData.courseData.name : '',
+      message: 'Free demo booking. Date: ' + document.getElementById('e_date').value + ', Slot: ' + enrollData.selectedSlot + ', Mode: ' + document.getElementById('e_batch').value
+    })
+  }).catch(()=>{});
+
+  setTimeout(() => {
+    showSuccess('MPF-' + new Date().getFullYear() + '-' + Math.floor(100000+Math.random()*900000));
+  }, 600);
 }
 function goStepDirect(n) {
   enrollData.step = n;
@@ -2342,7 +2233,7 @@ function goStepDirect(n) {
       if (i < n) sp.classList.add('done'); else if (i === n) sp.classList.add('active');
     });
   }
-  const titles = {1:'📋 Book Free Demo Class', 2:'📅 Schedule Your Demo', 3:'💳 Payment'};
+  const titles = {1:'Book Free Demo Class', 2:'Schedule Your Demo', 3:'Next Step'};
   if (titles[n]) document.getElementById('modalTitle').textContent = titles[n];
   document.getElementById('enrollModal').scrollTo({top:0, behavior:'smooth'});
 }
@@ -2362,7 +2253,6 @@ function selectEMI(el, planType, installmentNumber, label) {
   updateFeeDisplay();
 }
 
-// ── RAZORPAY CHECKOUT (connected to backend) ──
 async function startRazorpay() {
   if (!enrollData.courseData) { alert('Please select a course first'); return; }
   const name = document.getElementById('e_name').value;
@@ -2372,7 +2262,7 @@ async function startRazorpay() {
   const payBtn = document.getElementById('payNowBtn');
   const payBtnText = document.getElementById('payBtnText');
   payBtn.disabled = true;
-  payBtnText.textContent = '⏳ Preparing secure checkout...';
+  payBtnText.textContent = 'Preparing secure checkout...';
 
   try {
     const orderRes = await fetch(`${BACKEND_URL}/api/create-order`, {
@@ -2388,7 +2278,7 @@ async function startRazorpay() {
     if (!orderRes.ok) throw new Error('order-create-failed');
     const order = await orderRes.json();
 
-    payBtnText.textContent = '🔒 Pay Securely with Razorpay';
+    payBtnText.textContent = 'Pay Securely with Razorpay';
     payBtn.disabled = false;
 
     const options = {
@@ -2432,7 +2322,7 @@ async function startRazorpay() {
   } catch (err) {
     console.error(err);
     payBtn.disabled = false;
-    payBtnText.textContent = '🔒 Pay Securely with Razorpay';
+    payBtnText.textContent = 'Pay Securely with Razorpay';
     alert('Could not start checkout. Please check your connection and try again.');
   }
 }
@@ -2441,13 +2331,13 @@ function showSuccess(bookingId) {
   goStepDirect('success');
   document.getElementById('bookingId').textContent = bookingId || ('MPF-' + new Date().getFullYear() + '-' + Math.floor(100000+Math.random()*900000));
   [1,2,3].forEach(i => { document.getElementById('sp'+i).classList.remove('active'); document.getElementById('sp'+i).classList.add('done'); });
-  document.getElementById('modalTitle').textContent = '🎉 Enrollment Confirmed!';
+  document.getElementById('modalTitle').textContent = 'Booking Confirmed!';
 }
 function shareWhatsApp() {
   const name = document.getElementById('e_name').value;
   const course = enrollData.courseData ? enrollData.courseData.name : 'Course';
   const id = document.getElementById('bookingId').textContent;
-  const msg = encodeURIComponent(`Hi MPULSE DIGITAL AI! I just enrolled for *${course}*.\\nName: ${name}\\nBooking ID: ${id}\\nPlease confirm my demo class slot. Thank you! 🙏`);
+  const msg = encodeURIComponent(`Hi MPULSE DIGITAL AI! I just booked for ${course}. Name: ${name}. Booking ID: ${id}. Please confirm my demo class slot. Thank you!`);
   window.open('https://wa.me/919964476659?text=' + msg, '_blank');
 }
 </script>
