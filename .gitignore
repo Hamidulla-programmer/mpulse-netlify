@@ -1,0 +1,8 @@
+node_modules/
+.gemini/
+.vscode/
+walkthrough.md1
+scratch/
+mongodb_data/
+*.log
+waltthrough.md2 aiageent

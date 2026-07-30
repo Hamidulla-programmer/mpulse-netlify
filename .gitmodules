@@ -1,0 +1,9 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/hidayathulla1234/Mpulse_Digi_AI_Frontend-.git
+	branch = main
+
+[submodule "backend"]
+	path = backend
+	url = https://github.com/hidayathulla1234/Mpulse_Digi_AI_Backend.git
+	branch = main
