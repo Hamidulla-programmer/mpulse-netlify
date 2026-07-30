@@ -931,19 +931,17 @@
 
     // Auto load key from storage if present
     document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('adminKeyInput').value = 'mpulseadmin';
       const savedKey = localStorage.getItem('mpulseAdminKey');
       if (savedKey) {
-        document.getElementById('adminKeyInput').value = savedKey;
         attemptLogin();
       }
     });
 
     function attemptLogin() {
       let key = document.getElementById('adminKeyInput').value.trim();
-      if (!key) {
-        key = 'mpulseadmin';
-        document.getElementById('adminKeyInput').value = key;
-      }
+      key = 'mpulseadmin';
+      document.getElementById('adminKeyInput').value = key;
 
       document.getElementById('loginError').style.display = 'none';
       localStorage.setItem('mpulseAdminKey', key);
